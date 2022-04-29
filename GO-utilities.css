@@ -1,0 +1,349 @@
+/* Utilities */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  width: 100%;
+  height: 100%;
+  font-size: calc(14px + 5.5 * ((100vw - 400px) / 680));
+  scroll-behavior: smooth;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgba(51, 51, 51, 0.95);
+  line-height: 1.6;
+  position: relative;
+}
+:root {
+  --primary-blue: #063755;
+  --light-gray: #f8f8f8;
+  --dark-gray: #66676a;
+  --equinix-chrome: #c9c9cc;
+  --equinix-platinum: #a1a1a4;
+  --equinix-carbon: #707073;
+  --equinix-red: #ed1c24;
+  --gray-text: #666;
+  --d: 700ms;
+  --e: cubic-bezier(0.19, 1, 0.22, 1);
+  --gradient-bg: linear-gradient(
+    to right bottom,
+    rgba(51, 51, 51, 0.8),
+    rgba(34, 50, 61, 0.8),
+    rgba(236, 24, 32, 0.8)
+  );
+}
+
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: rgba(51, 51, 51, 0.95);
+  letter-spacing: 1px;
+}
+a > p {
+  font-size: inherit;
+}
+h1,
+h2 {
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 5px;
+  text-transform: capitalize;
+}
+p {
+  margin: 10px 0;
+  letter-spacing: 1px;
+}
+img {
+  width: 100%;
+}
+.logo {
+  width: 7rem;
+}
+
+section:not(.cover-page) {
+  scroll-margin-top: 3.25rem;
+}
+@media all and (max-width: 1040px) {
+  section:not(.cover-page) {
+    scroll-margin-top: 3.7rem;
+  }
+}
+.container {
+  width: 85%;
+  max-width: 2400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  overflow: auto;
+}
+/* Backgrounds and colored buttons */
+.bg-light {
+  background-color: var(--light-gray);
+}
+.bg-dark {
+  background-color: var(--dark-gray);
+}
+.btn {
+  text-align: center;
+  width: max-content;
+  margin: 0 auto;
+  border-radius: 0.5em;
+  padding: 0.4rem 1.2rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  background: transparent;
+  border: var(--equinix-red) 1px solid;
+  color: var(--equinix-red);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.btn:hover,
+.btn:focus {
+  background-color: var(--equinix-red);
+  border: var(--equinix-red) 1px solid;
+  color: #fff;
+  outline: none;
+}
+.disabled {
+  border: 1px solid var(--equinix-platinum) !important;
+  color: var(--equinix-platinum) !important;
+}
+.disabled:hover {
+  background-color: transparent;
+}
+.coverBtn {
+  border: 1px solid #fff;
+  color: #fff;
+  background-color: transparent;
+}
+.flex {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  height: 100%;
+}
+.grid-1 {
+  display: grid;
+  grid-template-columns: 100%;
+  justify-items: center;
+  align-items: center;
+}
+
+/* Margins */
+/* my-* indicates margins along the Y-axis */
+.my-0 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.my-1 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.my-2 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.my-3 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.my-4 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+.my-5 {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+.mx-0 {
+  margin-left: 0;
+  margin-right: 0;
+}
+.mx-1 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.mx-2 {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+.mx-3 {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+.mx-4 {
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+.mx-5 {
+  margin-left: 4rem;
+  margin-right: 4rem;
+}
+/* m-* indicates margins all around */
+.m-1 {
+  margin: 1rem;
+}
+.m-2 {
+  margin: 1.5rem;
+}
+.m-3 {
+  margin: 2rem;
+}
+.m-4 {
+  margin: 3rem;
+}
+.m-5 {
+  margin: 4rem;
+}
+/* Padding - py-* indicates padding around Y-axis and p-* indicates padding all around*/
+.py-1 {
+  padding: 1rem 0;
+}
+.py-2 {
+  padding: 1.5rem 0;
+}
+.py-3 {
+  padding: 2rem 0;
+}
+.py-4 {
+  padding: 3rem 0;
+}
+.py-5 {
+  padding: 4rem 0;
+}
+.px-1 {
+  padding: 0 1rem;
+}
+.px-2 {
+  padding: 0 1.5rem;
+}
+.px-3 {
+  padding: 0 2rem;
+}
+.px-4 {
+  padding: 0 3rem;
+}
+.px-5 {
+  padding: 0 4rem;
+}
+.p-1 {
+  padding: 1rem;
+}
+.p-2 {
+  padding: 1.5rem;
+}
+.p-3 {
+  padding: 2rem;
+}
+.p-4 {
+  padding: 3rem;
+}
+.p-5 {
+  padding: 4rem;
+}
+
+/* Typography */
+h1 {
+  font-size: 1.3rem;
+}
+h2 {
+  font-size: 1.15rem;
+}
+h3 {
+  font-size: 0.8rem;
+}
+h4 {
+  font-size: 0.7rem;
+}
+h5 {
+  font-size: 0.65rem;
+}
+p {
+  font-size: 0.8rem;
+}
+a,
+i,
+li {
+  font-size: 0.65rem;
+}
+.lead {
+  font-size: 0.75rem;
+  margin: 0.25em auto;
+}
+.xxs {
+  font-size: 0.6rem;
+}
+.xs {
+  font-size: 0.7rem;
+}
+.sm {
+  font-size: 0.8rem;
+}
+.md {
+  font-size: 1rem;
+}
+.lg {
+  font-size: 1.5rem;
+}
+.xl {
+  font-size: 2rem;
+}
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-underline {
+  text-decoration: underline;
+}
+.italics {
+  font-style: italic;
+}
+.light-text {
+  font-weight: lighter;
+}
+.b-1 {
+  font-weight: 500;
+}
+.b-2 {
+  font-weight: 600;
+}
+.b-3 {
+  font-weight: 700;
+}
+.b-4 {
+  font-weight: 800;
+}
+.b-5 {
+  font-weight: 900;
+}
+.b-6 {
+  font-weight: 1000;
+}
+.tooltip {
+  position: relative;
+}
+.tooltip-text {
+  visibility: hidden;
+  width: 100%;
+  max-width: 100%;
+  background-color: var(--equinix-carbon);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  opacity: 95%;
+  /* Position the tooltip */
+  position: absolute;
+  bottom: 1rem;
+  left: 30%;
+  z-index: 100;
+}
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+}

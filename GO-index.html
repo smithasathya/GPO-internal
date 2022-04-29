@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GO Dashboard</title>
+    <link rel="stylesheet" href="GO-style.css">
+    <link rel="stylesheet" href="GO-utilities.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+<body>
+    <!-- To top button -->
+    <a href="#top" id="toTop" title="Go to top" class="page-link"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <img src="./images/logo-dark-BG.png" alt="Company Logo" class="logo" />
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav no-search">
+                <li class="nav-item"><a href="#home">Home</a></li>
+                <li class="nav-item"><a href="#onboarding">Onboarding</a></li>
+                <li class="nav-item"><a href="#roles">Roles</a></li>
+                <li class="nav-item"><a href="#degreed">Degreed LXP</a></li>
+                <li class="nav-item"><a href="#equitube">Equitube</a></li>
+                <li class="nav-item"><a href="#social">Social</a></li>
+                <li class="nav-item"><a target="_blank" href="">About Us</a></li>
+                <div class="dropdown nav-item">
+                    <button class="dropbtn">
+                        <div>
+                            <span>Resources </span>
+                            <i class="fa fa-caret-down"></i>
+                        </div>
+                    </button>
+                    <div class="dropdown-content">
+                        <a target="_blank"
+                            href="https://intranet.equinix.com/Pages/Equinix%20Dictionary%20Acronym/Dictionary.aspx"
+                            class="nav-item">Dictionary</a>
+                        <a target="_blank" href="https://developer.equinix.com/docs/glossary?pid=122"
+                            class="nav-item">Portal
+                            Glossary</a>
+                    </div>
+                </div>
+                <li class="nav-item"><a href="#contact">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="home">
+        <div class="slider" data-autoplay="true" data-timer="5000">
+            <div class="slide current ss1" data-slide="1">
+                <div class="slide-wrapper container">
+                    <div class="slide-content">
+                        <h1>Welcome, <b><span id="user">Nabiya</span></b> to the <b>Equinix Learning Center</b>
+                        </h1>
+                        <p>
+                            Advance your skills- anywhere, anytime
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="slide ss1" data-slide="2">
+                <div class="slide-wrapper container">
+                    <div class="slide-content">
+                        <h1>Slide Two</h1>
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit hic
+                            maxime, voluptatibus labore doloremque vero!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide ss1" data-slide="3">
+                <div class="slide-wrapper container">
+                    <div class="slide-content">
+                        <h1>Slide Three</h1>
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit hic
+                            maxime, voluptatibus labore doloremque vero!
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="buttons container ss1-btnc">
+                <button class="prev" id="prev"><i class="fas fa-arrow-left"></i></button>
+                <button class="next" id="next"><i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </section>
+    <div class="user-content">
+        <div class="container">
+
+            <div class="uc-item">
+                <i class="fa-solid fa-users-gear uc-icon"></i>
+                <h3>Global Operations Onboarding</h3>
+                <p>
+                    Get started with introdution to Equinix and learn your first 30 days in Global
+                    Operations
+                </p>
+                <div class="uc-link">
+                    <div class="uc-btn">
+                        <a href="#onboarding">
+                            Explore Onboarding
+                            <p class="arrow">
+                            </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="uc-item">
+                <i class="fa-solid fa-users-viewfinder uc-icon"></i>
+                <h3>Discover Your Roles</h3>
+                <p>
+                    Browse Global Operations New to Equinix learning tracks based on your roles
+                </p>
+                <div class="uc-link">
+                    <div class="uc-btn">
+                        <a href="#roles"> Explore Roles
+                            <p class="arrow">
+                            </p>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--     <div class="lo-link">
+        <a href="#learningOpps">
+            <i class="fas fa-angle-double-down" style="font-size: 1rem; padding: .75rem;"></i>
+        </a>
+    </div> -->
+
+    <!-- onboarding -->
+    <section class="onboarding" id="onboarding">
+        <div class="container grid-1">
+            <div class="text-left onboarding-content">
+                <h1 class="py-1">Global Operations: At The Core of Who We Are and What We Do!</h1>
+                <p class="lead">
+                    Welcome to Equinix and Global Operations. Equinix Operations designs and builds our state-of-the-art
+                    IBX data centers all over the world to the highest standards. We run all IBXs to provide customers
+                    with optimal performance and service. Watch the welcome video from <a href=""><em>Raulf
+                            Abdel</em></a> , EVP of Global
+                    Operations thoughts on what it means to be a member of Global Operations.
+                </p>
+
+
+                <button class="btn" href="javascript:void(0)" onclick="video_open()">Watch Video
+                </button>
+
+
+                <a class="btn" href="#onboard-cont">Continue onboarding</a>
+
+
+            </div>
+            <div class="onboarding-image">
+                <img src="./images/rouf.jpg" alt="Rouf Abel">
+                <h4>Raouf Abdel</h4>
+                <h5 class="light-text italics">EVP Global Operations</h5>
+            </div>
+        </div>
+        <div id="light">
+            <a class="boxclose" id="boxclose" onclick="video_close();"></a>
+            <video id="onboardingVideo" width="100%" controls>
+                <source src="https://bit.ly/2VROazb" type="video/mp4">
+                <!--Browser does not support <video> tag -->
+            </video>
+        </div>
+        <div id="fade" onClick="lightbox_close();"></div>
+    </section>
+    <!--     <section id="onboard-cont"></section> -->
+
+    <section class="roles" id="roles">
+        <h1 class="text-center md b-3 p-2 py-4">Discover your roles</h1>
+        <div class="timeline" id="timeline">
+            <div class="tl-item">
+                <div class="tl-bg" style="background-image: url(./images/MicrosoftTeams-image.png)"></div>
+
+                <div class="tl-title">
+                    <p>New Hires and New to Role</p>
+                    <h2 class="b-4 md">IBX Customer Operations</h2>
+                </div>
+
+                <div class="tl-content">
+                    <p>New Hires and New to Role</p>
+                    <h2 class="b-4 md">IBX Customer Operations</h2>
+                    <div class="tl-content-body">
+                        <p class="lead text-left px-2">
+                            Select Training Associated To Your Job Level
+                        </p>
+                        <ul class="text-left px-2">
+                            <li>Fundamental Tracks (Level A01 & N02)</li>
+                            <li>Intermediate Tracks (Level N03, N04)</li>
+                            <li>Advanced Tracks (Level N05)</li>
+                        </ul>
+
+                    </div>
+                    <a href="#courses">
+                        <div onclick="goToCourse('TAM',this)" class="btn coverBtn">Register here</div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="tl-item">
+                <div class="tl-bg" style="background-image: url(./images/pexels-photo-9101888.jpeg)"></div>
+
+                <div class="tl-title">
+                    <p>New Hires and New to Role</p>
+                    <h2 class="b-4 md">IBX Critical Facilities</h2>
+                </div>
+
+                <div class="tl-content">
+                    <p>New Hires and New to Role</p>
+                    <h2 class="b-4 md">IBX Customer Operations</h2>
+                    <div class="tl-content-body">
+                        <p class="lead text-left">
+                            Coming Soon!
+                        </p>
+
+                    </div>
+                    <a href="#courses">
+                        <div onclick="goToCourse('CSM',this)" class="btn disabled coverBtn">Register here</div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="tl-item">
+                <div class="tl-bg" style="background-image: url(./images/MicrosoftTeams-image\ \(1\).png)"></div>
+
+                <div class="tl-title">
+                    <p>New Hires and New to Role</p>
+                    <h2 class="b-4 md">IBX Logistics Specialists</h2>
+                </div>
+
+                <div class="tl-content">
+                    <p>New Hires and New to Role</p>
+                    <h2 class="b-4 md">IBX Logistics Specialists</h2>
+                    <div class="tl-content-body">
+                        <p class="lead text-left">
+                            Coming Soon!
+                        </p>
+                    </div>
+                    <a href="#courses">
+                        <div onclick="goToCourse('CPM',this)" class="btn disabled coverBtn">Register here</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="equitube" id="equitube">
+
+        <h2 class="py-2 b-5">CLOUD INFRASTRUCTURE COURSES</h2>
+
+        <div class="course-wrapper container">
+            <div class="card">
+                <a class="courseImg card-img-top">
+                    <img data-aos="fade-right" id="general-cloud">
+                    </img>
+                </a>
+                <div class="card-body">
+                    <h5 data-aos="fade-up" class="card-title">CCOE - General Cloud Learning Track</h5>
+                    <div class="card-text text-left">
+                        <p>
+                            <span class="bullet">&#9632;</span> Introduction to the world of cloud
+                            <br>
+                            <span class="bullet">&#9632;</span> Gain basic understanding of core concepts of cloud such
+                            as cloud computing, cloud security & cloud architecture
+                        </p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a target="_blank"
+                        href="https://equinix.sumtotal.host/Core/pillarRedirect?relyingParty=LM&url=core%2Factivitydetails%2FViewActivityDetails%3FActivityId%3D28137%26UserMode%3D0"
+                        class="btn btn-lg courseBtn">Review Track
+                    </a>
+                </div>
+            </div>
+
+            <div class="card">
+                <a class="courseImg card-img-top">
+                    <img data-aos="fade-right" id="infra-admin">
+                    </img>
+                </a>
+                <div class="card-body">
+                    <h5 data-aos="fade-up" class="card-title">CCOE - Infra Engineering & Ops Learning Track - Admin</h5>
+                    <div class="card-text text-left">
+                        <p>
+                            <span class="bullet">&#9632;</span> Learn how to deploy, and administrator the Hybrid Cloud
+                        </p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a target="_blank"
+                        href="https://equinix.sumtotal.host/Core/pillarRedirect?relyingParty=LM&url=core%2Factivitydetails%2FViewActivityDetails%3FActivityId%3D28097%26UserMode%3D0"
+                        class="btn btn-lg courseBtn">Review Track
+                    </a>
+                </div>
+            </div>
+
+            <div class="card">
+                <a class="courseImg card-img-top">
+                    <img data-aos="fade-right" id="infra-code">
+                    </img>
+                </a>
+                <div class="card-body">
+                    <h5 data-aos="fade-up" class="card-title">CCOE - Infra Engineering & Ops Learning Track -
+                        Infrastructure as Code</h5>
+
+                    <div class="card-text text-left">
+                        <p>
+                            <span class="bullet">&#9632;</span> Learn infrastructure as a code on the Hybrid Cloud
+                        </p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a target="_blank"
+                        href="https://EQUINIX.sumtotal.host/core/pillarRedirect?relyingParty=LM&url=app%2Fmanagement%2FLMS_ActDetails.aspx%3FActivityId%3D28157%26UserMode%3D0"
+                        class="btn btn-lg courseBtn">Review Track</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <a class="courseImg card-img-top">
+                    <img data-aos="fade-right" id="cloud-admin">
+                    </img>
+                </a>
+                <div class="card-body">
+                    <h5 data-aos="fade-up" class="card-title">CCOE - Cloud Administrator Learning Track</h5>
+
+                    <div class="card-text text-left">
+                        <p>
+                            <span class="bullet">&#9632;</span>Gain understanding of core components of the cloud
+                            administrator function
+                            <br>
+
+                            <span class="bullet">&#9632;</span>Learn necessary skills to apply the administration
+                            concepts in an enterprise cloud computing environment
+
+                        </p>
+                    </div>
+
+                </div>
+                <div class="card-footer">
+                    <a target="_blank"
+                        href="https://EQUINIX.sumtotal.host/core/pillarRedirect?relyingParty=LM&url=app%2Fmanagement%2FLMS_ActDetails.aspx%3FActivityId%3D28178%26UserMode%3D0"
+                        class="btn btn-lg courseBtn">Review Track</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <a class="courseImg card-img-top">
+                    <img data-aos="fade-right" id="architect">
+                    </img>
+                </a>
+                <div class="card-body">
+                    <h5 data-aos="fade-up" class="card-title">CCOE - Cloud Architect Learning Track</h5>
+
+                    <div class="card-text text-left">
+                        <p>
+                            <span class="bullet">&#9632;</span>Designed for Architects to learn various clouds and
+                            reference architectures
+
+                        </p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a target="_blank"
+                        href="https://EQUINIX.sumtotal.host/core/pillarRedirect?relyingParty=LM&url=app%2Fmanagement%2FLMS_ActDetails.aspx%3FActivityId%3D28206%26UserMode%3D0"
+                        class="btn btn-lg courseBtn">Review Track</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <a class="courseImg card-img-top">
+                    <img data-aos="fade-right" id="infosec">
+                    </img>
+                </a>
+                <div class="card-body">
+                    <h5 data-aos="fade-up" class="card-title">CCOE - Infosec Learning Track</h5>
+                    <div class="card-text text-left">
+                        <p>
+                            <span class="bullet">&#9632;</span>Native security controls within the different cloud
+                            vendors and deployment models used to implement cloud security defences
+                            <br>
+                            <span class="bullet">&#9632;</span>Different phases of ethnical hacking, as well as common
+                            threats that affect cloud computing environments to identify anomalies. It introduces how
+                            security and DevOps align to reveal testing strategies for web applications, microservices,
+                            and APIs, as well as CI/CD pipelines
+                        </p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a target="_blank"
+                        href="https://EQUINIX.sumtotal.host/core/pillarRedirect?relyingParty=LM&url=app%2Fmanagement%2FLMS_ActDetails.aspx%3FActivityId%3D28244%26UserMode%3D0"
+                        class="btn btn-lg courseBtn">Review Track</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <a class="courseImg card-img-top">
+                    <img data-aos="fade-right" id="devops">
+                    </img>
+                </a>
+                <div class="card-body">
+                    <h5 data-aos="fade-up" class="card-title">CCOE - Cloud DevOps Learning Track</h5>
+                    <div class="card-text text-left">
+                        <p>
+                            <span class="bullet">&#9632;</span>Learn how to use the most common DevOps patterns to
+                            develop, deploy, and maintain applications in Equinix’s Hybrid Cloud network
+                            <br>
+                            <span class="bullet">&#9632;</span>Understand the practical aspects of DevOps and learn how
+                            best to apply DevOps practices within Equinix
+                        </p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a target="_blank"
+                        href="https://EQUINIX.sumtotal.host/core/pillarRedirect?relyingParty=LM&url=app%2Fmanagement%2FLMS_ActDetails.aspx%3FActivityId%3D28296%26UserMode%3D0"
+                        class="btn btn-lg courseBtn">Review Track</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <a class="courseImg card-img-top">
+                    <img data-aos="fade-right" id="data-analytics">
+                    </img>
+                </a>
+                <div class="card-body">
+                    <h5 data-aos="fade-up" class="card-title">CCOE - Data and Analytics Learning Track</h5>
+                    <div class="card-text text-left">
+                        <p>
+                            <span class="bullet">&#9632;</span>Cloud software and data engineering fundamentals
+                            <br>
+                            <span class="bullet">&#9632;</span>Acquire the skills necessary to operate in data platform
+                            and pipeline systems for data engineering, analytics and machine learning
+                        </p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a target="_blank"
+                        href="https://EQUINIX.sumtotal.host/core/pillarRedirect?relyingParty=LM&url=app%2Fmanagement%2FLMS_ActDetails.aspx%3FActivityId%3D28322%26UserMode%3D0"
+                        class="btn btn-lg courseBtn">Review Track</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <a class="courseImg card-img-top">
+                    <img data-aos="fade-right" id="itsm">
+                    </img>
+                </a>
+                <div class="card-body">
+                    <h5 data-aos="fade-up" class="card-title">CCOE - ITSM Learning Track</h5>
+                    <div class="card-text text-left">
+                        <p>
+                            <span class="bullet">&#9632;</span>Primary objective of ITSM program is, "Paradigm shift
+                            from managing IT Services as individual, siloed functions to focusing on the delivery of
+                            end-to-end services using ITSM best practice process models"
+                            <br>
+                            <span class="bullet">&#9632;</span>ITIL framework to be used for implementing ITSM best
+                            practices
+                        </p>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a target="_blank"
+                        href="https://EQUINIX.sumtotal.host/core/pillarRedirect?relyingParty=LM&url=app%2Fmanagement%2FLMS_ActDetails.aspx%3FActivityId%3D28241%26UserMode%3D0"
+                        class="btn btn-lg courseBtn">Review Track</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--     <section class="team" id="team">
+        <div class='organization-banner lg text-center p-1 b-3'>
+            <h1 class="b-4">GCCX Organization</h1>
+            <div>
+                <a class="btn coverBtn" href="https://equinix.sumtotal.host/core/organization" target="_blank">View
+                    Chart</a>
+            </div>
+            </a>
+        </div>
+
+        <h1 class="text-center  py-1 md b-3">GCCX Enablement Team</h1>
+        <div class="container">
+            <div class="slider">
+                <div class="contact-card">
+                    <div class="banner-img">
+                    </div>
+                    <img src="https://equinix.sumtotal.host/Core/419.sumtfile" alt="" class="contact-img">
+                    <div class="contact-details">
+                        <h4 class="md">Moe Goodman</h4>
+                        <p class="title">Director, GCCX Enablement</p>
+                        <p class="person-details">
+                            Moe leads the enablement team and is responsible for the overall strategy and direction of
+                            the continuous
+                            learning and development within GCCX.
+                        </p>
+                        <a href="mailto:magoodman@equinix.com">
+                            <div class="btn">Contact me</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <div class="banner-img">
+                    </div>
+                    <img src="https://equinix.sumtotal.host/Core/413.sumtfile" alt="" class="contact-img">
+                    <div class="contact-details">
+                        <h4 class="md">Dawn Roberts</h4>
+                        <p class="title">Instructional Designer, GCCX Enablement</p>
+                        <p class="person-details">
+                            Dawn is responsible for the curation and creation of the content for continuous learning and
+                            development
+                            for
+                            the GCCX organization.
+                        </p>
+                        <a href="mailto:daroberts@equinix.com">
+                            <div class="btn">Contact me</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <div class="banner-img">
+                    </div>
+                    <img src="https://equinix.sumtotal.host/Core/418.sumtfile" alt="" class="contact-img">
+                    <div class="contact-details">
+                        <h4 class="md">Linda Lee</h4>
+                        <p class="title">Project and Program Manager, TAM Enablement</p>
+                        <p class="person-details">
+                            Linda is responsible for curation and creation of knowledge materials for the Technical
+                            Account Manager
+                            team.
+                        </p>
+                        <a href="mailto:llee@equinix.com">
+                            <div class="btn">Contact me</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <div class="banner-img">
+                    </div>
+                    <img src="https://equinix.sumtotal.host/Core/412.sumtfile" alt="" class="contact-img">
+                    <div class="contact-details">
+                        <h4 class="md">Dalia Osorio</h4>
+                        <p class="title">Manager, GSD Enablement </p>
+                        <p class="person-details">
+                            Dalia is responsible for the Global Service Desk (GSD) Training and Development and curation
+                            of the
+                            knowledge base within Salesforce for the GCCX team.
+                        </p>
+                        <a href="mailto:dosorio@equinix.com">
+                            <div class="btn">Contact me</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-card">
+                    <div class="banner-img">
+                    </div>
+                    <img src="https://equinix.sumtotal.host/Core/453.sumtfile" alt="" class="contact-img">
+                    <div class="contact-details">
+                        <h4 class="md">Kim Graham</h4>
+                        <p class="title">Sr. Manager, CSM/CPM Enablement</p>
+                        <p class="person-details">
+                            Kim is responsible for driving enablement best practices for the GCCX organization and the
+                            enhanced
+                            learning
+                            and development plan for the CSM & CPM organization.
+                        </p>
+                        <a href="mailto:kgraham@equinix.com">
+                            <div class="btn">Contact me</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class='organization-banner-bottom md text-center p-2 b-3'>
+        </div>
+    </section> -->
+
+    <section class="footer" id="contact">
+        <div class="footer-container container">
+            <div class="footer-left">
+                <h3>About Us</h3>
+                <p>
+                    Equinix,Inc. (Nasdaq: EQIX) connects the world's leading businesses to their customers,
+                    employees
+                    and partners
+                    inside the most-interconnected data centers. On this global platform for digital business,
+                    companies
+                    come
+                    together across more than 55+ markets on five continents to reach everywhere, interconnect
+                    everyone
+                    and
+                    integrate everything they need to create their digital futures. In the United States, Equinix
+                    operates data
+                    centers in Atlanta, Boston, Chicago, Dallas, Denver, Los Angeles, Miami, New York, Philadelphia,
+                    Seattle,
+                    Silicon Valley and Washington D.C.
+                </p>
+                <div class="eq-footer-social">
+                    <a href="https://blog.equinix.com" target="_blank" rel="noopener">
+                        <em class="fa fa-rss"><span style="display: none;">B</span></em>
+                    </a>
+                    <a class="twitter" href="https://twitter.com/Equinix" target="_blank" rel="noopener">
+                        <em class="fab fa-twitter">
+                            <span style="display: none;">T</span>
+                        </em>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/Equinix/" target="_blank" rel="noopener">
+                        <em class="fab fa-facebook"><span style="display: none;">F</span></em>
+                    </a>
+                    <a class="linkedin" href="https://www.linkedin.com/company/equinix/" target="_blank"
+                        rel="noopener"><em class="fab fa-linkedin"><span style="display: none;">L</span></em></a>
+                    <a class="youtube" href="https://www.youtube.com/user/equinixvideos" target="_blank"
+                        rel="noopener"><em class="fab fa-youtube"><span style="display: none;">Y</span></em></a>
+
+                </div>
+
+            </div>
+
+            <div class="footer-mid">
+                <h3>Help/Support</h3>
+                <a href="mailto:help@equinix.com">Report an incident</a>
+                <a href="http://intranet.equinix.com/Pages/IT/Equinix%20Learning%20Center/FAQs.aspx">Frequently
+                    asked
+                    questions</a>
+                <a href="mailto:Global-IT-LearningCenter-Support@equinix.com"> Global Information Technology
+                    (IT)</a>
+                <a href="mailto:OpsELCSupport@equinix.com">IBX Operations</a>
+                <a href="mailto:SalesEnablement@equinix.com">Sales</a>
+                <a href="mailto:Global-HR-LearningCenter-Support@equinix.com">Human Resources</a>
+                <a href="mailto:Global-IT-LearningCenter-Support@equinix.com">All Other Functions</a>
+            </div>
+
+            <div class="footer-right">
+                <h3>Contact Us</h3>
+                <p>Do you have any questions? Please do not hesitate to contact us directly. Our team will come back
+                    to
+                    you
+                    within
+                    a matter of hours to help you.</p>
+                <div class="contact-links">
+                    <a class="btn" href="mailto:GCCXEnablement@equinix.com
+              "><i class="fas fa-envelope-open-text"></i> Contact Us</a>
+                    <a class='btn' href="mailto:help@equinix.com"><i class="fas fa-fist-raised"></i> Raise an
+                        Incident</a>
+                </div>
+            </div>
+            <div class="grad">
+                <a> <br>Equinix Learning Center <br>
+                    <script>document.write(new Date().getFullYear())</script> @ Equinix, Inc. All rights reserved
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+</body>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+<!-- Slick Carousel  https://kenwheeler.github.io/slick/-->
+<script type="text/javascript"
+    src="//cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/slick.min.js"></script>
+<script src="./GO-script.js"></script>
+
+</html>
