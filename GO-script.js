@@ -59,7 +59,7 @@ function navHighlighter() {
     }
   });
   /* Last Section */
-  /*   if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
     document
       .querySelector(".nav-item a[href*=team]")
       .classList.remove("active");
@@ -70,7 +70,7 @@ function navHighlighter() {
     document
       .querySelector(".nav-item a[href*=contact]")
       .classList.remove("active");
-  } */
+  }
 }
 
 /* Toggle Nav on smaller screens */
@@ -146,7 +146,7 @@ const currentSlide = (e, slider, i) => {
     e.target.classList.add("active");
   });
 };
-document.querySelectorAll(".slider").forEach((slider) => {
+document.querySelectorAll(".custom-slider").forEach((slider) => {
   let autoplay = slider.getAttribute("data-autoplay");
   const timer = slider.getAttribute("data-timer");
 
@@ -288,4 +288,35 @@ paragraphs.forEach((para, i) => {
   // Call listener function at run time
   window.addEventListener("resize", checkScreenSize);
   checkScreenSize(minWidth);
+});
+
+/* Slick Carousel for Teams Section */
+$(document).ready(function ($) {
+  $(".team-slider").slick({
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: false,
+    autoplaySpeed: 3000,
+    arrows: true,
+
+    responsive: [
+      {
+        breakpoint: 1300,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  });
 });

@@ -290,7 +290,7 @@
   transition: all 0.2s ease;
 }
 
-.slider {
+.custom-slider {
   position: relative;
   overflow: hidden;
   height: 100%;
@@ -456,7 +456,7 @@
 }
 /* Backgorund Images */
 
-.home .slider .slide:first-child {
+.home .custom-slider .slide:first-child {
   background: linear-gradient(
       to right,
       rgba(0, 0, 0, 0.82) 15%,
@@ -1095,6 +1095,197 @@
   background-image: url("https://picsum.photos/458");
   background-size: cover;
   background-position: center;
+}
+
+/* Teams Section */
+#team {
+  width: 100%;
+  min-height: 88vh;
+  background-color: #c9c9cc;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='600' y1='25' x2='600' y2='777'%3E%3Cstop offset='0' stop-color='%23c9c9cc'/%3E%3Cstop offset='1' stop-color='%23f0f9ff'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='650' y1='25' x2='650' y2='777'%3E%3Cstop offset='0' stop-color='%23c9cad4'/%3E%3Cstop offset='1' stop-color='%23f1faff'/%3E%3C/linearGradient%3E%3ClinearGradient id='c' gradientUnits='userSpaceOnUse' x1='700' y1='25' x2='700' y2='777'%3E%3Cstop offset='0' stop-color='%23caccdc'/%3E%3Cstop offset='1' stop-color='%23f3faff'/%3E%3C/linearGradient%3E%3ClinearGradient id='d' gradientUnits='userSpaceOnUse' x1='750' y1='25' x2='750' y2='777'%3E%3Cstop offset='0' stop-color='%23cbcfe3'/%3E%3Cstop offset='1' stop-color='%23f4fbff'/%3E%3C/linearGradient%3E%3ClinearGradient id='e' gradientUnits='userSpaceOnUse' x1='800' y1='25' x2='800' y2='777'%3E%3Cstop offset='0' stop-color='%23cdd3e9'/%3E%3Cstop offset='1' stop-color='%23f5fbff'/%3E%3C/linearGradient%3E%3ClinearGradient id='f' gradientUnits='userSpaceOnUse' x1='850' y1='25' x2='850' y2='777'%3E%3Cstop offset='0' stop-color='%23d0d8ee'/%3E%3Cstop offset='1' stop-color='%23f7fcff'/%3E%3C/linearGradient%3E%3ClinearGradient id='g' gradientUnits='userSpaceOnUse' x1='900' y1='25' x2='900' y2='777'%3E%3Cstop offset='0' stop-color='%23d3def3'/%3E%3Cstop offset='1' stop-color='%23f8fcff'/%3E%3C/linearGradient%3E%3ClinearGradient id='h' gradientUnits='userSpaceOnUse' x1='950' y1='25' x2='950' y2='777'%3E%3Cstop offset='0' stop-color='%23d8e3f7'/%3E%3Cstop offset='1' stop-color='%23fafdff'/%3E%3C/linearGradient%3E%3ClinearGradient id='i' gradientUnits='userSpaceOnUse' x1='1000' y1='25' x2='1000' y2='777'%3E%3Cstop offset='0' stop-color='%23dde9fa'/%3E%3Cstop offset='1' stop-color='%23fbfdff'/%3E%3C/linearGradient%3E%3ClinearGradient id='j' gradientUnits='userSpaceOnUse' x1='1050' y1='25' x2='1050' y2='777'%3E%3Cstop offset='0' stop-color='%23e2effc'/%3E%3Cstop offset='1' stop-color='%23fcfeff'/%3E%3C/linearGradient%3E%3ClinearGradient id='k' gradientUnits='userSpaceOnUse' x1='1100' y1='25' x2='1100' y2='777'%3E%3Cstop offset='0' stop-color='%23e9f4fe'/%3E%3Cstop offset='1' stop-color='%23fefeff'/%3E%3C/linearGradient%3E%3ClinearGradient id='l' gradientUnits='userSpaceOnUse' x1='1150' y1='25' x2='1150' y2='777'%3E%3Cstop offset='0' stop-color='%23f0f9ff'/%3E%3Cstop offset='1' stop-color='%23ffffff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg %3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' x='100' width='1100' height='800'/%3E%3Crect fill='url(%23c)' x='200' width='1000' height='800'/%3E%3Crect fill='url(%23d)' x='300' width='900' height='800'/%3E%3Crect fill='url(%23e)' x='400' width='800' height='800'/%3E%3Crect fill='url(%23f)' x='500' width='700' height='800'/%3E%3Crect fill='url(%23g)' x='600' width='600' height='800'/%3E%3Crect fill='url(%23h)' x='700' width='500' height='800'/%3E%3Crect fill='url(%23i)' x='800' width='400' height='800'/%3E%3Crect fill='url(%23j)' x='900' width='300' height='800'/%3E%3Crect fill='url(%23k)' x='1000' width='200' height='800'/%3E%3Crect fill='url(%23l)' x='1100' width='100' height='800'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+}
+.team .container {
+  margin: 0 auto;
+  padding: 0 50px;
+}
+.contact-card {
+  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.2);
+  width: auto;
+  max-width: 360px;
+  min-height: 475px;
+  text-align: center;
+  position: relative;
+  display: inline-flex !important;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f0f8ff;
+  overflow: hidden;
+  transition: all 0.5s;
+  margin: 1rem 0;
+}
+.banner-img {
+  width: 120%;
+  height: 150px;
+  transform: rotate(-12deg);
+  position: relative;
+  left: -5%;
+  overflow: hidden;
+  transform-origin: top left;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+}
+.banner-img::before {
+  content: " ";
+  transform: rotate(12deg);
+  background-image: url(https://equinix.sumtotal.host/Core/409.sumtfile);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  transform-origin: top left;
+  -webkit-transform-origin: top left;
+  -ms-transform-origin: top left;
+  position: absolute;
+  top: 0%;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s;
+}
+.contact-img {
+  width: 7rem;
+  height: 7rem;
+  border: 10px solid #f0f8ff;
+  border-radius: 50%;
+  z-index: 0;
+  transform: translateY(-80%);
+}
+.contact-details {
+  padding: 1rem 0.5rem 1rem 0.5rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  grid-template-rows: 1fr 1fr 3fr 1fr;
+  height: 65%;
+  align-items: end;
+}
+.person-details {
+  align-self: start;
+}
+.title {
+  color: grey;
+  margin: 0;
+  align-self: start;
+}
+
+.contact-details a {
+  text-decoration: none;
+  color: var(--equinix-red);
+}
+
+.contact-details .btn {
+  width: fit-content;
+  margin: 0 auto;
+  align-self: flex-end !important;
+  margin-bottom: 0.1rem;
+  padding: 0.35rem;
+}
+.slider {
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.slick-next .slick-next-icon:before,
+.slick-next .slick-prev-icon:before,
+.slick-prev .slick-next-icon:before,
+.slick-prev .slick-prev-icon:before {
+  color: var(--equinix-red) !important;
+}
+.slick-next .slick-next-icon::before,
+.slick-next .slick-prev-icon::before,
+.slick-prev .slick-next-icon::before,
+.slick-prev .slick-prev-icon::before {
+  font-size: 1rem !important;
+}
+.slick-autoplay-toggle-button .slick-pause-icon:before {
+  display: none;
+}
+.slick-slide {
+  padding: 0 10px;
+}
+.slick-active > div {
+  display: flex !important;
+  justify-content: center;
+}
+
+@media all and (max-width: 600px) {
+  .team .container {
+    padding: 10px;
+  }
+  .contact-card {
+    max-width: 360px;
+  }
+}
+@media all and (min-width: 800px) {
+  .contact-card {
+    min-height: 560px;
+  }
+  .banner-img {
+    height: 200px;
+    left: -10%;
+  }
+  .contact-img {
+    transform: translateY(-90%);
+  }
+}
+@media all and (min-width: 1100px) {
+  .contact-card {
+    width: 100%;
+    max-width: 450px;
+    min-height: 525px;
+  }
+  .contact-img {
+    width: 160px;
+    height: 160px;
+  }
+  .contact-card h4 {
+    font-size: 22px;
+  }
+  .contact-card p,
+  .contact-card a,
+  .contact-card .btn {
+    font-size: 18px;
+  }
+}
+@media all and (min-width: 2000px) {
+  .slider {
+    width: auto;
+  }
+}
+
+.organization-banner {
+  width: 100%;
+  height: max-content;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("https://equinix.sumtotal.host/Core/610.sumtfile");
+  background-attachment: fixed;
+  color: #f2f2f2;
+  position: static;
+  top: 0px;
+  left: 0;
+}
+.organization-banner-bottom {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("https://equinix.sumtotal.host/Core/610.sumtfile");
+  background-attachment: fixed;
+  position: static;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 10vh;
 }
 
 /* Footer */
