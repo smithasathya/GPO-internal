@@ -139,7 +139,6 @@ const currentSlide = (e, slider, i) => {
   current.classList.remove("current");
   e.target.parentNode.querySelector(".active").classList.remove("active");
   slides.forEach((slide) => {
-    console.log(slide.getAttribute("data-slide"), i);
     if (slide.getAttribute("data-slide") == i + 1) {
       slide.classList.add("current");
     }
@@ -158,12 +157,10 @@ document.querySelectorAll(".custom-slider").forEach((slider) => {
   const sliderBtns = document.querySelectorAll(".ss1-btnc button");
   sliderBtns.forEach((btn) => {
     btn.addEventListener("mouseenter", () => {
-      console.log("Hovering");
       autoplay = false;
       clearInterval(slideInterval);
     });
     btn.addEventListener("mouseleave", () => {
-      console.log("mouseLeft");
       if (slider.getAttribute("data-autoplay") === "true") {
         slideInterval = setInterval(nextSlide, timer, slider);
       }
@@ -276,7 +273,6 @@ paragraphs.forEach((para, i) => {
       para.textContent.split(/\s+/).join(" ").length >= 120
     ) {
       setAttributes(para, paraAttr);
-      console.log(para, paraAttr);
       const controlBtn = document.createElement("p");
       para.parentNode.insertBefore(controlBtn, para.nextSibling);
       setAttributes(controlBtn, controlBtnAttr);
@@ -291,7 +287,7 @@ paragraphs.forEach((para, i) => {
 });
 
 /* Slick Carousel for Teams Section */
-$(document).ready(function ($) {
+$(document).ready(function () {
   $(".team-slider").slick({
     dots: true,
     infinite: true,
@@ -320,3 +316,414 @@ $(document).ready(function ($) {
     ],
   });
 });
+
+/* Course Tabs */
+//styleActive link function and display resective tab content
+var activeSection;
+const styleActiveTabLink = (activeLink, tablinks) => {
+  //default style
+  // Remove styles of all tablinks/buttons
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+    tablinks[i].style.border = "none";
+    tablinks[i].style.borderBottom = "3.5px solid #333";
+    tablinks[i].style.borderRadius = "0px";
+    tablinks[i].style.color = " #333";
+
+    tablinks[tablinks.length - 1].style.borderRadius = "0 0 30px 0";
+    tablinks[0].style.borderRadius = "0 0 0 30px ";
+  }
+  //active style
+  activeLink.style.borderTop = "3.5px solid var(--equinix-red)";
+  activeLink.style.borderBottom = "none";
+  activeLink.style.borderRadius = "30px";
+  activeLink.style.color = "var(--equinix-red)";
+  if (activeLink.nextElementSibling) {
+    activeLink.nextElementSibling.style.borderRadius = "0px 0px 0px 30px";
+  }
+  if (activeLink.previousElementSibling) {
+    activeLink.previousElementSibling.style.borderRadius = " 0 0 30px 0";
+  }
+  if (
+    activeLink.previousElementSibling == activeLink.parentNode.firstElementChild
+  ) {
+    activeLink.parentNode.firstElementChild.style.borderRadius =
+      "0 0 30px 30px";
+  }
+  if (activeLink.nextElementSibling == activeLink.parentNode.lastElementChild) {
+    activeLink.parentNode.lastElementChild.style.borderRadius = "0 0 30px 30px";
+  }
+
+  //hide all tab contents by defualt
+  const tabcontent = activeLink.parentNode.querySelectorAll(".tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  const targetTabContent = activeLink.getAttribute("data-target-container");
+  document.querySelector(`#${targetTabContent}`).style.display = "block";
+};
+
+function openPage(pageName, targetDiv) {
+  // Hide all elements with class="tabcontent" by default */
+  var i, tabcontent, tablinks;
+  tablinks = targetDiv.querySelectorAll(".tablink");
+
+  //Assign click to the default open tab
+  const defaultOpen = targetDiv.querySelector(".defaultOpen");
+  defaultOpen.click();
+  styleActiveTabLink(defaultOpen, tablinks);
+  //add click event to tablinks
+  tablinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      styleActiveTabLink(link, tablinks);
+      activeSection = targetDiv;
+    });
+  });
+}
+
+/* Code to scroll to courses section from personas */
+const goToCourse = (tab, element) => {
+  //show the hidden section
+  const targetDiv = document.querySelector("#" + tab);
+  targetDiv.classList.add("active-section");
+  setTimeout(() => {
+    targetDiv.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "start",
+    });
+  }, 350);
+  openPage(tab, targetDiv);
+};
+
+//check if the hidden sections are in user's view port
+//Adding a debounce function to avoid jumpy lags on the page due to scroll events being called multiple times
+function debounce(func, wait) {
+  var timeout;
+  return () => {
+    if (timeout) {
+      clearTimeout(timeout);
+    }
+    timeout = setTimeout(func, wait);
+  };
+}
+
+//get all hidden sections
+//if hiddensection is out of view port, hide it
+//adding a debounce function so the scroll event is not triggered constantly and the page does not display a laggy behaviour
+var hideOnScroll = debounce(() => {
+  var visibleSections = document.querySelectorAll(".active-section");
+  if (visibleSections) {
+    visibleSections.forEach((section) => {
+      if (!elementInViewport(section)) {
+        section.classList.remove("active-section");
+      }
+    });
+  }
+}, 500);
+// When the user scrolls down 20px from the top of the document, show the button
+window.addEventListener("scroll", hideOnScroll);
+window.addEventListener("mousewheel", hideOnScroll);
+
+//triggering hidediv on touch devices
+var touchEvent = new Event("mousewheel");
+window.addEventListener("touchmove", () => {
+  window.dispatchEvent(touchEvent);
+});
+
+function elementInViewport(el) {
+  var top = el.offsetTop + 300;
+  var left = el.offsetLeft;
+  var width = el.offsetWidth;
+  var height = el.offsetHeight;
+
+  while (el.offsetParent) {
+    el = el.offsetParent;
+    top += el.offsetTop;
+    left += el.offsetLeft;
+  }
+
+  return (
+    top < window.pageYOffset + window.innerHeight &&
+    left < window.pageXOffset + window.innerWidth &&
+    top + height > window.pageYOffset &&
+    left + width > window.pageXOffset
+  );
+}
+/* Week Time line script */
+$(document).ready(function () {
+  paintSmallScreen();
+  paintBigScreen();
+  let screenSize = window.matchMedia("(min-width:90px)");
+  markActives(screenSize);
+  screenSize.addListener(markActives);
+});
+
+/* Progress on click */
+const markActives = (size) => {
+  if (size.matches) {
+    paintBigScreen();
+  } else {
+    paintSmallScreen();
+  }
+};
+/* Function to mark actives classes and draw progess bar on resize to mobile version*/
+const paintSmallScreen = () => {
+  $(document).on("click", ".step", function () {
+    let lineProgress = $(this)
+      .parent()
+      .closest(".progress-bar-container")
+      .children("#line")
+      .children("#line-progress");
+    $(this)
+      .addClass("current")
+      .prevAll()
+      .addClass("active")
+      .removeClass("current");
+    $(this).nextAll().removeClass("active current");
+
+    if (
+      this.classList.contains("step2") &&
+      this.classList.contains("co-beginner")
+    ) {
+      lineProgress.css("height", "18%");
+      $(this)
+        .parent()
+        .parent()
+        .parent()
+        .children(".progress-content")
+        .children(".week2")
+        .addClass("active")
+        .siblings()
+        .removeClass("active");
+    } else if (
+      this.classList.contains("step3") &&
+      this.classList.contains("co-beginner")
+    ) {
+      lineProgress.css("height", "34%");
+      $(this)
+        .parent()
+        .parent()
+        .parent()
+        .children(".progress-content")
+        .children(".week3")
+        .addClass("active")
+        .siblings()
+        .removeClass("active");
+    } else if (
+      this.classList.contains("step4") &&
+      this.classList.contains("co-beginner")
+    ) {
+      lineProgress.css("height", "50%");
+      $(this)
+        .parent()
+        .parent()
+        .parent()
+        .children(".progress-content")
+        .children(".week4")
+        .addClass("active")
+        .siblings()
+        .removeClass("active");
+    } else if (
+      this.classList.contains("step5") &&
+      this.classList.contains("co-beginner")
+    ) {
+      lineProgress.css("height", "67%");
+      $(this)
+        .parent()
+        .parent()
+        .parent()
+        .children(".progress-content")
+        .children(".week5")
+        .addClass("active")
+        .siblings()
+        .removeClass("active");
+    } else if (
+      this.classList.contains("step6") &&
+      this.classList.contains("co-beginner")
+    ) {
+      lineProgress.css("height", "84%");
+      $(this)
+        .parent()
+        .parent()
+        .parent()
+        .children(".progress-content")
+        .children(".co-beginner101")
+        .addClass("active")
+        .siblings()
+        .removeClass("active");
+    } else if (
+      this.classList.contains("step7") &&
+      this.classList.contains("co-beginner")
+    ) {
+      lineProgress.css("height", "100%");
+      $(this)
+        .parent()
+        .parent()
+        .parent()
+        .children(".progress-content")
+        .children(".co-beginner201")
+        .addClass("active")
+        .siblings()
+        .removeClass("active");
+    }
+  });
+};
+/* Function to mark actives classes and draw progess bar on resize to tablets and desktop version*/
+const paintBigScreen = (tablnks) => {
+  console.log(activeSection);
+  $(".tab-container").addClass(".container");
+  $(document).on("click", ".step", function (e) {
+    let lineProgress = $(this)
+      .parent()
+      .closest(".progress-bar-container")
+      .children("#line")
+      .children("#line-progress");
+    $(this).addClass("current").prevAll().addClass("active");
+    $(this).nextAll().removeClass("active");
+
+    if (this.classList.contains("step2")) {
+      lineProgress.css("width", "27%");
+      $(this)
+        .parent()
+        .parent()
+        .parent()
+        .children(".progress-content")
+        .children(".week2")
+        .addClass("active")
+        .siblings()
+        .removeClass("active");
+    } else if (this.classList.contains("step3")) {
+      lineProgress.css("width", "53%");
+      $(this)
+        .parent()
+        .parent()
+        .parent()
+        .children(".progress-content")
+        .children(".week3")
+        .addClass("active")
+        .siblings()
+        .removeClass("active");
+    } else if (this.classList.contains("step4")) {
+      lineProgress.css("width", "77%");
+      $(this)
+        .parent()
+        .parent()
+        .parent()
+        .children(".progress-content")
+        .children(".week4")
+        .addClass("active")
+        .siblings()
+        .removeClass("active");
+    } else if (this.classList.contains("step5")) {
+      lineProgress.css("width", "100%");
+      $(this)
+        .parent()
+        .parent()
+        .parent()
+        .children(".progress-content")
+        .children(".week5")
+        .addClass("active")
+        .siblings()
+        .removeClass("active");
+    } else {
+      lineProgress.css("width", "1%");
+      $(this)
+        .parent()
+        .parent()
+        .parent()
+        .children(".progress-content")
+        .children(".week1")
+        .addClass("active")
+        .siblings()
+        .removeClass("active");
+    }
+    //********************
+    //co-beginner Line Progress
+    if (
+      this.classList.contains("step2") &&
+      this.classList.contains("co-beginner")
+    ) {
+      lineProgress.css("width", "18%");
+      $(this)
+        .parent()
+        .parent()
+        .parent()
+        .children(".progress-content")
+        .children(".week2")
+        .addClass("active")
+        .siblings()
+        .removeClass("active");
+    } else if (
+      this.classList.contains("step3") &&
+      this.classList.contains("co-beginner")
+    ) {
+      lineProgress.css("width", "34%");
+      $(this)
+        .parent()
+        .parent()
+        .parent()
+        .children(".progress-content")
+        .children(".week3")
+        .addClass("active")
+        .siblings()
+        .removeClass("active");
+    } else if (
+      this.classList.contains("step4") &&
+      this.classList.contains("co-beginner")
+    ) {
+      lineProgress.css("width", "50%");
+      $(this)
+        .parent()
+        .parent()
+        .parent()
+        .children(".progress-content")
+        .children(".week4")
+        .addClass("active")
+        .siblings()
+        .removeClass("active");
+    } else if (
+      this.classList.contains("step5") &&
+      this.classList.contains("co-beginner")
+    ) {
+      lineProgress.css("width", "67%");
+      $(this)
+        .parent()
+        .parent()
+        .parent()
+        .children(".progress-content")
+        .children(".week5")
+        .addClass("active")
+        .siblings()
+        .removeClass("active");
+    } else if (
+      this.classList.contains("step6") &&
+      this.classList.contains("co-beginner")
+    ) {
+      lineProgress.css("width", "84%");
+      $(this)
+        .parent()
+        .parent()
+        .parent()
+        .children(".progress-content")
+        .children(".co-beginner101")
+        .addClass("active")
+        .siblings()
+        .removeClass("active");
+    } else if (
+      this.classList.contains("step7") &&
+      this.classList.contains("co-beginner")
+    ) {
+      lineProgress.css("width", "100%");
+      $(this)
+        .parent()
+        .parent()
+        .parent()
+        .children(".progress-content")
+        .children(".co-beginner201")
+        .addClass("active")
+        .siblings()
+        .removeClass("active");
+    }
+  });
+};

@@ -12,6 +12,11 @@
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
 </head>
 
 <body>
@@ -35,7 +40,7 @@
                 <li class="nav-item"><a href="#equitube">Equitube</a></li>
                 <li class="nav-item"><a href="#social">Social</a></li>
                 <li class="nav-item"><a target="_blank" href="#team">About Us</a></li>
-                <div class="dropdown nav-item">
+                <li class="dropdown nav-item">
                     <button class="dropbtn">
                         <div>
                             <span>Resources </span>
@@ -50,13 +55,14 @@
                             class="nav-item">Portal
                             Glossary</a>
                     </div>
-                </div>
+                </li>
                 <li class="nav-item"><a href="#contact">Contact Us</a></li>
             </ul>
         </div>
     </nav>
 
     <section id="home" class="home">
+        <div class="welcome-user">Welcome, <span id="user">Smitha</span></div>
         <div class="custom-slider" data-autoplay="true" data-timer="5000">
             <div class="slide current ss1" data-slide="1">
                 <div class="slide-wrapper container">
@@ -211,7 +217,7 @@
 
                     </div>
                     <a href="#courses">
-                        <div onclick="goToCourse('TAM',this)" class="btn coverBtn">Register here</div>
+                        <div onclick="goToCourse('ibx-co',this)" class="btn coverBtn">Register here</div>
                     </a>
                 </div>
             </div>
@@ -234,7 +240,7 @@
 
                     </div>
                     <a href="#courses">
-                        <div onclick="goToCourse('CSM',this)" class="btn disabled coverBtn">Register here</div>
+                        <div onclick="goToCourse('ibx-cf',this)" class="btn coverBtn">Register here</div>
                     </a>
                 </div>
             </div>
@@ -262,10 +268,322 @@
             </div>
         </div>
     </section>
+    <div class="ibx-co hidden-section" id="ibx-co">
+        <h1 class="text-center lg py-2 b-4">IBX Customer Operations</h1>
+        <div class="tab-container">
+            <div class="tablinks-container">
+                <div class="tablinks-container">
+                    <button class="tablink xs b-2 beginner defaultOpen" data-target-container="co-beginner">
+                        Customer Operations Beginner
+                    </button>
+                    <button class="tablink xs b-2 intermediate " data-target-container="co-intermediate">
+                        Customer Operations Intermediate
+                    </button>
+                    <button class="tablink xs b-2 advanced" data-target-container="co-advanced">
+                        Customer Operations Advanced
+                    </button>
+                    <div id="co-beginner" class="tabcontent">
+                        <div class="progress-wrapper">
+                            <div class="progress-bar-container">
+                                <div id="line">
+                                    <div id="line-progress"></div>
+                                </div>
+                                <ul>
+                                    <li class="step step1 sm co-beginner active current">
+                                        <div class="step-inner">
+                                            IBX Familiarization
+                                        </div>
+                                    </li>
+                                    <li class="step step2 sm co-beginner">
+                                        <div class="step-inner">
+                                            GNSP
+                                        </div>
+                                    </li>
+                                    <li class="step step3 sm co-beginner">
+                                        <div class="step-inner">
+                                            Equinix Products Fundamentals
+                                        </div>
+                                    </li>
+                                    <li class="step step4 sm co-beginner">
+                                        <div class="step-inner">
+                                            Safety Fundamentals
+                                        </div>
+                                    </li>
+                                    <li class="step step5 sm co-beginner">
+                                        <div class="step-inner">
+                                            IBX Security Fundamentals
+                                        </div>
+                                    </li>
+                                    <li class="step step6 sm co-beginner">
+                                        <div class="step-inner">
+                                            Smart Hands Fundamentals
+
+                                        </div>
+                                    </li>
+                                    <li class="step step7 sm co-beginner">
+                                        <div class="step-inner">
+                                            Introduction to Networking Foundations
+                                        </div>
+                                    </li>
+                                    <li class="step step8 sm co-beginner">
+                                        <div class="step-inner">
+                                            Inbound & Outbound Shipment Fundamentals
+                                        </div>
+                                    </li>
+                                    <li class="step step9 sm co-beginner">
+                                        <div class="step-inner">
+                                            IBX Application Systems (Jarvis, Airflow Management)
+                                        </div>
+                                    </li>
+                                    <li class="step step10 sm co-beginner">
+                                        <div class="step-inner">
+                                            Cross Connect Fundamentals
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="progress-content">
+                                <div class="section-content week1 active">
+                                    <div class="course-card">
+                                        <div class="image-data">
+                                            <div class="bg-img">
+                                            </div>
+                                            <div class="img-details">
+                                                <h4 class="b-2 img-title">WEEK 1 - WELCOME TO THE TEAM</h4>
+                                            </div>
+                                        </div>
+                                        <div class="course-data">
+                                            <div class="course">
+                                                <h4 class="course-title b-3">Topics covered in this week are:</h4>
+                                                <ul class='course-detail px-3'>
+                                                    <li>Welcome to Equinix and the CRO</li>
+                                                    <li>GCCX Teams</li>
+                                                    <li>GCCX Operating Model</li>
+                                                    <li>GCCX Roles and Responsibilities</li>
+                                                    <li>Cross Functional Teams</li>
+                                                </ul>
+                                                <div class="cta">
+                                                    <a target="_blank"
+                                                        href="https://EQUINIX.sumtotal.host/core/pillarRedirect?relyingParty=LM&url=app%2Fmanagement%2FLMS_ActDetails.aspx%3FActivityId%3D32997%26UserMode%3D0">Register
+                                                        here &rarr;</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="section-content week2">
+                                    <div class="course-card">
+                                        <div class="image-data">
+                                            <div class="bg-img">
+                                            </div>
+                                            <div class="img-details">
+                                                <h4 class="b-2 img-title">WEEK 2 - PRODUCT KNOWLEDGE</h4>
+                                            </div>
+                                        </div>
+                                        <div class="course-data">
+                                            <div class="course">
+                                                <h4 class="course-title b-3">Topics covered in this week are:</h4>
+                                                <ul class='course-detail px-3'>
+                                                    <li>Platform Equinix Overview</li>
+                                                    <li>Equinix Fabric</li>
+                                                    <li>Network Edge</li>
+                                                    <li>Edge Precision Time</li>
+                                                    <li>Equinix Metal</li>
+                                                    <li>API Training</li>
+                                                </ul>
+                                                <div class="cta">
+                                                    <a target="_blank"
+                                                        href="https://EQUINIX.sumtotal.host/core/pillarRedirect?relyingParty=LM&url=app%2Fmanagement%2FLMS_ActDetails.aspx%3FActivityId%3D32969%26UserMode%3D0">Register
+                                                        here &rarr;</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section-content week3">
+                                    <div class="course-card my-1">
+                                        <div class="image-data">
+                                            <div class="bg-img">
+                                            </div>
+                                            <div class="img-details">
+                                                <h4 class="b-2 img-title">WEEK 3-INDUSTRY KNOWLEDGE</h4>
+                                            </div>
+                                        </div>
+                                        <div class="course-data">
+                                            <div class="course">
+                                                <h4 class="course-title b-3">Topics covered in this week are:</h4>
+                                                <ul class='course-detail px-3'>
+                                                    <li>Networking</li>
+                                                    <li>Cloud</li>
+                                                    <li>Security</li>
+                                                </ul>
+                                                <div class="cta">
+                                                    <a target="_blank"
+                                                        href="https://EQUINIX.sumtotal.host/core/pillarRedirect?relyingParty=LM&url=app%2Fmanagement%2FLMS_ActDetails.aspx%3FActivityId%3D32981%26UserMode%3D0">Register
+                                                        here &rarr;</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section-content week4">
+                                    <div class="course-card my-1">
+                                        <div class="image-data">
+                                            <div class="bg-img">
+                                            </div>
+                                            <div class="img-details">
+                                                <h4 class="b-2 img-title">WEEK 4-BUILDING RELATIONSHIPS</h4>
+                                            </div>
+                                        </div>
+                                        <div class="course-data">
+                                            <div class="course">
+                                                <h4 class="course-title b-2">Topics covered in this week are:</h4>
+                                                <ul class='course-detail px-3'>
+                                                    <li>Strategic Selling</li>
+                                                    <li>Customer Strategy</li>
+                                                    <li>Thought Leadership</li>
+                                                    <li>Communications and Consultation</li>
+                                                </ul>
+                                                <div class="cta">
+                                                    <a target="_blank"
+                                                        href="https://EQUINIX.sumtotal.host/core/pillarRedirect?relyingParty=LM&url=app%2Fmanagement%2FLMS_ActDetails.aspx%3FActivityId%3D32991%26UserMode%3D0">Register
+                                                        here &rarr;</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section-content week5">
+                                    <div class="course-card my-1">
+                                        <div class="image-data">
+                                            <div class="bg-img">
+                                            </div>
+                                            <div class="img-details">
+                                                <h4 class="b-2 img-title">WEEK 5-REPORTING, GROWTH & DEVELOPMENT</h4>
+                                            </div>
+                                        </div>
+                                        <div class="course-data">
+                                            <div class="course">
+                                                <h4 class="course-title b-2">Topics covered in this week are:</h4>
+                                                <ul class='course-detail px-3'>
+                                                    <li>TAM Knowledge Management and Collaboration</li>
+                                                    <li>Meet the TAMs</li>
+                                                    <li>Reporting (Coming Soon)</li>
+                                                    <li>TAM Engagement </li>
+                                                    <li>TAM Growth and Development (Coming Soon)</li>
+                                                </ul>
+                                                <div class="cta">
+                                                    <a target="_blank"
+                                                        href="https://EQUINIX.sumtotal.host/core/pillarRedirect?relyingParty=LM&url=app%2fmanagement%2fLMS_ActDetails.aspx%3fActivityId%3d32998%26UserMode%3d0">Register
+                                                        here &rarr;</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section-content tam101">
+                                    <div class="course-card my-1">
+                                        <div class="image-data">
+                                            <div class="bg-img">
+                                            </div>
+                                            <div class="img-details">
+                                                <h4 class="b-2 img-title">TAM 101 Training Module</h4>
+                                            </div>
+                                        </div>
+                                        <div class="course-data">
+                                            <div class="course">
+                                                <h4 class="course-title b-2">The TAM 101 curriculum includes the
+                                                    following topics in Networking,
+                                                    Cloud, Security, and digital products:</h4>
+                                                <ul class='course-detail px-3'>
+                                                    <li>BGP, virtual networks, and network layers</li>
+                                                    <li>Cloud providers and connections</li>
+                                                    <li>Network Security</li>
+                                                    <li>Equinix Fabric </li>
+                                                    <li>Network Edge</li>
+                                                </ul>
+                                                <div class="cta">
+                                                    <a target="_blank"
+                                                        href="https://EQUINIX.sumtotal.host/core/pillarRedirect?relyingParty=LM&url=app%2Fmanagement%2FLMS_ActDetails.aspx%3FActivityId%3D38926%26UserMode%3D0">Register
+                                                        here &rarr;</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section-content tam201">
+                                    <div class="course-card my-1">
+                                        <div class="image-data">
+                                            <div class="bg-img">
+                                            </div>
+                                            <div class="img-details">
+                                                <h4 class="b-2 img-title">TAM 201 Training Module</h4>
+                                            </div>
+                                        </div>
+                                        <div class="course-data">
+                                            <div class="course">
+                                                <h4 class="course-title b-2">TAM 201: The TAM 201 curriculum includes
+                                                    the following topics in
+                                                    Networking, Cloud, and digital products: </h4>
+                                                <ul class='course-detail px-3'>
+                                                    <li>Cloud Service Providers</li>
+                                                    <li>BGP Routing and Peering</li>
+                                                    <li>Layer 3 Routing</li>
+                                                </ul>
+                                                <div class="cta">
+                                                    <a target="_blank"
+                                                        href="https://EQUINIX.sumtotal.host/core/pillarRedirect?relyingParty=LM&url=app%2fmanagement%2fLMS_ActDetails.aspx%3fActivityId%3d39901%26UserMode%3d0">Register
+                                                        here &rarr;</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="co-intermediate" class="tabcontent">
+                        <h1>Inside Customer Operations Intermediate</h1>
+                    </div>
+                    <div id="co-advanced" class="tabcontent">
+                        <h1>Inside Customer Operations Advanced</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ibx-cf hidden-section" id="ibx-cf">
+        <h1 class="text-center lg py-2 b-4">IBX Critical Facilities</h1>
+        <div class="tab-container">
+            <div class="tablinks-container">
+                <div class="tablinks-container">
+                    <button class="tablink xs b-2 beginner defaultOpen" data-target-container="cf-beginner">
+                        Customer Operations Beginner
+                    </button>
+                    <button class="tablink xs b-2 intermediate" data-target-container="cf-intermediate">
+                        Customer Operations Intermediate
+                    </button>
+                    <button class="tablink xs b-2 advanced" data-target-container="cf-advanced">
+                        Customer Operations Advanced
+                    </button>
+                    <div id="cf-beginner" class="tabcontent">
+                        <h1>Inside IBX Critical Facilities Beginner</h1>
+                    </div>
+                    <div id="cf-intermediate" class="tabcontent">
+                        <h1>Inside IBX Critical Facilities Intermediate</h1>
+                    </div>
+                    <div id="cf-advanced" class="tabcontent">
+                        <h1>Inside IBX Critical Facilities Advanced</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <section class="equitube" id="equitube">
 
-        <h2 class="py-2 b-5">CLOUD INFRASTRUCTURE COURSES</h2>
+        <h2 class="py-2 b-5">Equitube</h2>
 
         <div class="course-wrapper container">
             <div class="card">
@@ -279,7 +597,8 @@
                         <p>
                             <span class="bullet">&#9632;</span> Introduction to the world of cloud
                             <br>
-                            <span class="bullet">&#9632;</span> Gain basic understanding of core concepts of cloud such
+                            <span class="bullet">&#9632;</span> Gain basic understanding of core concepts of cloud
+                            such
                             as cloud computing, cloud security & cloud architecture
                         </p>
                     </div>
@@ -298,10 +617,12 @@
                     </img>
                 </a>
                 <div class="card-body">
-                    <h5 data-aos="fade-up" class="card-title">CCOE - Infra Engineering & Ops Learning Track - Admin</h5>
+                    <h5 data-aos="fade-up" class="card-title">CCOE - Infra Engineering & Ops Learning Track - Admin
+                    </h5>
                     <div class="card-text text-left">
                         <p>
-                            <span class="bullet">&#9632;</span> Learn how to deploy, and administrator the Hybrid Cloud
+                            <span class="bullet">&#9632;</span> Learn how to deploy, and administrator the Hybrid
+                            Cloud
                         </p>
                     </div>
                 </div>
@@ -398,9 +719,12 @@
                             <span class="bullet">&#9632;</span>Native security controls within the different cloud
                             vendors and deployment models used to implement cloud security defences
                             <br>
-                            <span class="bullet">&#9632;</span>Different phases of ethnical hacking, as well as common
-                            threats that affect cloud computing environments to identify anomalies. It introduces how
-                            security and DevOps align to reveal testing strategies for web applications, microservices,
+                            <span class="bullet">&#9632;</span>Different phases of ethnical hacking, as well as
+                            common
+                            threats that affect cloud computing environments to identify anomalies. It introduces
+                            how
+                            security and DevOps align to reveal testing strategies for web applications,
+                            microservices,
                             and APIs, as well as CI/CD pipelines
                         </p>
                     </div>
@@ -424,7 +748,8 @@
                             <span class="bullet">&#9632;</span>Learn how to use the most common DevOps patterns to
                             develop, deploy, and maintain applications in Equinix’s Hybrid Cloud network
                             <br>
-                            <span class="bullet">&#9632;</span>Understand the practical aspects of DevOps and learn how
+                            <span class="bullet">&#9632;</span>Understand the practical aspects of DevOps and learn
+                            how
                             best to apply DevOps practices within Equinix
                         </p>
                     </div>
@@ -447,7 +772,8 @@
                         <p>
                             <span class="bullet">&#9632;</span>Cloud software and data engineering fundamentals
                             <br>
-                            <span class="bullet">&#9632;</span>Acquire the skills necessary to operate in data platform
+                            <span class="bullet">&#9632;</span>Acquire the skills necessary to operate in data
+                            platform
                             and pipeline systems for data engineering, analytics and machine learning
                         </p>
                     </div>
@@ -502,12 +828,13 @@
                 <div class="contact-card">
                     <div class="banner-img">
                     </div>
-                    <img src="https://equinix.sumtotal.host/Core/419.sumtfile" alt="" class="contact-img">
+                    <img src="https://i.pravatar.cc/300" alt="" class="contact-img">
                     <div class="contact-details">
                         <h4 class="md">Moe Goodman</h4>
                         <p class="title">Director, GCCX Enablement</p>
                         <p class="person-details">
-                            Moe leads the enablement team and is responsible for the overall strategy and direction of
+                            Moe leads the enablement team and is responsible for the overall strategy and direction
+                            of
                             the continuous
                             learning and development within GCCX.
                         </p>
@@ -519,12 +846,13 @@
                 <div class="contact-card">
                     <div class="banner-img">
                     </div>
-                    <img src="https://equinix.sumtotal.host/Core/413.sumtfile" alt="" class="contact-img">
+                    <img src="https://i.pravatar.cc/300" alt="" class="contact-img">
                     <div class="contact-details">
                         <h4 class="md">Dawn Roberts</h4>
                         <p class="title">Instructional Designer, GCCX Enablement</p>
                         <p class="person-details">
-                            Dawn is responsible for the curation and creation of the content for continuous learning and
+                            Dawn is responsible for the curation and creation of the content for continuous learning
+                            and
                             development
                             for
                             the GCCX organization.
@@ -537,7 +865,7 @@
                 <div class="contact-card">
                     <div class="banner-img">
                     </div>
-                    <img src="https://equinix.sumtotal.host/Core/418.sumtfile" alt="" class="contact-img">
+                    <img src="https://i.pravatar.cc/300" alt="" class="contact-img">
                     <div class="contact-details">
                         <h4 class="md">Linda Lee</h4>
                         <p class="title">Project and Program Manager, TAM Enablement</p>
@@ -554,12 +882,13 @@
                 <div class="contact-card">
                     <div class="banner-img">
                     </div>
-                    <img src="https://equinix.sumtotal.host/Core/412.sumtfile" alt="" class="contact-img">
+                    <img src="https://i.pravatar.cc/300" alt="" class="contact-img">
                     <div class="contact-details">
                         <h4 class="md">Dalia Osorio</h4>
                         <p class="title">Manager, GSD Enablement </p>
                         <p class="person-details">
-                            Dalia is responsible for the Global Service Desk (GSD) Training and Development and curation
+                            Dalia is responsible for the Global Service Desk (GSD) Training and Development and
+                            curation
                             of the
                             knowledge base within Salesforce for the GCCX team.
                         </p>
@@ -571,12 +900,13 @@
                 <div class="contact-card">
                     <div class="banner-img">
                     </div>
-                    <img src="https://equinix.sumtotal.host/Core/453.sumtfile" alt="" class="contact-img">
+                    <img src="https://i.pravatar.cc/300" alt="" class="contact-img">
                     <div class="contact-details">
                         <h4 class="md">Kim Graham</h4>
                         <p class="title">Sr. Manager, CSM/CPM Enablement</p>
                         <p class="person-details">
-                            Kim is responsible for driving enablement best practices for the GCCX organization and the
+                            Kim is responsible for driving enablement best practices for the GCCX organization and
+                            the
                             enhanced
                             learning
                             and development plan for the CSM & CPM organization.
@@ -678,9 +1008,10 @@
     AOS.init();
 </script>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
     crossorigin="anonymous"></script>
@@ -689,8 +1020,8 @@
     crossorigin="anonymous"></script>
 
 <!-- Slick Carousel  https://kenwheeler.github.io/slick/-->
-<script type="text/javascript"
-    src="//cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/slick.min.js"></script>
+
+
 <script src="./GO-script.js"></script>
 
 </html>

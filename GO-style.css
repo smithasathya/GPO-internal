@@ -112,6 +112,7 @@
 }
 .dropbtn span {
   font-size: 0.65rem;
+  letter-spacing: 1px;
 }
 .dropdown-content {
   display: none;
@@ -142,7 +143,7 @@
 .dropdown:hover .dropbtn {
   color: #c9c9cc;
 }
-@media all and (min-width: 980px) and (max-width: 1360px) {
+@media all and (min-width: 980px) and (max-width: 1475px) {
   .container {
     width: 95%;
   }
@@ -170,10 +171,12 @@
   .dropbtn span,
   .dropbtn i {
     padding: 5px;
-    font-size: 0.55rem;
   }
   section {
     scroll-margin-top: 5rem !important;
+  }
+  .hidden-section.active-section {
+    scroll-margin-top: 5.5rem;
   }
 }
 @media all and (max-width: 980px) {
@@ -274,6 +277,11 @@
     padding: 10px 0;
   }
 }
+@media all and (min-width: 1475px) {
+  .hidden-section.active-section {
+    scroll-margin-top: 3rem;
+  }
+}
 /* Styles when navbar scrolls */
 .navbar-scrolled {
   background: rgb(51, 51, 51);
@@ -288,6 +296,17 @@
   width: 100%;
   height: 65vh;
   transition: all 0.2s ease;
+  position: relative;
+}
+.welcome-user {
+  position: absolute;
+  top: 15%;
+  right: 1%;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 1.5rem;
 }
 
 .custom-slider {
@@ -388,10 +407,11 @@
   background-color: transparent;
   color: #fff;
   cursor: pointer;
-  padding: 13px 15px;
+  padding: 10px 12px;
   border-radius: 50%;
   outline: none;
-  width: 2.25rem;
+  width: 40px;
+  height: 40px;
 }
 
 .buttons button:hover {
@@ -891,7 +911,31 @@
     top: 15%;
   }
 }
+/* Hidden Sections */
+.hidden-section {
+  background-color: var(--light-gray);
+  height: 0vh;
+  display: none;
+}
+.hidden-section.active-section {
+  height: 100vh;
+  display: block;
+}
+.tablink {
+  background-color: transparent;
+  color: #333;
+  float: left;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  width: 33.33%;
+  border-radius: 5px;
+  transition: border 0.2s ease;
+}
 
+.tablink:hover {
+  color: var(--equinix-red);
+}
 /* Equitube */
 /* Courses Section */
 #equitube {
@@ -929,7 +973,7 @@
 }
 .card {
   width: 15rem;
-  min-height: 21rem;
+
   border-radius: 5px;
   background-color: var(--light-gray);
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
@@ -1049,6 +1093,470 @@
     grid-column: auto;
   }
 }
+/* Tab contents */
+
+.progress-wrapper {
+  display: inline-flex;
+  height: 70vh;
+}
+.progress-bar-container {
+  max-height: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.progress-bar-container ul {
+  min-width: 75px;
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  margin: 0;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.progress-bar-container li {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0.25rem;
+  cursor: pointer;
+}
+.progress-bar-container li::before {
+  content: " ";
+  display: block !important;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: 0;
+  background-image: url(https://equinix.sumtotal.host/Core/459.sumtfile);
+  background-size: contain;
+  opacity: 0.4;
+  transition: all 0.2s ease;
+  background-color: transparent;
+  border-radius: 50%;
+}
+.progress-bar-container li:hover::before {
+  border-color: var(--dark-gray);
+}
+.progress-bar-container li.active::before {
+  opacity: 1;
+  border-color: var(--dark-gray);
+}
+.progress-bar-container li.current::before {
+  opacity: 1;
+  border-color: var(--dark-gray);
+}
+.step-inner {
+  width: 100%;
+  bottom: 0;
+  color: #043776;
+  font-weight: 600;
+}
+.progress-bar-container li:hover .step-inner {
+  color: var(--dark-gray);
+}
+.progress-bar-container li.current .step-inner {
+  color: var(--equinix-red);
+  font-weight: 700;
+}
+.progress-bar-container li:hover .step-inner {
+  color: var(--dark-gray);
+}
+.progress-bar-container li.current .step-inner {
+  color: var(--equinix-red);
+  font-weight: 700;
+}
+.progress-bar-container li:after {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--light-gray);
+  margin: auto;
+  border: solid 4px var(--dark-gray);
+  border-radius: 50%;
+  box-shadow: 0 2px 13px -1px rgba(0, 0, 0, 0.3);
+  transition: all ease 0.2s;
+  position: absolute;
+  top: 15px;
+  right: 5px;
+  z-index: 0;
+}
+.progress-bar-container #line {
+  content: " ";
+  width: 5px;
+  height: 92%;
+  background-color: var(--dark-gray);
+  opacity: 0.8;
+  position: absolute;
+  top: 8%;
+  left: 60px;
+  z-index: 0;
+}
+.progress-bar-container #line {
+  content: " ";
+  width: 5px;
+  height: 92%;
+  background-color: var(--dark-gray);
+  opacity: 0.8;
+  position: absolute;
+  top: 8%;
+  left: 60px;
+  z-index: 0;
+}
+.progress-bar-container #line-progress {
+  content: "";
+  width: 100%;
+  height: 4%;
+  background: linear-gradient(
+    to bottom,
+    #53b7e8 25%,
+    #043776 85%,
+    #ed1c24 100%
+  );
+  position: absolute;
+  z-index: 2;
+  border-radius: 50px;
+  transition: all ease 0.9s;
+}
+
+.progress-bar-container li:hover::after {
+  background-color: #c9c9cc;
+  border-color: var(--dark-gray);
+}
+.progress-bar-container li.active::after {
+  background-color: #53b7e8;
+  border-color: var(--dark-gray);
+  border-color: #043776;
+}
+.progress-bar-container li.current::after {
+  background-color: var(--light-gray);
+  border-color: #ed1c24;
+  transition: border-color 0.2s ease;
+  transition-delay: 0.5s;
+}
+@media all and (min-height: 600px) {
+  .progress-bar-container #line {
+    height: 86%;
+    top: 4%;
+  }
+}
+@media all and (max-width: 600px) {
+  .progress-bar-container #line-progress {
+    min-width: 100%;
+  }
+  #co-beginner .progress-bar-container #line {
+    height: 84%;
+    top: 4%;
+  }
+  .step-inner {
+    width: 80%;
+    overflow-wrap: break-word;
+  }
+}
+@media all and (min-width: 600px) {
+  .step-inner {
+    text-align: center;
+    font-size: 0.5rem;
+  }
+  .progress-wrapper {
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+  }
+  .progress-bar-container ul {
+    min-height: 4rem;
+    height: 100%;
+    width: 90%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .progress-bar-container li {
+    justify-self: start;
+    align-self: flex-start;
+    margin: 0%;
+  }
+  .progress-bar-container li::before {
+    margin: 0rem auto;
+    width: 60px;
+    height: 60px;
+  }
+
+  .progress-bar-container li::after {
+    top: 135px;
+    left: 0px;
+    right: 0;
+  }
+  .progress-bar-container #line {
+    content: "";
+    width: 80%;
+    height: 4px;
+    background-color: var(--dark-gray);
+    position: absolute;
+    top: 142px;
+    left: 0%;
+  }
+  #co-beginner .progress-bar-container #line {
+    width: 81%;
+    left: 9.5%;
+    top: 152px;
+  }
+
+  .progress-bar-container #line-progress {
+    width: 1rem;
+    min-height: 100%;
+    background: linear-gradient(
+      to right,
+      #53b7e8 15%,
+      #043776 85%,
+      #ed1c24 95%
+    );
+  }
+}
+.progress-content {
+  background-color: transparent;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  padding: 0.25rem;
+}
+.progress-content::-webkit-scrollbar {
+  width: 0px;
+}
+
+.progress-content .section-content {
+  display: none;
+  animation: FadeIn 700ms ease 1;
+  animation-fill-mode: forwards;
+  transform: translateY(15px);
+  opacity: 0;
+}
+.progress-content .section-content.active {
+  display: block;
+  height: 100%;
+}
+@media all and (min-width: 600px) {
+  .progress-content {
+    background-color: transparent;
+    width: 80%;
+    height: max-content;
+    margin: 0 auto;
+    padding: 0.1rem;
+    overflow: auto;
+  }
+  .progress-content .section-content {
+    margin-top: 2rem;
+  }
+}
+@media all and (min-width: 1400px) {
+  .progress-content .section-content {
+    margin-top: 1rem;
+  }
+}
+@media all and (min-width: 3000px) {
+  .progress-content .section-content {
+    margin-top: 0;
+  }
+  .progress-bar-container li::after {
+    top: 115px;
+    left: 0px;
+  }
+  .progress-bar-container #line {
+    top: 121px;
+    left: 10%;
+  }
+}
+/* Course Card Styles */
+.course-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #f2f2f2;
+  opacity: 0.9;
+  box-shadow: 2px 0.8rem 1rem rgba(0, 0, 0, 0.05);
+  color: #333;
+  min-height: 100%;
+}
+.image-data {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  flex: 1 0 auto;
+}
+#TAM .image-data .bg-img {
+  background-image: url("https://equinix.sumtotal.host/Core/438.sumtfile");
+}
+#CSM .image-data .bg-img {
+  background-image: url("https://equinix.sumtotal.host/Core/429.sumtfile");
+}
+#CPM .image-data .bg-img {
+  background-image: url("https://equinix.sumtotal.host/Core/428.sumtfile");
+}
+#GSD .image-data .bg-img {
+  background-image: url("https://equinix.sumtotal.host/Core/435.sumtfile");
+}
+#manager .image-data .bg-img {
+  background-image: url("https://equinix.sumtotal.host/Core/603.sumtfile");
+}
+.bg-img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+  transition: transform 3s;
+}
+.course-card:hover .bg-img {
+  transform: scale(1.5);
+}
+
+.img-details {
+  width: 100%;
+  height: 100%;
+  background-image: var(--gradient-bg);
+  color: #fff !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+}
+
+.img-title {
+  display: block;
+  color: #fff;
+  transition: all 0.5s 0.3s;
+  text-transform: uppercase;
+  line-height: 1.2;
+  margin: auto 0;
+}
+.img-title:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+.course-data {
+  background-color: #f2f2f2;
+  position: relative;
+  flex: 1 0 80%;
+}
+.course {
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  overflow: visible;
+}
+
+.course-title {
+  margin: 0.75rem 1rem 0 1.75rem;
+}
+
+.course-title::before {
+  content: "";
+  position: absolute;
+  top: 0.9rem;
+  left: 0.75rem;
+  width: 0.12rem;
+  min-height: 1rem;
+  background: var(--equinix-red);
+  border-radius: 2rem;
+}
+.course-detail,
+.course-detail li a {
+  list-style-type: disc;
+  color: #043776;
+  margin: 0.5rem 0.5rem 0 0.5rem;
+  position: relative;
+}
+.course-detail li {
+  font-weight: 600;
+}
+.cta {
+  text-align: right;
+  font-weight: bold;
+  margin: 1rem;
+}
+.cta a {
+  background: var(--equinix-red);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  position: relative;
+}
+.cta a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.5rem;
+  width: 100%;
+  height: 2px;
+  background-color: var(--equinix-red);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s;
+}
+.cta a:hover::before {
+  transform: scaleX(1);
+}
+
+@media screen and (min-width: 600px) {
+  .course-card {
+    flex-direction: row;
+    max-width: 100%;
+    height: auto;
+    min-height: 300px;
+  }
+  .image-data {
+    flex-basis: 40%;
+    height: unset;
+  }
+  .img-details {
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+  }
+  .course-card:hover .img-details {
+    transform: translateX(0);
+  }
+  .img-title {
+    transform: translateY(-3rem);
+    opacity: 0;
+    margin: 1rem;
+  }
+  .course-title {
+    margin: 0rem 1rem 0 2rem;
+  }
+  .course-title::before {
+    left: 2.25rem;
+    top: 1rem;
+  }
+  .course-card:hover .img-title {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  .course {
+    padding: 1rem 2rem 2rem 0;
+  }
+  .course-data {
+    flex-basis: 60%;
+    padding-left: 1rem;
+  }
+  .course-data::before {
+    content: "";
+    width: 2.7rem;
+    height: 100%;
+    background-color: #f2f2f2;
+    position: absolute;
+    top: 0rem;
+    left: -1.5rem;
+    z-index: 1;
+    transform: skewX(-5deg);
+  }
+}
 /* Setting images as background to cards */
 #general-cloud {
   background-image: url("https://picsum.photos/500");
@@ -1107,15 +1615,9 @@
   background-size: cover;
   position: relative;
 }
-.team .container {
-  margin: 0 auto;
-  padding: 0 50px;
-}
+
 .contact-card {
   box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.2);
-  width: auto;
-  max-width: 360px;
-  min-height: 475px;
   text-align: center;
   position: relative;
   display: inline-flex !important;
@@ -1124,7 +1626,11 @@
   background-color: #f0f8ff;
   overflow: hidden;
   transition: all 0.5s;
-  margin: 1rem 0;
+  margin: 1rem;
+}
+.slick-slide {
+  min-height: 23rem !important;
+  height: auto !important;
 }
 .banner-img {
   width: 120%;
@@ -1140,7 +1646,7 @@
 .banner-img::before {
   content: " ";
   transform: rotate(12deg);
-  background-image: url(https://equinix.sumtotal.host/Core/409.sumtfile);
+  background-image: url(./images/team-card-bg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -1157,7 +1663,7 @@
 .contact-img {
   width: 7rem;
   height: 7rem;
-  border: 10px solid #f0f8ff;
+  border: 3px solid #f0f8ff;
   border-radius: 50%;
   z-index: 0;
   transform: translateY(-80%);
@@ -1167,10 +1673,13 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  display: grid;
-  grid-template-rows: 1fr 1fr 3fr 1fr;
-  height: 65%;
-  align-items: end;
+  display: grid !important;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  text-align: center;
+
+  grid-template-rows: 10% 20% 50% 20%;
 }
 .person-details {
   align-self: start;
@@ -1178,7 +1687,7 @@
 .title {
   color: grey;
   margin: 0;
-  align-self: start;
+  align-self: center;
 }
 
 .contact-details a {
@@ -1189,27 +1698,21 @@
 .contact-details .btn {
   width: fit-content;
   margin: 0 auto;
-  align-self: flex-end !important;
+  align-self: end !important;
   margin-bottom: 0.1rem;
   padding: 0.35rem;
 }
-.slider {
+.team-slider {
   width: 90%;
   margin: 0 auto;
   padding: 0 1rem;
 }
-.slick-next .slick-next-icon:before,
-.slick-next .slick-prev-icon:before,
-.slick-prev .slick-next-icon:before,
-.slick-prev .slick-prev-icon:before {
+.slick-prev:before,
+.slick-next:before {
   color: var(--equinix-red) !important;
+  font-size: 1.5rem !important;
 }
-.slick-next .slick-next-icon::before,
-.slick-next .slick-prev-icon::before,
-.slick-prev .slick-next-icon::before,
-.slick-prev .slick-prev-icon::before {
-  font-size: 1rem !important;
-}
+
 .slick-autoplay-toggle-button .slick-pause-icon:before {
   display: none;
 }
@@ -1242,11 +1745,6 @@
   }
 }
 @media all and (min-width: 1100px) {
-  .contact-card {
-    width: 100%;
-    max-width: 450px;
-    min-height: 525px;
-  }
   .contact-img {
     width: 160px;
     height: 160px;
@@ -1257,12 +1755,12 @@
   .contact-card p,
   .contact-card a,
   .contact-card .btn {
-    font-size: 18px;
+    font-size: 0.7rem;
   }
 }
 @media all and (min-width: 2000px) {
-  .slider {
-    width: auto;
+  .team-slider {
+    width: 90%;
   }
 }
 
