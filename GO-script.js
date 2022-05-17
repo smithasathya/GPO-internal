@@ -454,7 +454,7 @@ function elementInViewport(el) {
 $(document).ready(function () {
   paintSmallScreen();
   paintBigScreen();
-  let screenSize = window.matchMedia("(min-width:90px)");
+  let screenSize = window.matchMedia("(min-width:1200px)");
   markActives(screenSize);
   screenSize.addListener(markActives);
 });
@@ -467,6 +467,7 @@ const markActives = (size) => {
     paintSmallScreen();
   }
 };
+
 /* Function to mark actives classes and draw progess bar on resize to mobile version*/
 const paintSmallScreen = () => {
   $(document).on("click", ".step", function () {
@@ -482,11 +483,23 @@ const paintSmallScreen = () => {
       .removeClass("current");
     $(this).nextAll().removeClass("active current");
 
+    if (this.classList.contains("step1")) {
+      lineProgress.css("height", "1%");
+      $(this)
+        .parent()
+        .parent()
+        .parent()
+        .children(".progress-content")
+        .children(".week1")
+        .addClass("active")
+        .siblings()
+        .removeClass("active");
+    }
     if (
       this.classList.contains("step2") &&
       this.classList.contains("co-beginner")
     ) {
-      lineProgress.css("height", "18%");
+      lineProgress.css("height", "9%");
       $(this)
         .parent()
         .parent()
@@ -500,7 +513,7 @@ const paintSmallScreen = () => {
       this.classList.contains("step3") &&
       this.classList.contains("co-beginner")
     ) {
-      lineProgress.css("height", "34%");
+      lineProgress.css("height", "17%");
       $(this)
         .parent()
         .parent()
@@ -514,7 +527,7 @@ const paintSmallScreen = () => {
       this.classList.contains("step4") &&
       this.classList.contains("co-beginner")
     ) {
-      lineProgress.css("height", "50%");
+      lineProgress.css("height", "30%");
       $(this)
         .parent()
         .parent()
@@ -528,7 +541,7 @@ const paintSmallScreen = () => {
       this.classList.contains("step5") &&
       this.classList.contains("co-beginner")
     ) {
-      lineProgress.css("height", "67%");
+      lineProgress.css("height", "40%");
       $(this)
         .parent()
         .parent()
@@ -542,13 +555,69 @@ const paintSmallScreen = () => {
       this.classList.contains("step6") &&
       this.classList.contains("co-beginner")
     ) {
-      lineProgress.css("height", "84%");
+      lineProgress.css("height", "50%");
       $(this)
         .parent()
         .parent()
         .parent()
         .children(".progress-content")
         .children(".co-beginner101")
+        .addClass("active")
+        .siblings()
+        .removeClass("active");
+    } else if (
+      this.classList.contains("step7") &&
+      this.classList.contains("co-beginner")
+    ) {
+      lineProgress.css("height", "60%");
+      $(this)
+        .parent()
+        .parent()
+        .parent()
+        .children(".progress-content")
+        .children(".co-beginner201")
+        .addClass("active")
+        .siblings()
+        .removeClass("active");
+    } else if (
+      this.classList.contains("step8") &&
+      this.classList.contains("co-beginner")
+    ) {
+      lineProgress.css("height", "72%");
+      $(this)
+        .parent()
+        .parent()
+        .parent()
+        .children(".progress-content")
+        .children(".co-beginner201")
+        .addClass("active")
+        .siblings()
+        .removeClass("active");
+    } else if (
+      this.classList.contains("step8") &&
+      this.classList.contains("co-beginner")
+    ) {
+      lineProgress.css("height", "84%");
+      $(this)
+        .parent()
+        .parent()
+        .parent()
+        .children(".progress-content")
+        .children(".co-beginner201")
+        .addClass("active")
+        .siblings()
+        .removeClass("active");
+    } else if (
+      this.classList.contains("step9") &&
+      this.classList.contains("co-beginner")
+    ) {
+      lineProgress.css("height", "87%");
+      $(this)
+        .parent()
+        .parent()
+        .parent()
+        .children(".progress-content")
+        .children(".co-beginner201")
         .addClass("active")
         .siblings()
         .removeClass("active");
@@ -571,7 +640,6 @@ const paintSmallScreen = () => {
 };
 /* Function to mark actives classes and draw progess bar on resize to tablets and desktop version*/
 const paintBigScreen = (tablnks) => {
-  console.log(activeSection);
   $(".tab-container").addClass(".container");
   $(document).on("click", ".step", function (e) {
     let lineProgress = $(this)
@@ -583,7 +651,7 @@ const paintBigScreen = (tablnks) => {
     $(this).nextAll().removeClass("active");
 
     if (this.classList.contains("step2")) {
-      lineProgress.css("width", "27%");
+      lineProgress.css("width", "13%");
       $(this)
         .parent()
         .parent()
@@ -644,7 +712,7 @@ const paintBigScreen = (tablnks) => {
       this.classList.contains("step2") &&
       this.classList.contains("co-beginner")
     ) {
-      lineProgress.css("width", "18%");
+      lineProgress.css("width", "11%");
       $(this)
         .parent()
         .parent()
@@ -658,7 +726,7 @@ const paintBigScreen = (tablnks) => {
       this.classList.contains("step3") &&
       this.classList.contains("co-beginner")
     ) {
-      lineProgress.css("width", "34%");
+      lineProgress.css("width", "23%");
       $(this)
         .parent()
         .parent()
@@ -672,7 +740,7 @@ const paintBigScreen = (tablnks) => {
       this.classList.contains("step4") &&
       this.classList.contains("co-beginner")
     ) {
-      lineProgress.css("width", "50%");
+      lineProgress.css("width", "34%");
       $(this)
         .parent()
         .parent()
@@ -686,7 +754,7 @@ const paintBigScreen = (tablnks) => {
       this.classList.contains("step5") &&
       this.classList.contains("co-beginner")
     ) {
-      lineProgress.css("width", "67%");
+      lineProgress.css("width", "44%");
       $(this)
         .parent()
         .parent()
@@ -700,7 +768,7 @@ const paintBigScreen = (tablnks) => {
       this.classList.contains("step6") &&
       this.classList.contains("co-beginner")
     ) {
-      lineProgress.css("width", "84%");
+      lineProgress.css("width", "56%");
       $(this)
         .parent()
         .parent()
@@ -712,6 +780,48 @@ const paintBigScreen = (tablnks) => {
         .removeClass("active");
     } else if (
       this.classList.contains("step7") &&
+      this.classList.contains("co-beginner")
+    ) {
+      lineProgress.css("width", "67%");
+      $(this)
+        .parent()
+        .parent()
+        .parent()
+        .children(".progress-content")
+        .children(".co-beginner201")
+        .addClass("active")
+        .siblings()
+        .removeClass("active");
+    } else if (
+      this.classList.contains("step8") &&
+      this.classList.contains("co-beginner")
+    ) {
+      lineProgress.css("width", "78%");
+      $(this)
+        .parent()
+        .parent()
+        .parent()
+        .children(".progress-content")
+        .children(".co-beginner201")
+        .addClass("active")
+        .siblings()
+        .removeClass("active");
+    } else if (
+      this.classList.contains("step9") &&
+      this.classList.contains("co-beginner")
+    ) {
+      lineProgress.css("width", "89%");
+      $(this)
+        .parent()
+        .parent()
+        .parent()
+        .children(".progress-content")
+        .children(".co-beginner201")
+        .addClass("active")
+        .siblings()
+        .removeClass("active");
+    } else if (
+      this.classList.contains("step10") &&
       this.classList.contains("co-beginner")
     ) {
       lineProgress.css("width", "100%");
