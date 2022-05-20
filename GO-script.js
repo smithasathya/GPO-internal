@@ -650,51 +650,7 @@ const paintBigScreen = (tablnks) => {
     $(this).addClass("current").prevAll().addClass("active");
     $(this).nextAll().removeClass("active");
 
-    if (this.classList.contains("step2")) {
-      lineProgress.css("width", "13%");
-      $(this)
-        .parent()
-        .parent()
-        .parent()
-        .children(".progress-content")
-        .children(".week2")
-        .addClass("active")
-        .siblings()
-        .removeClass("active");
-    } else if (this.classList.contains("step3")) {
-      lineProgress.css("width", "53%");
-      $(this)
-        .parent()
-        .parent()
-        .parent()
-        .children(".progress-content")
-        .children(".week3")
-        .addClass("active")
-        .siblings()
-        .removeClass("active");
-    } else if (this.classList.contains("step4")) {
-      lineProgress.css("width", "77%");
-      $(this)
-        .parent()
-        .parent()
-        .parent()
-        .children(".progress-content")
-        .children(".week4")
-        .addClass("active")
-        .siblings()
-        .removeClass("active");
-    } else if (this.classList.contains("step5")) {
-      lineProgress.css("width", "100%");
-      $(this)
-        .parent()
-        .parent()
-        .parent()
-        .children(".progress-content")
-        .children(".week5")
-        .addClass("active")
-        .siblings()
-        .removeClass("active");
-    } else {
+    if (this.classList.contains("step1")) {
       lineProgress.css("width", "1%");
       $(this)
         .parent()
@@ -708,10 +664,8 @@ const paintBigScreen = (tablnks) => {
     }
     //********************
     //co-beginner Line Progress
-    if (
-      this.classList.contains("step2") &&
-      this.classList.contains("co-beginner")
-    ) {
+
+    if (this.classList.contains("step2")) {
       lineProgress.css("width", "11%");
       $(this)
         .parent()
@@ -722,10 +676,7 @@ const paintBigScreen = (tablnks) => {
         .addClass("active")
         .siblings()
         .removeClass("active");
-    } else if (
-      this.classList.contains("step3") &&
-      this.classList.contains("co-beginner")
-    ) {
+    } else if (this.classList.contains("step3")) {
       lineProgress.css("width", "23%");
       $(this)
         .parent()
@@ -736,10 +687,7 @@ const paintBigScreen = (tablnks) => {
         .addClass("active")
         .siblings()
         .removeClass("active");
-    } else if (
-      this.classList.contains("step4") &&
-      this.classList.contains("co-beginner")
-    ) {
+    } else if (this.classList.contains("step4")) {
       lineProgress.css("width", "34%");
       $(this)
         .parent()
@@ -750,10 +698,7 @@ const paintBigScreen = (tablnks) => {
         .addClass("active")
         .siblings()
         .removeClass("active");
-    } else if (
-      this.classList.contains("step5") &&
-      this.classList.contains("co-beginner")
-    ) {
+    } else if (this.classList.contains("step5")) {
       lineProgress.css("width", "44%");
       $(this)
         .parent()
@@ -764,65 +709,80 @@ const paintBigScreen = (tablnks) => {
         .addClass("active")
         .siblings()
         .removeClass("active");
-    } else if (
-      this.classList.contains("step6") &&
-      this.classList.contains("co-beginner")
-    ) {
+    } else if (this.classList.contains("step6")) {
       lineProgress.css("width", "56%");
       $(this)
         .parent()
         .parent()
         .parent()
         .children(".progress-content")
-        .children(".co-beginner101")
+        .children(".week6")
         .addClass("active")
         .siblings()
         .removeClass("active");
-    } else if (
-      this.classList.contains("step7") &&
-      this.classList.contains("co-beginner")
-    ) {
+    } else if (this.classList.contains("step7")) {
       lineProgress.css("width", "67%");
       $(this)
         .parent()
         .parent()
         .parent()
         .children(".progress-content")
-        .children(".co-beginner201")
+        .children(".week7")
         .addClass("active")
         .siblings()
         .removeClass("active");
-    } else if (
-      this.classList.contains("step8") &&
-      this.classList.contains("co-beginner")
-    ) {
+    } else if (this.classList.contains("step8")) {
       lineProgress.css("width", "78%");
       $(this)
         .parent()
         .parent()
         .parent()
         .children(".progress-content")
-        .children(".co-beginner201")
+        .children(".week8")
         .addClass("active")
         .siblings()
         .removeClass("active");
-    } else if (
-      this.classList.contains("step9") &&
-      this.classList.contains("co-beginner")
-    ) {
+    } else if (this.classList.contains("step9")) {
       lineProgress.css("width", "89%");
       $(this)
         .parent()
         .parent()
         .parent()
         .children(".progress-content")
-        .children(".co-beginner201")
+        .children(".week9")
+        .addClass("active")
+        .siblings()
+        .removeClass("active");
+    } else if (this.classList.contains("step10")) {
+      lineProgress.css("width", "100%");
+      $(this)
+        .parent()
+        .parent()
+        .parent()
+        .children(".progress-content")
+        .children(".week10")
+        .addClass("active")
+        .siblings()
+        .removeClass("active");
+    }
+
+    if (
+      this.classList.contains("step10") &&
+      this.classList.contains("cf-beginner")
+    ) {
+      lineProgress.css("width", "90%");
+      $(this)
+        .parent()
+        .parent()
+        .parent()
+        .children(".progress-content")
+        .children(".week10")
         .addClass("active")
         .siblings()
         .removeClass("active");
     } else if (
-      this.classList.contains("step10") &&
-      this.classList.contains("co-beginner")
+      this.classList.contains("step11") &&
+      this.classList.contains("cf-beginner")
     ) {
       lineProgress.css("width", "100%");
       $(this)
@@ -830,7 +790,7 @@ const paintBigScreen = (tablnks) => {
         .parent()
         .parent()
         .children(".progress-content")
-        .children(".co-beginner201")
+        .children(".week11")
         .addClass("active")
         .siblings()
         .removeClass("active");
