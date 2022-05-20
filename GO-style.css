@@ -510,6 +510,37 @@
     url("https://bit.ly/3vrqxt6") no-repeat fixed;
 }
 
+/* user-content and degreed common styles */
+
+.degreed-item,
+.uc-item {
+  text-align: center;
+  color: #444;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.degreed-btn,
+.uc-btn {
+  color: #fff;
+  font-size: 0.55rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 5px;
+  background-color: var(--equinix-red);
+  border: 1px solid var(--equinix-red);
+  min-width: 8rem;
+  width: fit-content;
+  margin: 0 auto;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.45);
+  transition: all 0.1s ease;
+}
+
+.degreed-btn a,
+.uc-btn a {
+  color: #fff;
+}
+
 /* user-content */
 .user-content {
   height: 35vh;
@@ -535,14 +566,6 @@
   margin: 0.5rem auto;
 }
 
-.uc-item {
-  text-align: center;
-
-  color: #444;
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: column;
-}
 .uc-link {
   margin: 0.75rem;
   font-weight: bold;
@@ -550,22 +573,6 @@
 }
 .uc-btn:hover .arrow {
   background-image: url(./images/arrow-light.svg);
-}
-.uc-btn {
-  color: #fff;
-  font-size: 0.55rem;
-  padding: 0.15rem 0.5rem;
-  border-radius: 5px;
-  background-color: var(--equinix-red);
-  border: 1px solid var(--equinix-red);
-  min-width: 8rem;
-  width: fit-content;
-  margin: 0 auto;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.45);
-  transition: all 0.1s ease;
-}
-.uc-btn a {
-  color: #fff;
 }
 .uc-btn:hover {
   background-color: var(--light-gray);
@@ -636,8 +643,9 @@
   animation-iteration-count: infinite;
 }
 
-/* Onboarding */
+/* Onboarding and Degreed common styles */
 
+#degreed ,
 #onboarding {
   position: relative;
   background: linear-gradient(rgba(256, 256, 256, 0.1), rgba(240, 248, 255, 8)),
@@ -646,6 +654,8 @@
   background-position: -80% -10%, -50% 12%;
   background-repeat: no-repeat, no-repeat;
 }
+
+#degreed .container,
 #onboarding .container {
   min-height: 100vh;
   justify-content: left;
@@ -653,9 +663,14 @@
   grid-template-columns: 1.5fr 1fr;
   position: relative;
 }
+
+.degreed-content,
 .onboarding-content {
   height: auto;
 }
+
+/* Onboarding */
+
 .onboarding-content h1 {
   font-weight: 1000;
   text-transform: capitalize;
@@ -1964,5 +1979,132 @@ footer a {
   .eq-footer-social a {
     padding: 1rem;
     padding-left: 0;
+  }
+}
+
+/* Degreed section styles*/
+
+#degreed {
+  display: grid;
+  justify-items: center;
+  padding-bottom: 100px;
+}
+
+.degreed-link-wrapper {
+  display: grid;
+  justify-items: baseline;
+}
+
+.degreed-wrapper {
+  display: grid;  
+  column-gap: 200px;
+  row-gap: 50px;
+}
+
+.degreed-item-link {
+  margin: 0.75rem;
+  transition: background-image 1s ease;
+}
+
+.degreed-icon {
+  padding-top: 60px;
+  padding-bottom: 0.5rem;
+}
+
+.degreed-link {
+  text-align: right;
+  text-decoration: underline;
+  font-size: x-large;
+  padding-left: 50px;
+}
+
+.degreed-link a {
+  color: red;
+}
+
+.degreed-card {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 5px;
+  background-color: var(--light-gray);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  display: grid;
+  grid-template-rows: 0.3fr 1fr 0.1fr;
+}
+
+.degreed-image {
+  width: 10rem;
+  height: 10rem;
+}
+
+.degreed-text {
+  font-size: 0.5rem;
+  text-align: center;
+}
+
+.degreed-desc {
+  text-align: left;
+  padding: 0.5rem 0.5rem 0 0.5rem;
+}
+
+.degreed-desc-icon {
+  font-size: 1.5rem;
+}
+
+.degreed-card .degreed-desc {
+  display: none;
+}
+
+.degreed-card:hover .degreed-desc {
+  display: inline;
+}
+
+.degreed-card .degreed-icon {
+  display: inline;
+}
+ 
+.degreed-card:hover .degreed-icon {
+  display: none;
+}
+
+.degreed-btn {  
+  padding-top: 10px;
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 620px) {
+  .degreed-wrapper {
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+  }
+  .degreed-link-wrapper {
+    grid-template-columns: repeat(1,1fr);
+  }
+  .degreed-empty-holder {
+    display:none;
+  }
+}
+
+@media screen and (min-width: 1320px) {
+  .degreed-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .degreed-link-wrapper {
+    grid-template-columns: repeat(2,1fr);
+  }
+  .degreed-empty-holder {
+    display:inline;
+  }
+}
+
+@media screen and (min-width: 3200px) {
+  .degreed-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .degreed-link-wrapper {
+    grid-template-columns: repeat(2,1fr);
+  }
+  .degreed-empty-holder {
+    display:inline;
   }
 }
