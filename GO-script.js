@@ -35,27 +35,30 @@ window.onscroll = function (ev) {
 };
 /* Active Links when the screen scrolls to that section*/
 // Get all sections that have an ID defined
-const sections = document.querySelectorAll("section[id]");
+const sections = document.querySelectorAll("section:not(.hidden-section)[id]");
+
 function navHighlighter() {
   // Get current scroll position
   let scrollY = window.pageYOffset;
   // Now we loop through sections to get height, top and ID values for each
   sections.forEach((current) => {
     const sectionHeight = current.offsetHeight;
-    const sectionTop = current.offsetTop - 100;
+    const sectionTop = current.offsetTop - 200;
     sectionId = current.getAttribute("id");
     /*
     - If our current scroll position enters the space where current section on screen is, add .active class to corresponding navigation link, else remove it
     - To know which link needs an active class, we use sectionId variable we are getting while looping through sections as an selector
     */
-    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-      document
-        .querySelector(".nav-item a[href*=" + sectionId + "]")
-        .classList.add("active");
-    } else {
-      document
-        .querySelector(".nav-item a[href*=" + sectionId + "]")
-        .classList.remove("active");
+    if (sectionId) {
+      if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+        document
+          .querySelector(".nav-item a[href*=" + sectionId + "]")
+          .classList.add("active");
+      } else {
+        document
+          .querySelector(".nav-item a[href*=" + sectionId + "]")
+          .classList.remove("active");
+      }
     }
   });
   /* Last Section */
@@ -200,19 +203,35 @@ window.document.onkeydown = function (e) {
   }
 };
 
-function video_open() {
-  var lightBoxVideo = document.getElementById("VisaChipCardVideo");
+function video_open(event) {
+  var lightBoxVideo = document.getElementById("onboardingVideo");
+  if (event.target.classList.contains("video")) {
+    lightBoxVideo.play();
+  }
+  event.target.parentNode.nextElementSibling.style.display = "block";
+  event.target.parentNode.nextElementSibling.nextElementSibling.style.display =
+    "block";
 
-  document.getElementById("light").style.display = "block";
-  document.getElementById("fade").style.display = "block";
-  lightBoxVideo.play();
+  /*   document.getElementById("light").style.display = "block";
+  document.getElementById("fade").style.display = "block"; */
 }
 
 function video_close() {
-  var lightBoxVideo = document.getElementById("onboardingVideo");
+  console.log(this.event.target);
+  if (this.event.target.classList.contains("boxclose") || event.keyCode == 27) {
+    this.event.target.parentNode.style.display = "none";
+    this.event.target.parentNode.nextElementSibling.style.display = "none";
+  }
+  if (this.event.target.classList.contains("fade")) {
+    console.log(this.target);
+    this.event.target.style.display = "none";
+    this.event.target.previousElementSibling.style.display = "none";
+  }
+  const modal = document.querySelectorAll("video");
+  /*   var lightBoxVideo = document.getElementById("onboardingVideo");
   document.getElementById("light").style.display = "none";
   document.getElementById("fade").style.display = "none";
-  lightBoxVideo.pause();
+  lightBoxVideo.pause(); */
 }
 
 /* Amination on offset */
@@ -454,7 +473,7 @@ function elementInViewport(el) {
 $(document).ready(function () {
   paintSmallScreen();
   paintBigScreen();
-  let screenSize = window.matchMedia("(min-width:1200px)");
+  let screenSize = window.matchMedia("(min-width:700px)");
   markActives(screenSize);
   screenSize.addListener(markActives);
 });
@@ -495,10 +514,7 @@ const paintSmallScreen = () => {
         .siblings()
         .removeClass("active");
     }
-    if (
-      this.classList.contains("step2") &&
-      this.classList.contains("co-beginner")
-    ) {
+    if (this.classList.contains("step2")) {
       lineProgress.css("height", "9%");
       $(this)
         .parent()
@@ -509,10 +525,7 @@ const paintSmallScreen = () => {
         .addClass("active")
         .siblings()
         .removeClass("active");
-    } else if (
-      this.classList.contains("step3") &&
-      this.classList.contains("co-beginner")
-    ) {
+    } else if (this.classList.contains("step3")) {
       lineProgress.css("height", "17%");
       $(this)
         .parent()
@@ -523,10 +536,7 @@ const paintSmallScreen = () => {
         .addClass("active")
         .siblings()
         .removeClass("active");
-    } else if (
-      this.classList.contains("step4") &&
-      this.classList.contains("co-beginner")
-    ) {
+    } else if (this.classList.contains("step4")) {
       lineProgress.css("height", "30%");
       $(this)
         .parent()
@@ -537,10 +547,7 @@ const paintSmallScreen = () => {
         .addClass("active")
         .siblings()
         .removeClass("active");
-    } else if (
-      this.classList.contains("step5") &&
-      this.classList.contains("co-beginner")
-    ) {
+    } else if (this.classList.contains("step5")) {
       lineProgress.css("height", "40%");
       $(this)
         .parent()
@@ -551,10 +558,7 @@ const paintSmallScreen = () => {
         .addClass("active")
         .siblings()
         .removeClass("active");
-    } else if (
-      this.classList.contains("step6") &&
-      this.classList.contains("co-beginner")
-    ) {
+    } else if (this.classList.contains("step6")) {
       lineProgress.css("height", "50%");
       $(this)
         .parent()
@@ -565,10 +569,7 @@ const paintSmallScreen = () => {
         .addClass("active")
         .siblings()
         .removeClass("active");
-    } else if (
-      this.classList.contains("step7") &&
-      this.classList.contains("co-beginner")
-    ) {
+    } else if (this.classList.contains("step7")) {
       lineProgress.css("height", "60%");
       $(this)
         .parent()
@@ -579,10 +580,7 @@ const paintSmallScreen = () => {
         .addClass("active")
         .siblings()
         .removeClass("active");
-    } else if (
-      this.classList.contains("step8") &&
-      this.classList.contains("co-beginner")
-    ) {
+    } else if (this.classList.contains("step8")) {
       lineProgress.css("height", "72%");
       $(this)
         .parent()
@@ -593,10 +591,7 @@ const paintSmallScreen = () => {
         .addClass("active")
         .siblings()
         .removeClass("active");
-    } else if (
-      this.classList.contains("step8") &&
-      this.classList.contains("co-beginner")
-    ) {
+    } else if (this.classList.contains("step8")) {
       lineProgress.css("height", "84%");
       $(this)
         .parent()
@@ -607,10 +602,7 @@ const paintSmallScreen = () => {
         .addClass("active")
         .siblings()
         .removeClass("active");
-    } else if (
-      this.classList.contains("step9") &&
-      this.classList.contains("co-beginner")
-    ) {
+    } else if (this.classList.contains("step9")) {
       lineProgress.css("height", "87%");
       $(this)
         .parent()
@@ -621,10 +613,7 @@ const paintSmallScreen = () => {
         .addClass("active")
         .siblings()
         .removeClass("active");
-    } else if (
-      this.classList.contains("step7") &&
-      this.classList.contains("co-beginner")
-    ) {
+    } else if (this.classList.contains("step10")) {
       lineProgress.css("height", "100%");
       $(this)
         .parent()
@@ -632,6 +621,38 @@ const paintSmallScreen = () => {
         .parent()
         .children(".progress-content")
         .children(".co-beginner201")
+        .addClass("active")
+        .siblings()
+        .removeClass("active");
+    }
+
+    //Custom cases if the size of the course path is increased or decreased
+    //Customer fundamentals(cf-beginner) has 11 weeks/sections, Hence adding custom styles the the last two sections
+    if (
+      this.classList.contains("step10") &&
+      this.classList.contains("cf-beginner")
+    ) {
+      lineProgress.css("height", "90%");
+      $(this)
+        .parent()
+        .parent()
+        .parent()
+        .children(".progress-content")
+        .children(".week10")
+        .addClass("active")
+        .siblings()
+        .removeClass("active");
+    } else if (
+      this.classList.contains("step11") &&
+      this.classList.contains("cf-beginner")
+    ) {
+      lineProgress.css("height", "100%");
+      $(this)
+        .parent()
+        .parent()
+        .parent()
+        .children(".progress-content")
+        .children(".week11")
         .addClass("active")
         .siblings()
         .removeClass("active");
@@ -766,6 +787,8 @@ const paintBigScreen = (tablnks) => {
         .removeClass("active");
     }
 
+    //Custom cases if the size of the course path is increased or decreased
+    //Customer fundamentals(cf-beginner) has 11 weeks/sections, Hence adding custom styles the the last two sections
     if (
       this.classList.contains("step10") &&
       this.classList.contains("cf-beginner")
@@ -797,3 +820,41 @@ const paintBigScreen = (tablnks) => {
     }
   });
 };
+
+/* Slide pane for the course steps */
+/* Script for a smooth sliding slider-Different from the autotimed slider with smooth slides*/
+var slideForward = document.querySelectorAll(".slideForward");
+console.log(slideForward);
+slideForward.forEach((hit) => {
+  hit.onclick = function () {
+    var containers = document.querySelectorAll(".scroll-pane");
+    containers.forEach((container) => {
+      sideScroll(container, "right", 200, 100, 170);
+    });
+  };
+});
+
+var slideBack = document.querySelectorAll(".slideBack");
+slideBack.forEach((hit) => {
+  hit.onclick = function () {
+    var containers = document.querySelectorAll(".scroll-pane");
+    containers.forEach((container) => {
+      sideScroll(container, "left", 100, 100, 170);
+    });
+  };
+});
+
+function sideScroll(element, direction, speed, distance, step) {
+  scrollAmount = 0;
+  var slideTimer = setInterval(function () {
+    if (direction == "left") {
+      element.scrollLeft -= step;
+    } else {
+      element.scrollLeft += step;
+    }
+    scrollAmount += step;
+    if (scrollAmount >= distance) {
+      window.clearInterval(slideTimer);
+    }
+  }, speed);
+}

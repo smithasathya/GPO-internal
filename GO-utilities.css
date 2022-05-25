@@ -9,6 +9,7 @@ html {
   height: 100%;
   font-size: calc(14px + 5.5 * ((100vw - 400px) / 680));
   scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
 }
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -63,18 +64,21 @@ img {
 .logo {
   width: 7rem;
 }
-
-section:not(.cover-page) {
+section {
+  scroll-snap-align: start;
+}
+section {
   scroll-margin-top: 3.25rem;
+  min-height: 100vh;
 }
 @media all and (max-width: 1040px) {
-  section:not(.cover-page) {
+  section {
     scroll-margin-top: 3.7rem;
   }
 }
 .container {
   width: 85%;
-  max-width: 2400px;
+  max-width: 2500px;
   margin: 0 auto;
   padding: 0 40px;
   overflow: auto;
@@ -90,7 +94,7 @@ section:not(.cover-page) {
   text-align: center;
   width: max-content;
   margin: 0 auto;
-  border-radius: 0.5em;
+
   padding: 0.4rem 1.2rem;
   font-size: 0.8rem;
   font-weight: 700;
