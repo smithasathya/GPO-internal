@@ -208,12 +208,8 @@ function video_open(event) {
   if (event.target.classList.contains("video")) {
     lightBoxVideo.play();
   }
-  event.target.parentNode.nextElementSibling.style.display = "block";
-  event.target.parentNode.nextElementSibling.nextElementSibling.style.display =
-    "block";
-
-  /*   document.getElementById("light").style.display = "block";
-  document.getElementById("fade").style.display = "block"; */
+  event.target.nextElementSibling.style.display = "block";
+  event.target.nextElementSibling.nextElementSibling.style.display = "block";
 }
 
 function video_close() {
@@ -223,15 +219,17 @@ function video_close() {
     this.event.target.parentNode.nextElementSibling.style.display = "none";
   }
   if (this.event.target.classList.contains("fade")) {
-    console.log(this.target);
     this.event.target.style.display = "none";
     this.event.target.previousElementSibling.style.display = "none";
   }
-  const modal = document.querySelectorAll("video");
+
+  /* For video boxes, stop video on close */
+  const videos = document.querySelectorAll("video");
+  videos.forEach((video) => video.pause());
   /*   var lightBoxVideo = document.getElementById("onboardingVideo");
   document.getElementById("light").style.display = "none";
   document.getElementById("fade").style.display = "none";
-  lightBoxVideo.pause(); */
+ */
 }
 
 /* Amination on offset */
@@ -316,7 +314,7 @@ $(document).ready(function () {
     autoplay: false,
     autoplaySpeed: 3000,
     arrows: true,
-
+    adaptiveHeight: true,
     responsive: [
       {
         breakpoint: 1300,
@@ -326,7 +324,7 @@ $(document).ready(function () {
         },
       },
       {
-        breakpoint: 800,
+        breakpoint: 900,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -440,9 +438,49 @@ var hideOnScroll = debounce(() => {
     });
   }
 }, 500);
+/* Counter upper */
+const countUp = debounce(() => {
+  const counters = document.querySelectorAll(".counter");
+  const speedSlow = 1000; // The lower the slower
+  const speed = 500; // The lower the slower
+  counters.forEach((counter) => {
+    if (elementInViewport(counter)) {
+      const updateCount = () => {
+        const target = +counter.getAttribute("data-target");
+        const count = +counter.innerText;
+
+        // Lower inc to slow and higher to slow
+        var inc;
+        if (target < 5000) {
+          inc = target / speedSlow;
+        } else {
+          inc = target / speed;
+        }
+
+        // console.log(inc);
+        // console.log(count);
+
+        // Check if target is reached
+        if (count < target) {
+          // Add inc to count and output in counter
+          counter.innerText = Math.ceil(count + inc);
+          // Call function every ms
+          setTimeout(updateCount, 1);
+        } else {
+          counter.innerText = target;
+        }
+      };
+
+      updateCount();
+    }
+  });
+}, 500);
+
 // When the user scrolls down 20px from the top of the document, show the button
 window.addEventListener("scroll", hideOnScroll);
 window.addEventListener("mousewheel", hideOnScroll);
+window.addEventListener("scroll", countUp);
+window.addEventListener("mousewheel", countUp);
 
 //triggering hidediv on touch devices
 var touchEvent = new Event("mousewheel");
@@ -471,9 +509,7 @@ function elementInViewport(el) {
 }
 /* Week Time line script */
 $(document).ready(function () {
-  paintSmallScreen();
-  paintBigScreen();
-  let screenSize = window.matchMedia("(min-width:700px)");
+  let screenSize = window.matchMedia("(min-width:1200px)");
   markActives(screenSize);
   screenSize.addListener(markActives);
 });
@@ -515,7 +551,7 @@ const paintSmallScreen = () => {
         .removeClass("active");
     }
     if (this.classList.contains("step2")) {
-      lineProgress.css("height", "9%");
+      lineProgress.css("height", "12%");
       $(this)
         .parent()
         .parent()
@@ -526,7 +562,7 @@ const paintSmallScreen = () => {
         .siblings()
         .removeClass("active");
     } else if (this.classList.contains("step3")) {
-      lineProgress.css("height", "17%");
+      lineProgress.css("height", "24%");
       $(this)
         .parent()
         .parent()
@@ -537,7 +573,7 @@ const paintSmallScreen = () => {
         .siblings()
         .removeClass("active");
     } else if (this.classList.contains("step4")) {
-      lineProgress.css("height", "30%");
+      lineProgress.css("height", "34%");
       $(this)
         .parent()
         .parent()
@@ -548,7 +584,7 @@ const paintSmallScreen = () => {
         .siblings()
         .removeClass("active");
     } else if (this.classList.contains("step5")) {
-      lineProgress.css("height", "40%");
+      lineProgress.css("height", "45%");
       $(this)
         .parent()
         .parent()
@@ -559,57 +595,46 @@ const paintSmallScreen = () => {
         .siblings()
         .removeClass("active");
     } else if (this.classList.contains("step6")) {
-      lineProgress.css("height", "50%");
+      lineProgress.css("height", "58%");
       $(this)
         .parent()
         .parent()
         .parent()
         .children(".progress-content")
-        .children(".co-beginner101")
+        .children(".week6")
         .addClass("active")
         .siblings()
         .removeClass("active");
     } else if (this.classList.contains("step7")) {
-      lineProgress.css("height", "60%");
+      lineProgress.css("height", "70%");
       $(this)
         .parent()
         .parent()
         .parent()
         .children(".progress-content")
-        .children(".co-beginner201")
+        .children(".week7")
         .addClass("active")
         .siblings()
         .removeClass("active");
     } else if (this.classList.contains("step8")) {
-      lineProgress.css("height", "72%");
+      lineProgress.css("height", "86%");
       $(this)
         .parent()
         .parent()
         .parent()
         .children(".progress-content")
-        .children(".co-beginner201")
-        .addClass("active")
-        .siblings()
-        .removeClass("active");
-    } else if (this.classList.contains("step8")) {
-      lineProgress.css("height", "84%");
-      $(this)
-        .parent()
-        .parent()
-        .parent()
-        .children(".progress-content")
-        .children(".co-beginner201")
+        .children(".week8")
         .addClass("active")
         .siblings()
         .removeClass("active");
     } else if (this.classList.contains("step9")) {
-      lineProgress.css("height", "87%");
+      lineProgress.css("height", "90%");
       $(this)
         .parent()
         .parent()
         .parent()
         .children(".progress-content")
-        .children(".co-beginner201")
+        .children(".week9")
         .addClass("active")
         .siblings()
         .removeClass("active");
@@ -620,7 +645,7 @@ const paintSmallScreen = () => {
         .parent()
         .parent()
         .children(".progress-content")
-        .children(".co-beginner201")
+        .children(".week10")
         .addClass("active")
         .siblings()
         .removeClass("active");
@@ -858,3 +883,33 @@ function sideScroll(element, direction, speed, distance, step) {
     }
   }, speed);
 }
+
+/* Modal(For View schedules) */
+//
+
+// Get the button that opens the modal
+var modalBtns = document.querySelectorAll(".modal-button");
+
+// When the user clicks the button, open the modal
+modalBtns.forEach((btn) => {
+  //get modal corresponsidng to the button clicked
+  const modal = btn.nextElementSibling;
+  //get corresponding close button for the modal above
+  const closeBtn = modal.querySelector(".close");
+
+  //display modal on btn click
+  btn.onclick = () => {
+    modal.style.display = "block";
+  };
+
+  //close modal when clicked anywhere outside hte modal
+  window.onclick = (event) => {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+
+  closeBtn.onclick = () => {
+    modal.style.display = "none";
+  };
+});

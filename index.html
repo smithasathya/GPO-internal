@@ -26,7 +26,7 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container">
-            <img src="./images/logo-dark-BG.png" alt="Company Logo" class="logo" />
+            <img src="./images/logo.png" alt="Company Logo" class="logo" />
             <div class="menu-toggle" id="mobile-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -36,7 +36,7 @@
                 <li class="nav-item"><a href="#home">Home</a></li>
                 <li class="nav-item"><a href="#onboarding">Onboarding</a></li>
                 <li class="nav-item"><a href="#roles">Roles</a></li>
-                <li class="nav-item"><a href="#degreed">Degreed LXP</a></li>
+                <li class="nav-item"><a href="#new-degreed">Degreed LXP</a></li>
                 <li class="nav-item"><a href="#equitube">Equitube</a></li>
                 <li class="dropdown nav-item">
                     <button class="dropbtn">
@@ -54,8 +54,7 @@
                             Glossary</a>
                     </div>
                 </li>
-                <li class="nav-item"><a href="#social">Social</a></li>
-                <li class="nav-item"><a target="_blank" href="#team">About Us</a></li>
+                <li class="nav-item"><a href="#about">About Us</a></li>
                 <li class="nav-item"><a href="#contact">Contact Us</a></li>
             </ul>
         </div>
@@ -72,20 +71,21 @@
             <div class="slide current ss1 primary-slide" data-slide="1">
                 <div class="slide-wrapper container">
                     <div class="slide-content">
-                        <h1 class="b-5">Welcome to Global Operations Academy, Nabiya
+                        <h1 class="b-5" data-aos="fade-down">Welcome to Global Operations Academy, Nabiya
                         </h1>
-                        <p class="xxs">
+                        <p class="xxs" data-aos="fade-up">
                             Reshaping the Culture of Operations Learning
                         </p>
                         <div class="cover-btn-grp">
-                            <a class="btn" onclick="goToCourse('onboard-cont',this)">Explore Onboarding</a>
-                            <a class="btn" href="#roles">Explore Roles</a>
+                            <a class="btn" onclick="goToCourse('onboard-cont',this)" data-aos="fade-right">Explore
+                                Onboarding</a>
+                            <a class="btn" href="#roles" data-aos="fade-left">Explore Roles</a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="slide ss1" data-slide="2">
-                <div class="welcome-user">Hi <span id="user">NabiyaSWS</span></div>
+                <div class="welcome-user">Hi <span id="user">Nabiya</span></div>
                 <div class="slide-wrapper container">
                     <div class="slide-content">
                         <h1>Slide Two</h1>
@@ -116,52 +116,15 @@
         </div>
 
     </section>
-    <!--     <div class="user-content">
-        <div class="container">
-
-            <div class="uc-item">
-                <i class="fa-solid fa-users-gear uc-icon"></i>
-                <h3>Global Operations Onboarding</h3>
-                <p>
-                    Get started with introdution to Equinix and learn your first 30 days in Global
-                    Operations
-                </p>
-                <div class="uc-link">
-                    <div class="uc-btn">
-                        <a href="#onboarding">
-                            Explore Onboarding
-                            <p class="arrow">
-                            </p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="uc-item">
-                <i class="fa-solid fa-users-viewfinder uc-icon"></i>
-                <h3>Discover Your Roles</h3>
-                <p>
-                    Browse Global Operations New to Equinix learning tracks based on your roles
-                </p>
-                <div class="uc-link">
-                    <div class="uc-btn">
-                        <a href="#roles"> Explore Roles
-                            <p class="arrow">
-                            </p>
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-    </div> -->
-
 
     <!-- onboarding -->
     <section class="onboarding" id="onboarding">
-        <h1 class="text-center lg py-4  b-4 container">Global Operations: At The Core of Who We Are and What We Do!</h1>
+
+        <div class="section-header text-center py-2 b-4">
+            <h1 class="lg b-4">Global Operations</h1>
+            <h6 class="xs b-2">At The Core of Who We Are and What We Do!
+            </h6>
+        </div>
         <div class="container">
             <div class="text-left onboarding-content">
                 <p class="lead">
@@ -201,20 +164,27 @@
             <h1 class="lg b-4">Onboarding</h1>
             <h6 class="xs b-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae id cupiditate
             </h6>
-            <div class="cta" onclick="video_open(event)">
-                <a class="modal">View Schedule &rarr;</a>
+            <div class="cta modal-button">
+                <a href="javascript:void(0)">View Schedule &rarr;</a>
             </div>
-            <div id="light">
-                <a class="boxclose" id="boxclose" onclick="video_close();"></a>
-                <video id="onboardingVideo" width="100%" controls>
-                    <source src="https://bit.ly/2VROazb" type="video/mp4">
-                    <!--Browser does not support <video> tag -->
-                </video>
+            <div class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h2>Modal Header</h2>
+                    </div>
+                    <div class="modal-body">
+                        <p>Some text in the Modal Body</p>
+                        <p>Some other text...</p>
+                    </div>
+                    <div class="modal-footer">
+                        <h3>Modal Footer</h3>
+                    </div>
+                </div>
             </div>
-            <div id="fade" class="fade" onclick="video_close();"></div>
-
             <div class="cta">
-                <a href="javascript:void(0)">Download Schedule &rarr;</a>
+                <a href="javascript:void(0)" download>Download Schedule &rarr;</a>
             </div>
         </div>
         <div id="ls-beginner" class="tabcontent">
@@ -1870,8 +1840,117 @@
     </section>
 
     <!-- Degreed Section -->
+    <section class="new-degreed" id="new-degreed">
+        <div class="section-header text-center py-2 b-4">
+            <h1 class="lg b-4">Degreed Learning Experience Platform</h1>
+            <h6 class="xs b-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae id cupiditate
+            </h6>
+        </div>
+        <div class="new-degreed-content container">
+            <div class="new-degreed-card degreed-home">
+                <div class="icon">
 
-    <section class="degreed" id="degreed">
+                </div>
+                <div class="headline">
+                    <h1 class="sm b-5">Degreed Home</h1>
+                </div>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse quas molestiae eum repudiandae. Beatae
+                    porro sequi impedit! Ipsam, facilis non.</p>
+                <div class="cta">
+                    <a class="modal">Go to Degreed Home &rarr;</a>
+                </div>
+            </div>
+            <div class="new-degreed-card degreed-assignments">
+                <div class="icon">
+
+                </div>
+                <div class="headline">
+                    <h1 class="sm b-5">Degreed Assignments</h1>
+                </div>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse quas molestiae eum repudiandae. Beatae
+                    porro sequi impedit! Ipsam, facilis non.</p>
+                <div class="cta">
+                    <a class="modal">View Your Assignments &rarr;</a>
+                </div>
+            </div>
+            <div class="new-degreed-card degreed-featured">
+                <div class="icon">
+
+                </div>
+                <div class="headline">
+                    <h1 class="sm b-5">Degreed Featured</h1>
+                </div>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse quas molestiae eum repudiandae. Beatae
+                    porro sequi impedit! Ipsam, facilis non.</p>
+                <div class="cta">
+                    <a class="modal">Go to Degreed Home &rarr;</a>
+                </div>
+            </div>
+            <div class="new-degreed-card degreed-skills">
+                <div class="icon">
+
+                </div>
+                <div class="headline">
+                    <h1 class="sm b-5">Degreed Skills</h1>
+                </div>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse quas molestiae eum repudiandae. Beatae
+                    porro sequi impedit! Ipsam, facilis non.</p>
+                <div class="cta">
+                    <a class="modal">View your skills &rarr;</a>
+                </div>
+            </div>
+            <div class="new-degreed-card degreed-skills-coach">
+                <div class="icon">
+
+                </div>
+                <div class="headline">
+                    <h1 class="sm b-5">Degreed Skills Coach</h1>
+                </div>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse quas molestiae eum repudiandae. Beatae
+                    porro sequi impedit! Ipsam, facilis non.</p>
+                <div class="cta">
+                    <a class="modal">View Degreed Skills Coach &rarr;</a>
+                </div>
+            </div>
+        </div>
+        <div class="counters">
+            <div class="container">
+
+                <div>
+                    <i class="fa-solid fa-users-between-lines fa-2x"></i>
+                    <div class="counter" data-target="7800">0</div>
+                    <h3>Global Operations Users</h3>
+                </div>
+                <div>
+                    <i class="fa-solid fa-chalkboard-user fa-2x"></i>
+                    <div class="counter" data-target="25000">0</div>
+                    <h3>Elearning Content</h3>
+                </div>
+                <div>
+                    <i class="fa-solid fa-building-user fa-2x"></i>
+                    <div class="counter" data-target="300">0</div>
+                    <h3>Customer Operations Topics</h3>
+                </div>
+                <div>
+                    <i class="fa-solid fa-gears fa-2x"></i>
+                    <div class="counter" data-target="200">0</div>
+                    <h3>Critical Facilities Topics</h3>
+                </div>
+                <div>
+                    <i class="fa-solid fa-cart-flatbed fa-2x"></i>
+                    <div class="counter" data-target="150">0</div>
+                    <h3>Logistics Specialist Topics</h3>
+                </div>
+                <div>
+                    <i class="fa-solid fa-bullseye fa-2x"></i>
+                    <div class="counter" data-target="150">0</div>
+                    <h3>Operations Skills</h3>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!--     <section class="degreed" id="degreed">
 
         <h2 class="py-2 b-5">Degreed Learning Experience Platform</h2>
 
@@ -1970,7 +2049,7 @@
             </div>
         </div>
     </section>
-
+ -->
 
 
     <!-- Equitube Section -->
@@ -2170,21 +2249,77 @@
     </section>
 
     <!-- My teams section -->
-    <section class="team" id="team">
-        <div class='organization-banner lg text-center p-1 b-3'>
+    <section class="about" id="about">
+        <!--         <div class='organization-banner lg text-center p-1 b-3'>
             <h1 class="b-4">GCCX Organization</h1>
             <div>
                 <a class="btn coverBtn" href="https://equinix.sumtotal.host/core/organization" target="_blank">View
                     Chart</a>
             </div>
             </a>
-        </div>
-
+        </div> -->
         <div class="section-header text-center py-2 b-4">
-            <h1 class="lg b-4">Meet Our Team</h1>
+            <h1 class="lg b-4">About Us : Global Operations Acedemy</h1>
             <h6 class="xs b-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae id cupiditate
             </h6>
         </div>
+        <div class="aboutUs container">
+            <div class="aboutUs-content">
+                <div class="img-block">
+                    <img src="https://picsum.photos/100?random=1">
+                    <div class="color-block"></div>
+                </div>
+                <div class="why aboutUs-block">
+                    <div class="block-title">
+                        <h1 class="sm b-5 m-1">WHY</h1>
+                    </div>
+                    <div class="block-desc">
+                        <p class="xs my-0 p-1"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui doloremque
+                            illum
+                            molestias nisi
+                            assumenda voluptatibus ea ducimus eligendi excepturi iusto deleniti, eaque odit obcaecati
+                            architecto tenetur nesciunt tempora enim hic?</p>
+
+                    </div>
+                </div>
+                <div class="what aboutUs-block">
+                    <div class="block-title">
+                        <h1 class="sm b-5 my-1">WHAT</h1>
+                    </div>
+                    <div class="block-desc">
+                        <p class="xs my-0 p-1"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui doloremque
+                            illum
+                            molestias nisi
+                            assumenda voluptatibus ea ducimus eligendi excepturi iusto deleniti, eaque odit obcaecati
+                            architecto tenetur nesciunt tempora enim hic?</p>
+
+                    </div>
+                </div>
+                <div class="img-block">
+                    <img src="https://picsum.photos/100?random=2">
+                    <div class="color-block"></div>
+                </div>
+                <div class="how aboutUs-block">
+                    <div class="block-title">
+                        <h1 class="sm b-5 my-1">HOW</h1>
+                    </div>
+                    <div class="block-desc">
+                        <p class="xs my-0 p-1"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui doloremque
+                            illum
+                            molestias nisi
+                            assumenda voluptatibus ea ducimus eligendi excepturi iusto deleniti, eaque odit obcaecati
+                            architecto tenetur nesciunt tempora enim hic?</p>
+
+                    </div>
+                </div>
+                <div class="img-block">
+                    <img src="https://picsum.photos/100?random=3">
+                    <div class="color-block"></div>
+                </div>
+
+            </div>
+        </div>
+
         <div class="container">
             <div class="team-slider">
                 <div class="contact-card">
