@@ -34,8 +34,8 @@
             </div>
             <ul class="nav no-search">
                 <li class="nav-item"><a href="#home">Home</a></li>
-                <li class="nav-item"><a href="#onboarding">Onboarding</a></li>
-                <li class="nav-item"><a href="#roles">Roles</a></li>
+                <li class="nav-item"><a onclick="goToCourse('onboard-cont',this)"">Onboarding</a></li>
+                <li class=" nav-item"><a href="#roles">Roles</a></li>
                 <li class="nav-item"><a href="#new-degreed">Degreed LXP</a></li>
                 <li class="nav-item"><a href="#equitube">Equitube</a></li>
                 <li class="dropdown nav-item">
@@ -634,421 +634,426 @@
 
     <!-- Customer operations section(abbr used for section specific uses co-*/*-co). Hidden by default -->
     <section class="ibx-co hidden-section" id="ibx-co">
-        <div class="section-header text-center py-2 b-5">
-            <h1 class="lg">IBX Customer Operations</h1>
-            <h6 class="sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae id cupiditate</h6>
-
-            <a class="modal cta" onclick="video_open(event)">View Schedule &rarr;</a>
-
-            <div id="light">
-                <a class="boxclose" id="boxclose" onclick="video_close();"></a>
-                <video id="onboardingVideo" width="100%" controls>
-                    <source src="https://bit.ly/2VROazb" type="video/mp4">
-                    <!--Browser does not support <video> tag -->
-                </video>
+        <div class="section-header text-center py-2 b-4">
+            <h1 class="lg b-4">IBX Customer Operations</h1>
+            <h6 class="xs b-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae id cupiditate
+            </h6>
+            <div class="cta modal-button">
+                <a href="javascript:void(0)">View Schedule &rarr;</a>
             </div>
-            <div id="fade" onclick="video_close();"></div>
-
+            <div class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h2>Modal Header</h2>
+                    </div>
+                    <div class="modal-body">
+                        <p>Some text in the Modal Body</p>
+                        <p>Some other text...</p>
+                    </div>
+                    <div class="modal-footer">
+                        <h3>Modal Footer</h3>
+                    </div>
+                </div>
+            </div>
             <div class="cta">
-                <a target="_blank" href="">Download Schedule &rarr;</a>
+                <a href="javascript:void(0)" download>Download Schedule &rarr;</a>
             </div>
         </div>
 
-
         <div class="tab-container">
             <div class="tablinks-container">
-                <div class="tablinks-container">
-                    <button class="tablink xs b-2 beginner defaultOpen" data-target-container="co-beginner">
-                        Customer Operations Beginner
-                    </button>
-                    <button class="tablink xs b-2 intermediate " data-target-container="co-intermediate">
-                        Customer Operations Intermediate
-                    </button>
-                    <button class="tablink xs b-2 advanced" data-target-container="co-advanced">
-                        Customer Operations Advanced
-                    </button>
-                    <div id="co-beginner" class="tabcontent">
-                        <div class="progress-wrapper">
-                            <div class="progress-bar-container scroll-pane" id="scroll-pane">
-                                <div id="line">
-                                    <div id="line-progress"></div>
-                                </div>
-                                <ul>
-                                    <li class="step step1 sm co-beginner active current">
-                                        <div class="step-inner">
-                                            IBX Familiarization
-                                        </div>
-                                    </li>
-                                    <li class="step step2 sm co-beginner">
-                                        <div class="step-inner">
-                                            GNSP
-                                        </div>
-                                    </li>
-                                    <li class="step step3 sm co-beginner">
-                                        <div class="step-inner">
-                                            Equinix Products Fundamentals
-                                        </div>
-                                    </li>
-                                    <li class="step step4 sm co-beginner">
-                                        <div class="step-inner">
-                                            Safety Fundamentals
-                                        </div>
-                                    </li>
-                                    <li class="step step5 sm co-beginner">
-                                        <div class="step-inner">
-                                            IBX Security Fundamentals
-                                        </div>
-                                    </li>
-                                    <li class="step step6 sm co-beginner">
-                                        <div class="step-inner">
-                                            Smart Hands Fundamentals
-
-                                        </div>
-                                    </li>
-                                    <li class="step step7 sm co-beginner">
-                                        <div class="step-inner">
-                                            Introduction to Networking Foundations
-                                        </div>
-                                    </li>
-                                    <li class="step step8 sm co-beginner">
-                                        <div class="step-inner">
-                                            Inbound & Outbound Shipment Fundamentals
-                                        </div>
-                                    </li>
-                                    <li class="step step9 sm co-beginner">
-                                        <div class="step-inner">
-                                            IBX Application Systems (Jarvis, Airflow Management)
-                                        </div>
-                                    </li>
-                                    <li class="step step10 sm co-beginner">
-                                        <div class="step-inner">
-                                            Cross Connect Fundamentals
-                                        </div>
-                                    </li>
-                                    <li class="step step6 sm co-beginner">
-                                        <div class="step-inner">
-                                            Smart Hands Fundamentals
-
-                                        </div>
-                                    </li>
-                                    <li class="step step7 sm co-beginner">
-                                        <div class="step-inner">
-                                            Introduction to Networking Foundations
-                                        </div>
-                                    </li>
-                                    <li class="step step8 sm co-beginner">
-                                        <div class="step-inner">
-                                            Inbound & Outbound Shipment Fundamentals
-                                        </div>
-                                    </li>
-                                    <li class="step step9 sm co-beginner">
-                                        <div class="step-inner">
-                                            IBX Application Systems (Jarvis, Airflow Management)
-                                        </div>
-                                    </li>
-                                    <li class="step step10 sm co-beginner">
-                                        <div class="step-inner">
-                                            Cross Connect Fundamentals
-                                        </div>
-                                    </li>
-                                </ul>
-
+                <button class="tablink xs b-2 beginner defaultOpen" data-target-container="co-beginner">
+                    Customer Operations Beginner
+                </button>
+                <button class="tablink xs b-2 intermediate " data-target-container="co-intermediate">
+                    Customer Operations Intermediate
+                </button>
+                <button class="tablink xs b-2 advanced" data-target-container="co-advanced">
+                    Customer Operations Advanced
+                </button>
+                <div id="co-beginner" class="tabcontent">
+                    <div class="progress-wrapper">
+                        <div class="progress-bar-container scroll-pane" id="scroll-pane">
+                            <div id="line">
+                                <div id="line-progress"></div>
                             </div>
-                            <button class="slideBack" id="slideBack" type="button">Prev</button>
-                            <button class="slideForward" id="slideForward" type="button">Next</button>
-                            <div class="progress-content">
-                                <div class="section-content week1 active">
-                                    <div class="course-card">
-                                        <div class="image-data">
-                                            <div class="bg-img">
-                                            </div>
-                                            <div class="img-details">
-                                                <h4 class="b-2 img-title">1 - Pathway: IBX Familiarization
-                                                </h4>
-                                            </div>
-                                        </div>
-                                        <div class="course-data">
-                                            <div class="course">
-                                                <h4 class="course-title b-3">Topics covered in this section are:</h4>
-                                                <ul class='course-detail px-3'>
-                                                    <li>Learn infographic top 10 teams that interact w/IBX</li>
-                                                    <li>Campus/IBX orientation checklists</li>
-                                                    <li>Operations Knowledge Base (OKB) tour</li>
-                                                </ul>
-                                                <div class="cta">
-                                                    <a target="_blank" href="">Register
-                                                        here &rarr;</a>
-                                                </div>
-                                            </div>
-                                        </div>
+                            <ul>
+                                <li class="step step1 sm co-beginner active current">
+                                    <div class="step-inner">
+                                        IBX Familiarization
                                     </div>
-                                </div>
-                                <div class="section-content week2">
-                                    <div class="course-card">
-                                        <div class="image-data">
-                                            <div class="bg-img">
-                                            </div>
-                                            <div class="img-details">
-                                                <h4 class="b-2 img-title">2 - Pathway: Global Notification Subscription
-                                                    Portal (GNSP)
-                                                </h4>
-                                            </div>
-                                        </div>
-                                        <div class="course-data">
-                                            <div class="course">
-                                                <h4 class="course-title b-3">Topics covered in this section are:</h4>
-                                                <ul class='course-detail px-3'>
-                                                    <li>Familiarize with Global Notification Subscription Portal Basics-
-                                                        subscribing, unsubscribing, running and viewing subscription
-                                                        reports
-                                                    </li>
+                                </li>
+                                <li class="step step2 sm co-beginner">
+                                    <div class="step-inner">
+                                        GNSP
+                                    </div>
+                                </li>
+                                <li class="step step3 sm co-beginner">
+                                    <div class="step-inner">
+                                        Equinix Products Fundamentals
+                                    </div>
+                                </li>
+                                <li class="step step4 sm co-beginner">
+                                    <div class="step-inner">
+                                        Safety Fundamentals
+                                    </div>
+                                </li>
+                                <li class="step step5 sm co-beginner">
+                                    <div class="step-inner">
+                                        IBX Security Fundamentals
+                                    </div>
+                                </li>
+                                <li class="step step6 sm co-beginner">
+                                    <div class="step-inner">
+                                        Smart Hands Fundamentals
 
-                                                </ul>
-                                                <div class="cta">
-                                                    <a target="_blank" href="">Register
-                                                        here &rarr;</a>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
-                                </div>
-                                <div class="section-content week3">
-                                    <div class="course-card my-1">
-                                        <div class="image-data">
-                                            <div class="bg-img">
-                                            </div>
-                                            <div class="img-details">
-                                                <h4 class="b-2 img-title">3-Pathway: Equinix Products Fundamentals
-                                                </h4>
-                                            </div>
-                                        </div>
-                                        <div class="course-data">
-                                            <div class="course">
-                                                <h4 class="course-title b-3">Topics covered in this section are:</h4>
-                                                <ul class='course-detail px-3'>
-                                                    <li>Watch Colocation fundamentals</li>
-                                                    <li>tour the product portfolio Hub site</li>
-                                                    <li>Product & Services </li>
-                                                    <li>glossary & documentation </li>
+                                </li>
+                                <li class="step step7 sm co-beginner">
+                                    <div class="step-inner">
+                                        Introduction to Networking Foundations
+                                    </div>
+                                </li>
+                                <li class="step step8 sm co-beginner">
+                                    <div class="step-inner">
+                                        Inbound & Outbound Shipment Fundamentals
+                                    </div>
+                                </li>
+                                <li class="step step9 sm co-beginner">
+                                    <div class="step-inner">
+                                        IBX Application Systems (Jarvis, Airflow Management)
+                                    </div>
+                                </li>
+                                <li class="step step10 sm co-beginner">
+                                    <div class="step-inner">
+                                        Cross Connect Fundamentals
+                                    </div>
+                                </li>
+                                <li class="step step6 sm co-beginner">
+                                    <div class="step-inner">
+                                        Smart Hands Fundamentals
 
-                                                </ul>
-                                                <div class="cta">
-                                                    <a target="_blank" href="">Register
-                                                        here &rarr;</a>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
-                                </div>
-                                <div class="section-content week4">
-                                    <div class="course-card my-1">
-                                        <div class="image-data">
-                                            <div class="bg-img">
-                                            </div>
-                                            <div class="img-details">
-                                                <h4 class="b-2 img-title">4-Pathway: Safety Fundamentals
-                                                </h4>
-                                            </div>
-                                        </div>
-                                        <div class="course-data">
-                                            <div class="course">
-                                                <h4 class="course-title b-2">Topics covered in this section are:</h4>
-                                                <ul class='course-detail px-3'>
-                                                    <li>Watch keeping safe Inside the Collocation- ladder safety</li>
-                                                    <li>hearing conservation</li>
-                                                    <li>fall prevention</li>
-                                                    <li>electrical</li>
-                                                    <li>Laser & back safety & injury prevention</li>
-                                                </ul>
-                                                <div class="cta">
-                                                    <a target="_blank" href="">Register
-                                                        here &rarr;</a>
-                                                </div>
-                                            </div>
-                                        </div>
+                                </li>
+                                <li class="step step7 sm co-beginner">
+                                    <div class="step-inner">
+                                        Introduction to Networking Foundations
                                     </div>
-                                </div>
-                                <div class="section-content week5">
-                                    <div class="course-card my-1">
-                                        <div class="image-data">
-                                            <div class="bg-img">
-                                            </div>
-                                            <div class="img-details">
-                                                <h4 class="b-2 img-title">5-Pathway: IBX Security Fundamentals
-                                                </h4>
-                                            </div>
-                                        </div>
-                                        <div class="course-data">
-                                            <div class="course">
-                                                <h4 class="course-title b-2">Topics covered in this section are:</h4>
-                                                <ul class='course-detail px-3'>
-                                                    <li>Get introduced to IBX safety& security</li>
-                                                    <li>IBX general policies</li>
-                                                    <li>Customer access policy</li>
-                                                    <li>Customer space restrictions policy</li>
-                                                    <li>General Data Protection Regulation (GDPR) and procedure</li>
-                                                    <li>Cage restrictions - standard and custom signage</li>
-                                                </ul>
-                                                <div class="cta">
-                                                    <a target="_blank" href="">Register
-                                                        here &rarr;</a>
-                                                </div>
-                                            </div>
-                                        </div>
+                                </li>
+                                <li class="step step8 sm co-beginner">
+                                    <div class="step-inner">
+                                        Inbound & Outbound Shipment Fundamentals
                                     </div>
-                                </div>
-                                <div class="section-content week6">
-                                    <div class="course-card my-1">
-                                        <div class="image-data">
-                                            <div class="bg-img">
-                                            </div>
-                                            <div class="img-details">
-                                                <h4 class="b-2 img-title">6- Pathway: Smart Hands Fundamentals
-                                                </h4>
-                                            </div>
-                                        </div>
-                                        <div class="course-data">
-                                            <div class="course">
-                                                <h4 class="course-title b-2">Topics covered in this section are:</h4>
-                                                <ul class='course-detail px-3'>
-                                                    <li>Introduction to Smart Hands tickets</li>
-                                                    <li>cheat sheet</li>
-                                                    <li>product readiness spotlight</li>
-                                                    <li>Smart Hands activity policy</li>
-                                                    <li>FAQ’s</li>
-                                                    <li>Introduction to installs</li>
-                                                    <li>Install patch cable</li>
-                                                    <li>introduction to removal activities</li>
-                                                    <li>Install customer equipment</li>
-                                                    <li>audit</li>
-                                                    <li>locate customer equipment</li>
-                                                    <li>On the job training guide</li>
-                                                    <li>Excel essentials training</li>
-                                                </ul>
-                                                <div class="cta">
-                                                    <a target="_blank" href="">Register
-                                                        here &rarr;</a>
-                                                </div>
-                                            </div>
-                                        </div>
+                                </li>
+                                <li class="step step9 sm co-beginner">
+                                    <div class="step-inner">
+                                        IBX Application Systems (Jarvis, Airflow Management)
                                     </div>
-                                </div>
-                                <div class="section-content week7">
-                                    <div class="course-card my-1">
-                                        <div class="image-data">
-                                            <div class="bg-img">
-                                            </div>
-                                            <div class="img-details">
-                                                <h4 class="b-2 img-title">7-Pathway: Introduction to Networking
-                                                    Foundations
-                                                </h4>
-                                            </div>
-                                        </div>
-                                        <div class="course-data">
-                                            <div class="course">
-                                                <h4 class="course-title b-2">Topics covered in this section are:</h4>
-                                                <ul class='course-detail px-3'>
-                                                    <li>Get introduction to Networking basics</li>
-                                                    <li>IP addressing, Network media (LANs), (WANs), servers, protocols
-                                                        and CLI tools</li>
-                                                </ul>
-                                                <div class="cta">
-                                                    <a target="_blank" href="">Register
-                                                        here &rarr;</a>
-                                                </div>
-                                            </div>
-                                        </div>
+                                </li>
+                                <li class="step step10 sm co-beginner">
+                                    <div class="step-inner">
+                                        Cross Connect Fundamentals
                                     </div>
-                                </div>
-                                <div class="section-content week8">
-                                    <div class="course-card my-1">
-                                        <div class="image-data">
-                                            <div class="bg-img">
-                                            </div>
-                                            <div class="img-details">
-                                                <h4 class="b-2 img-title">Pathway: Inbound & Outbound Shipment
-                                                    Fundamentals
-                                                </h4>
-                                            </div>
-                                        </div>
-                                        <div class="course-data">
-                                            <div class="course">
-                                                <h4 class="course-title b-2">Topics covered in this section are:</h4>
-                                                <ul class='course-detail px-3'>
-                                                    <li>Learn to handle unannounced and rejected shipments</li>
-                                                    <li>receiving inbound shipment</li>
-                                                    <li>sending outbound shipment</li>
-                                                    <li>outbound shipment policy</li>
-                                                    <li>suspicious packages</li>
-                                                    <li>Spotlight IOS devise</li>
-                                                    <li>how to use the
-                                                        shipment Spotlight app - inbound shipment</li>
-                                                    <li>how to use the shipment
-                                                        Spotlight app - deliver to cage/customer</li>
-                                                    <li>how to use the shipment
-                                                        Spotlight app - outbound shipments</li>
+                                </li>
+                            </ul>
 
-                                                </ul>
-                                                <div class="cta">
-                                                    <a target="_blank" href="">Register
-                                                        here &rarr;</a>
-                                                </div>
+                        </div>
+                        <button class="slideBack" id="slideBack" type="button">Prev</button>
+                        <button class="slideForward" id="slideForward" type="button">Next</button>
+                        <div class="progress-content">
+                            <div class="section-content week1 active">
+                                <div class="course-card">
+                                    <div class="image-data">
+                                        <div class="bg-img">
+                                        </div>
+                                        <div class="img-details">
+                                            <h4 class="b-2 img-title">1 - Pathway: IBX Familiarization
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="course-data">
+                                        <div class="course">
+                                            <h4 class="course-title b-3">Topics covered in this section are:</h4>
+                                            <ul class='course-detail px-3'>
+                                                <li>Learn infographic top 10 teams that interact w/IBX</li>
+                                                <li>Campus/IBX orientation checklists</li>
+                                                <li>Operations Knowledge Base (OKB) tour</li>
+                                            </ul>
+                                            <div class="cta">
+                                                <a target="_blank" href="">Register
+                                                    here &rarr;</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="section-content week9">
-                                    <div class="course-card my-1">
-                                        <div class="image-data">
-                                            <div class="bg-img">
-                                            </div>
-                                            <div class="img-details">
-                                                <h4 class="b-2 img-title">9-Pathway: IBX Application Systems (Jarvis,
-                                                    Airflow Management)
-                                                </h4>
-                                            </div>
+                            </div>
+                            <div class="section-content week2">
+                                <div class="course-card">
+                                    <div class="image-data">
+                                        <div class="bg-img">
                                         </div>
-                                        <div class="course-data">
-                                            <div class="course">
-                                                <h4 class="course-title b-2">Topics covered in this section are:</h4>
-                                                <ul class='course-detail px-3'>
-                                                    <li>Familiarize with Jarvis dashboard</li>
-                                                    <li>DART mobile</li>
-                                                    <li>Intro to IBX airflow management, airtight - application</li>
+                                        <div class="img-details">
+                                            <h4 class="b-2 img-title">2 - Pathway: Global Notification Subscription
+                                                Portal (GNSP)
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="course-data">
+                                        <div class="course">
+                                            <h4 class="course-title b-3">Topics covered in this section are:</h4>
+                                            <ul class='course-detail px-3'>
+                                                <li>Familiarize with Global Notification Subscription Portal Basics-
+                                                    subscribing, unsubscribing, running and viewing subscription
+                                                    reports
+                                                </li>
 
-                                                </ul>
-                                                <div class="cta">
-                                                    <a target="_blank" href="">Register
-                                                        here &rarr;</a>
-                                                </div>
+                                            </ul>
+                                            <div class="cta">
+                                                <a target="_blank" href="">Register
+                                                    here &rarr;</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="section-content week10">
-                                    <div class="course-card my-1">
-                                        <div class="image-data">
-                                            <div class="bg-img">
-                                            </div>
-                                            <div class="img-details">
-                                                <h4 class="b-2 img-title">10-Pathway: Cross Connect Fundamentals
-                                                </h4>
+                            </div>
+                            <div class="section-content week3">
+                                <div class="course-card my-1">
+                                    <div class="image-data">
+                                        <div class="bg-img">
+                                        </div>
+                                        <div class="img-details">
+                                            <h4 class="b-2 img-title">3-Pathway: Equinix Products Fundamentals
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="course-data">
+                                        <div class="course">
+                                            <h4 class="course-title b-3">Topics covered in this section are:</h4>
+                                            <ul class='course-detail px-3'>
+                                                <li>Watch Colocation fundamentals</li>
+                                                <li>tour the product portfolio Hub site</li>
+                                                <li>Product & Services </li>
+                                                <li>glossary & documentation </li>
+
+                                            </ul>
+                                            <div class="cta">
+                                                <a target="_blank" href="">Register
+                                                    here &rarr;</a>
                                             </div>
                                         </div>
-                                        <div class="course-data">
-                                            <div class="course">
-                                                <h4 class="course-title b-2">Topics covered in this section are:</h4>
-                                                <ul class='course-detail px-3'>
-                                                    <li>Learn copper cable & fiber optics theory and applications</li>
-                                                    <li>manufacturing copper cable connectors</li>
-                                                    <li>troubleshooting copper cable installation</li>
-                                                    <li>media converters</li>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-content week4">
+                                <div class="course-card my-1">
+                                    <div class="image-data">
+                                        <div class="bg-img">
+                                        </div>
+                                        <div class="img-details">
+                                            <h4 class="b-2 img-title">4-Pathway: Safety Fundamentals
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="course-data">
+                                        <div class="course">
+                                            <h4 class="course-title b-2">Topics covered in this section are:</h4>
+                                            <ul class='course-detail px-3'>
+                                                <li>Watch keeping safe Inside the Collocation- ladder safety</li>
+                                                <li>hearing conservation</li>
+                                                <li>fall prevention</li>
+                                                <li>electrical</li>
+                                                <li>Laser & back safety & injury prevention</li>
+                                            </ul>
+                                            <div class="cta">
+                                                <a target="_blank" href="">Register
+                                                    here &rarr;</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-content week5">
+                                <div class="course-card my-1">
+                                    <div class="image-data">
+                                        <div class="bg-img">
+                                        </div>
+                                        <div class="img-details">
+                                            <h4 class="b-2 img-title">5-Pathway: IBX Security Fundamentals
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="course-data">
+                                        <div class="course">
+                                            <h4 class="course-title b-2">Topics covered in this section are:</h4>
+                                            <ul class='course-detail px-3'>
+                                                <li>Get introduced to IBX safety& security</li>
+                                                <li>IBX general policies</li>
+                                                <li>Customer access policy</li>
+                                                <li>Customer space restrictions policy</li>
+                                                <li>General Data Protection Regulation (GDPR) and procedure</li>
+                                                <li>Cage restrictions - standard and custom signage</li>
+                                            </ul>
+                                            <div class="cta">
+                                                <a target="_blank" href="">Register
+                                                    here &rarr;</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-content week6">
+                                <div class="course-card my-1">
+                                    <div class="image-data">
+                                        <div class="bg-img">
+                                        </div>
+                                        <div class="img-details">
+                                            <h4 class="b-2 img-title">6- Pathway: Smart Hands Fundamentals
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="course-data">
+                                        <div class="course">
+                                            <h4 class="course-title b-2">Topics covered in this section are:</h4>
+                                            <ul class='course-detail px-3'>
+                                                <li>Introduction to Smart Hands tickets</li>
+                                                <li>cheat sheet</li>
+                                                <li>product readiness spotlight</li>
+                                                <li>Smart Hands activity policy</li>
+                                                <li>FAQ’s</li>
+                                                <li>Introduction to installs</li>
+                                                <li>Install patch cable</li>
+                                                <li>introduction to removal activities</li>
+                                                <li>Install customer equipment</li>
+                                                <li>audit</li>
+                                                <li>locate customer equipment</li>
+                                                <li>On the job training guide</li>
+                                                <li>Excel essentials training</li>
+                                            </ul>
+                                            <div class="cta">
+                                                <a target="_blank" href="">Register
+                                                    here &rarr;</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-content week7">
+                                <div class="course-card my-1">
+                                    <div class="image-data">
+                                        <div class="bg-img">
+                                        </div>
+                                        <div class="img-details">
+                                            <h4 class="b-2 img-title">7-Pathway: Introduction to Networking
+                                                Foundations
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="course-data">
+                                        <div class="course">
+                                            <h4 class="course-title b-2">Topics covered in this section are:</h4>
+                                            <ul class='course-detail px-3'>
+                                                <li>Get introduction to Networking basics</li>
+                                                <li>IP addressing, Network media (LANs), (WANs), servers, protocols
+                                                    and CLI tools</li>
+                                            </ul>
+                                            <div class="cta">
+                                                <a target="_blank" href="">Register
+                                                    here &rarr;</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-content week8">
+                                <div class="course-card my-1">
+                                    <div class="image-data">
+                                        <div class="bg-img">
+                                        </div>
+                                        <div class="img-details">
+                                            <h4 class="b-2 img-title">Pathway: Inbound & Outbound Shipment
+                                                Fundamentals
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="course-data">
+                                        <div class="course">
+                                            <h4 class="course-title b-2">Topics covered in this section are:</h4>
+                                            <ul class='course-detail px-3'>
+                                                <li>Learn to handle unannounced and rejected shipments</li>
+                                                <li>receiving inbound shipment</li>
+                                                <li>sending outbound shipment</li>
+                                                <li>outbound shipment policy</li>
+                                                <li>suspicious packages</li>
+                                                <li>Spotlight IOS devise</li>
+                                                <li>how to use the
+                                                    shipment Spotlight app - inbound shipment</li>
+                                                <li>how to use the shipment
+                                                    Spotlight app - deliver to cage/customer</li>
+                                                <li>how to use the shipment
+                                                    Spotlight app - outbound shipments</li>
 
-                                                </ul>
-                                                <div class="cta">
-                                                    <a target="_blank" href="">Register
-                                                        here &rarr;</a>
-                                                </div>
+                                            </ul>
+                                            <div class="cta">
+                                                <a target="_blank" href="">Register
+                                                    here &rarr;</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-content week9">
+                                <div class="course-card my-1">
+                                    <div class="image-data">
+                                        <div class="bg-img">
+                                        </div>
+                                        <div class="img-details">
+                                            <h4 class="b-2 img-title">9-Pathway: IBX Application Systems (Jarvis,
+                                                Airflow Management)
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="course-data">
+                                        <div class="course">
+                                            <h4 class="course-title b-2">Topics covered in this section are:</h4>
+                                            <ul class='course-detail px-3'>
+                                                <li>Familiarize with Jarvis dashboard</li>
+                                                <li>DART mobile</li>
+                                                <li>Intro to IBX airflow management, airtight - application</li>
+
+                                            </ul>
+                                            <div class="cta">
+                                                <a target="_blank" href="">Register
+                                                    here &rarr;</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-content week10">
+                                <div class="course-card my-1">
+                                    <div class="image-data">
+                                        <div class="bg-img">
+                                        </div>
+                                        <div class="img-details">
+                                            <h4 class="b-2 img-title">10-Pathway: Cross Connect Fundamentals
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="course-data">
+                                        <div class="course">
+                                            <h4 class="course-title b-2">Topics covered in this section are:</h4>
+                                            <ul class='course-detail px-3'>
+                                                <li>Learn copper cable & fiber optics theory and applications</li>
+                                                <li>manufacturing copper cable connectors</li>
+                                                <li>troubleshooting copper cable installation</li>
+                                                <li>media converters</li>
+
+                                            </ul>
+                                            <div class="cta">
+                                                <a target="_blank" href="">Register
+                                                    here &rarr;</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1056,382 +1061,406 @@
                             </div>
                         </div>
                     </div>
-                    <div id="co-intermediate" class="tabcontent">
-                        <h1>Inside Customer Operations Intermediate</h1>
-                    </div>
-                    <div id="co-advanced" class="tabcontent">
-                        <h1>Inside Customer Operations Advanced</h1>
-                    </div>
+                </div>
+                <div id="co-intermediate" class="tabcontent">
+                    <h1>Inside Customer Operations Intermediate</h1>
+                </div>
+                <div id="co-advanced" class="tabcontent">
+                    <h1>Inside Customer Operations Advanced</h1>
                 </div>
             </div>
         </div>
     </section>
     <!--Critical Facilities section(abbr used for section specific uses cf-*/*-cf). Hidden by default -->
     <section class="ibx-cf hidden-section" id="ibx-cf">
-        <h1 class="text-center lg py-2 b-4">IBX Critical Facilities</h1>
+        <div class="section-header text-center py-2 b-4">
+            <h1 class="lg b-4">IBX Customer Facilities</h1>
+            <h6 class="xs b-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae id cupiditate
+            </h6>
+            <div class="cta modal-button">
+                <a href="javascript:void(0)">View Schedule &rarr;</a>
+            </div>
+            <div class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h2>Modal Header</h2>
+                    </div>
+                    <div class="modal-body">
+                        <p>Some text in the Modal Body</p>
+                        <p>Some other text...</p>
+                    </div>
+                    <div class="modal-footer">
+                        <h3>Modal Footer</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="cta">
+                <a href="javascript:void(0)" download>Download Schedule &rarr;</a>
+            </div>
+        </div>
         <div class="tab-container">
             <div class="tablinks-container">
-                <div class="tablinks-container">
-                    <button class="tablink xs b-2 beginner defaultOpen" data-target-container="cf-beginner">
-                        Customer Operations Beginner
-                    </button>
-                    <button class="tablink xs b-2 intermediate" data-target-container="cf-intermediate">
-                        Customer Operations Intermediate
-                    </button>
-                    <button class="tablink xs b-2 advanced" data-target-container="cf-advanced">
-                        Customer Operations Advanced
-                    </button>
-                    <div id="cf-beginner" class="tabcontent">
-                        <div class="progress-wrapper">
-                            <div class="progress-bar-container scroll-pane" id="scroll-pane">
-                                <div id="line">
-                                    <div id="line-progress"></div>
-                                </div>
-                                <ul>
-                                    <li class="step step1 sm cf-beginner active current">
-                                        <div class="step-inner">
-                                            Data Center Operating Systems
-                                        </div>
-                                    </li>
-                                    <li class="step step2 sm cf-beginner">
-                                        <div class="step-inner">
-                                            Incident Management (Remedy)
-                                        </div>
-                                    </li>
-                                    <li class="step step3 sm cf-beginner">
-                                        <div class="step-inner">
-                                            Equinix Products Fundamentals
-                                        </div>
-                                    </li>
-                                    <li class="step step4 sm cf-beginner">
-                                        <div class="step-inner">
-                                            Safety Fundamentals
-                                        </div>
-                                    </li>
-                                    <li class="step step5 sm cf-beginner">
-                                        <div class="step-inner">
-                                            IBX Security Fundamentals
-                                        </div>
-                                    </li>
-                                    <li class="step step6 sm cf-beginner">
-                                        <div class="step-inner">
-                                            Capacity Management
-                                        </div>
-                                    </li>
-                                    <li class="step step7 sm cf-beginner">
-                                        <div class="step-inner">
-                                            Regulatory & Compliance
-                                        </div>
-                                    </li>
-                                    <li class="step step8 sm cf-beginner">
-                                        <div class="step-inner">
-                                            Building Maintenance & Security
-                                        </div>
-                                    </li>
-                                    <li class="step step9 sm cf-beginner">
-                                        <div class="step-inner">
-                                            Energy Efficiency
-                                        </div>
-                                    </li>
-                                    <li class="step step10 sm cf-beginner">
-                                        <div class="step-inner">
-                                            Communication & Customer Care
-                                        </div>
-                                    </li>
-                                    <li class="step step11 sm cf-beginner">
-                                        <div class="step-inner">
-                                            Electrical, Mechanical & Water Systems Response
-                                        </div>
-                                    </li>
-                                </ul>
+                <button class="tablink xs b-2 beginner defaultOpen" data-target-container="cf-beginner">
+                    Customer Operations Beginner
+                </button>
+                <button class="tablink xs b-2 intermediate" data-target-container="cf-intermediate">
+                    Customer Operations Intermediate
+                </button>
+                <button class="tablink xs b-2 advanced" data-target-container="cf-advanced">
+                    Customer Operations Advanced
+                </button>
+                <div id="cf-beginner" class="tabcontent">
+                    <div class="progress-wrapper">
+                        <div class="progress-bar-container scroll-pane" id="scroll-pane">
+                            <div id="line">
+                                <div id="line-progress"></div>
                             </div>
-                            <button class="slideBack" id="slideBack" type="button">Prev</button>
-                            <button class="slideForward" id="slideForward" type="button">Next</button>
-                            <div class="progress-content">
-                                <div class="section-content week1 active">
-                                    <div class="course-card">
-                                        <div class="image-data">
-                                            <div class="bg-img">
-                                            </div>
-                                            <div class="img-details">
-                                                <h4 class="b-2 img-title">1 - Pathway: Data Center Operating Systems
+                            <ul>
+                                <li class="step step1 sm cf-beginner active current">
+                                    <div class="step-inner">
+                                        Data Center Operating Systems
+                                    </div>
+                                </li>
+                                <li class="step step2 sm cf-beginner">
+                                    <div class="step-inner">
+                                        Incident Management (Remedy)
+                                    </div>
+                                </li>
+                                <li class="step step3 sm cf-beginner">
+                                    <div class="step-inner">
+                                        Equinix Products Fundamentals
+                                    </div>
+                                </li>
+                                <li class="step step4 sm cf-beginner">
+                                    <div class="step-inner">
+                                        Safety Fundamentals
+                                    </div>
+                                </li>
+                                <li class="step step5 sm cf-beginner">
+                                    <div class="step-inner">
+                                        IBX Security Fundamentals
+                                    </div>
+                                </li>
+                                <li class="step step6 sm cf-beginner">
+                                    <div class="step-inner">
+                                        Capacity Management
+                                    </div>
+                                </li>
+                                <li class="step step7 sm cf-beginner">
+                                    <div class="step-inner">
+                                        Regulatory & Compliance
+                                    </div>
+                                </li>
+                                <li class="step step8 sm cf-beginner">
+                                    <div class="step-inner">
+                                        Building Maintenance & Security
+                                    </div>
+                                </li>
+                                <li class="step step9 sm cf-beginner">
+                                    <div class="step-inner">
+                                        Energy Efficiency
+                                    </div>
+                                </li>
+                                <li class="step step10 sm cf-beginner">
+                                    <div class="step-inner">
+                                        Communication & Customer Care
+                                    </div>
+                                </li>
+                                <li class="step step11 sm cf-beginner">
+                                    <div class="step-inner">
+                                        Electrical, Mechanical & Water Systems Response
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <button class="slideBack" id="slideBack" type="button">Prev</button>
+                        <button class="slideForward" id="slideForward" type="button">Next</button>
+                        <div class="progress-content">
+                            <div class="section-content week1 active">
+                                <div class="course-card">
+                                    <div class="image-data">
+                                        <div class="bg-img">
+                                        </div>
+                                        <div class="img-details">
+                                            <h4 class="b-2 img-title">1 - Pathway: Data Center Operating Systems
 
-                                                </h4>
-                                            </div>
+                                            </h4>
                                         </div>
-                                        <div class="course-data">
-                                            <div class="course">
-                                                <h4 class="course-title b-3">Topics covered in this section are:</h4>
-                                                <ul class='course-detail px-3'>
-                                                    <li>Learn infographic top 10 teams that interact w/IBX</li>
-                                                    <li>Campus/IBX orientation checklists</li>
-                                                    <li>Operations Knowledge Base (OKB) tour</li>
-                                                </ul>
-                                                <div class="cta">
-                                                    <a target="_blank" href="">Register
-                                                        here &rarr;</a>
-                                                </div>
+                                    </div>
+                                    <div class="course-data">
+                                        <div class="course">
+                                            <h4 class="course-title b-3">Topics covered in this section are:</h4>
+                                            <ul class='course-detail px-3'>
+                                                <li>Learn infographic top 10 teams that interact w/IBX</li>
+                                                <li>Campus/IBX orientation checklists</li>
+                                                <li>Operations Knowledge Base (OKB) tour</li>
+                                            </ul>
+                                            <div class="cta">
+                                                <a target="_blank" href="">Register
+                                                    here &rarr;</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="section-content week2">
-                                    <div class="course-card">
-                                        <div class="image-data">
-                                            <div class="bg-img">
-                                            </div>
-                                            <div class="img-details">
-                                                <h4 class="b-2 img-title">2 - Pathway: Incident Management (Remedy)
-                                                </h4>
-                                            </div>
+                            </div>
+                            <div class="section-content week2">
+                                <div class="course-card">
+                                    <div class="image-data">
+                                        <div class="bg-img">
                                         </div>
-                                        <div class="course-data">
-                                            <div class="course">
-                                                <h4 class="course-title b-3">Topics covered in this section are:</h4>
-                                                <ul class='course-detail px-3'>
-                                                    <li>Introduces to Global IBX Operations incident notification
-                                                        guidelines
-                                                    </li>
-                                                    <li>Remedy incident management application modules for introduction
-                                                    </li>
-                                                    <li>report first alert, update and resolve</li>
-                                                    <li>EOC job aids</li>
-                                                    <li>releases and policy training</li>
-                                                </ul>
-                                                <div class="cta">
-                                                    <a target="_blank" href="">Register
-                                                        here &rarr;</a>
-                                                </div>
+                                        <div class="img-details">
+                                            <h4 class="b-2 img-title">2 - Pathway: Incident Management (Remedy)
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="course-data">
+                                        <div class="course">
+                                            <h4 class="course-title b-3">Topics covered in this section are:</h4>
+                                            <ul class='course-detail px-3'>
+                                                <li>Introduces to Global IBX Operations incident notification
+                                                    guidelines
+                                                </li>
+                                                <li>Remedy incident management application modules for introduction
+                                                </li>
+                                                <li>report first alert, update and resolve</li>
+                                                <li>EOC job aids</li>
+                                                <li>releases and policy training</li>
+                                            </ul>
+                                            <div class="cta">
+                                                <a target="_blank" href="">Register
+                                                    here &rarr;</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="section-content week3">
-                                    <div class="course-card my-1">
-                                        <div class="image-data">
-                                            <div class="bg-img">
-                                            </div>
-                                            <div class="img-details">
-                                                <h4 class="b-2 img-title">3 - Pathway: Equinix Products Fundamentals
-                                                </h4>
-                                            </div>
+                            </div>
+                            <div class="section-content week3">
+                                <div class="course-card my-1">
+                                    <div class="image-data">
+                                        <div class="bg-img">
                                         </div>
-                                        <div class="course-data">
-                                            <div class="course">
-                                                <h4 class="course-title b-3">Topics covered in this section are:</h4>
-                                                <ul class='course-detail px-3'>
-                                                    <li>Watch Colocation fundamentals</li>
-                                                    <li>tour the product portfolio Hub site</li>
-                                                    <li>Product & Services glossary & documentation
-                                                    </li>
-                                                </ul>
-                                                <div class="cta">
-                                                    <a target="_blank" href="">Register
-                                                        here &rarr;</a>
-                                                </div>
+                                        <div class="img-details">
+                                            <h4 class="b-2 img-title">3 - Pathway: Equinix Products Fundamentals
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="course-data">
+                                        <div class="course">
+                                            <h4 class="course-title b-3">Topics covered in this section are:</h4>
+                                            <ul class='course-detail px-3'>
+                                                <li>Watch Colocation fundamentals</li>
+                                                <li>tour the product portfolio Hub site</li>
+                                                <li>Product & Services glossary & documentation
+                                                </li>
+                                            </ul>
+                                            <div class="cta">
+                                                <a target="_blank" href="">Register
+                                                    here &rarr;</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="section-content week4">
-                                    <div class="course-card my-1">
-                                        <div class="image-data">
-                                            <div class="bg-img">
-                                            </div>
-                                            <div class="img-details">
-                                                <h4 class="b-2 img-title">4 - Pathway: IBX Security Fundamentals
-                                                </h4>
-                                            </div>
+                            </div>
+                            <div class="section-content week4">
+                                <div class="course-card my-1">
+                                    <div class="image-data">
+                                        <div class="bg-img">
                                         </div>
-                                        <div class="course-data">
-                                            <div class="course">
-                                                <h4 class="course-title b-2">Topics covered in this section are:</h4>
-                                                <ul class='course-detail px-3'>
-                                                    <li>Watch keeping safe Inside the Collocation- ladder safety</li>
-                                                    <li>hearing conservation</li>
-                                                    <li>fall prevention</li>
-                                                    <li>electrical</li>
-                                                    <li>Laser & back safety & injury prevention</li>
-                                                </ul>
-                                                <div class="cta">
-                                                    <a target="_blank" href="">Register
-                                                        here &rarr;</a>
-                                                </div>
+                                        <div class="img-details">
+                                            <h4 class="b-2 img-title">4 - Pathway: IBX Security Fundamentals
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="course-data">
+                                        <div class="course">
+                                            <h4 class="course-title b-2">Topics covered in this section are:</h4>
+                                            <ul class='course-detail px-3'>
+                                                <li>Watch keeping safe Inside the Collocation- ladder safety</li>
+                                                <li>hearing conservation</li>
+                                                <li>fall prevention</li>
+                                                <li>electrical</li>
+                                                <li>Laser & back safety & injury prevention</li>
+                                            </ul>
+                                            <div class="cta">
+                                                <a target="_blank" href="">Register
+                                                    here &rarr;</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="section-content week5">
-                                    <div class="course-card my-1">
-                                        <div class="image-data">
-                                            <div class="bg-img">
-                                            </div>
-                                            <div class="img-details">
-                                                <h4 class="b-2 img-title"> 5 -Pathway: IBX Security Fundamentals
-                                                </h4>
-                                            </div>
+                            </div>
+                            <div class="section-content week5">
+                                <div class="course-card my-1">
+                                    <div class="image-data">
+                                        <div class="bg-img">
                                         </div>
-                                        <div class="course-data">
-                                            <div class="course">
-                                                <h4 class="course-title b-2">Topics covered in this section are:</h4>
-                                                <ul class='course-detail px-3'>
-                                                    <li>Get introduced to IBX safety& security</li>
-                                                    <li>IBX general policies</li>
-                                                    <li>Customer access policy</li>
-                                                    <li>Customer space restrictions policy</li>
-                                                    <li>General Data Protection Regulation (GDPR) and procedure</li>
-                                                    <li>Cage restrictions - standard and custom signage</li>
-                                                </ul>
-                                                <div class="cta">
-                                                    <a target="_blank" href="">Register
-                                                        here &rarr;</a>
-                                                </div>
+                                        <div class="img-details">
+                                            <h4 class="b-2 img-title"> 5 -Pathway: IBX Security Fundamentals
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="course-data">
+                                        <div class="course">
+                                            <h4 class="course-title b-2">Topics covered in this section are:</h4>
+                                            <ul class='course-detail px-3'>
+                                                <li>Get introduced to IBX safety& security</li>
+                                                <li>IBX general policies</li>
+                                                <li>Customer access policy</li>
+                                                <li>Customer space restrictions policy</li>
+                                                <li>General Data Protection Regulation (GDPR) and procedure</li>
+                                                <li>Cage restrictions - standard and custom signage</li>
+                                            </ul>
+                                            <div class="cta">
+                                                <a target="_blank" href="">Register
+                                                    here &rarr;</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="section-content week6">
-                                    <div class="course-card my-1">
-                                        <div class="image-data">
-                                            <div class="bg-img">
-                                            </div>
-                                            <div class="img-details">
-                                                <h4 class="b-2 img-title">6 - Capacity Management
-                                                </h4>
-                                            </div>
+                            </div>
+                            <div class="section-content week6">
+                                <div class="course-card my-1">
+                                    <div class="image-data">
+                                        <div class="bg-img">
                                         </div>
-                                        <div class="course-data">
-                                            <div class="course">
-                                                <h4 class="course-title b-2">Topics covered in this section are:</h4>
-                                                <ul class='course-detail px-3'>
-                                                    <li>Details to be updated soon! Please check again later</li>
-                                                </ul>
-                                                <div class="cta">
-                                                    <a target="_blank" href="">Register
-                                                        here &rarr;</a>
-                                                </div>
+                                        <div class="img-details">
+                                            <h4 class="b-2 img-title">6 - Capacity Management
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="course-data">
+                                        <div class="course">
+                                            <h4 class="course-title b-2">Topics covered in this section are:</h4>
+                                            <ul class='course-detail px-3'>
+                                                <li>Details to be updated soon! Please check again later</li>
+                                            </ul>
+                                            <div class="cta">
+                                                <a target="_blank" href="">Register
+                                                    here &rarr;</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="section-content week7">
-                                    <div class="course-card my-1">
-                                        <div class="image-data">
-                                            <div class="bg-img">
-                                            </div>
-                                            <div class="img-details">
-                                                <h4 class="b-2 img-title">7 - Pathway: Regulatory & Compliance
-                                                </h4>
-                                            </div>
+                            </div>
+                            <div class="section-content week7">
+                                <div class="course-card my-1">
+                                    <div class="image-data">
+                                        <div class="bg-img">
                                         </div>
-                                        <div class="course-data">
-                                            <div class="course">
-                                                <h4 class="course-title b-2">Topics covered in this section are:</h4>
-                                                <ul class='course-detail px-3'>
-                                                    <li>Details to be updated soon! Please check again later</li>
-                                                </ul>
-                                                <div class="cta">
-                                                    <a target="_blank" href="">Register
-                                                        here &rarr;</a>
-                                                </div>
+                                        <div class="img-details">
+                                            <h4 class="b-2 img-title">7 - Pathway: Regulatory & Compliance
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="course-data">
+                                        <div class="course">
+                                            <h4 class="course-title b-2">Topics covered in this section are:</h4>
+                                            <ul class='course-detail px-3'>
+                                                <li>Details to be updated soon! Please check again later</li>
+                                            </ul>
+                                            <div class="cta">
+                                                <a target="_blank" href="">Register
+                                                    here &rarr;</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="section-content week8">
-                                    <div class="course-card my-1">
-                                        <div class="image-data">
-                                            <div class="bg-img">
-                                            </div>
-                                            <div class="img-details">
-                                                <h4 class="b-2 img-title">8 - Pathway: Building Maintenance & Security
-                                                </h4>
-                                            </div>
+                            </div>
+                            <div class="section-content week8">
+                                <div class="course-card my-1">
+                                    <div class="image-data">
+                                        <div class="bg-img">
                                         </div>
-                                        <div class="course-data">
-                                            <div class="course">
-                                                <h4 class="course-title b-2">Topics covered in this section are:</h4>
-                                                <ul class='course-detail px-3'>
-                                                    <li>Details to be updated soon! Please check again later</li>
-                                                </ul>
-                                                <div class="cta">
-                                                    <a target="_blank" href="">Register
-                                                        here &rarr;</a>
-                                                </div>
+                                        <div class="img-details">
+                                            <h4 class="b-2 img-title">8 - Pathway: Building Maintenance & Security
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="course-data">
+                                        <div class="course">
+                                            <h4 class="course-title b-2">Topics covered in this section are:</h4>
+                                            <ul class='course-detail px-3'>
+                                                <li>Details to be updated soon! Please check again later</li>
+                                            </ul>
+                                            <div class="cta">
+                                                <a target="_blank" href="">Register
+                                                    here &rarr;</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="section-content week9">
-                                    <div class="course-card my-1">
-                                        <div class="image-data">
-                                            <div class="bg-img">
-                                            </div>
-                                            <div class="img-details">
-                                                <h4 class="b-2 img-title">9 - Pathway: Energy Efficiency
-                                                </h4>
-                                            </div>
+                            </div>
+                            <div class="section-content week9">
+                                <div class="course-card my-1">
+                                    <div class="image-data">
+                                        <div class="bg-img">
                                         </div>
-                                        <div class="course-data">
-                                            <div class="course">
-                                                <h4 class="course-title b-2">Topics covered in this section are:</h4>
-                                                <ul class='course-detail px-3'>
-                                                    <li>Details to be updated soon! Please check again later</li>
-                                                </ul>
-                                                <div class="cta">
-                                                    <a target="_blank" href="">Register
-                                                        here &rarr;</a>
-                                                </div>
+                                        <div class="img-details">
+                                            <h4 class="b-2 img-title">9 - Pathway: Energy Efficiency
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="course-data">
+                                        <div class="course">
+                                            <h4 class="course-title b-2">Topics covered in this section are:</h4>
+                                            <ul class='course-detail px-3'>
+                                                <li>Details to be updated soon! Please check again later</li>
+                                            </ul>
+                                            <div class="cta">
+                                                <a target="_blank" href="">Register
+                                                    here &rarr;</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="section-content week10">
-                                    <div class="course-card my-1">
-                                        <div class="image-data">
-                                            <div class="bg-img">
-                                            </div>
-                                            <div class="img-details">
-                                                <h4 class="b-2 img-title">10 - Pathway: Communication & Customer Care
-                                                </h4>
-                                            </div>
+                            </div>
+                            <div class="section-content week10">
+                                <div class="course-card my-1">
+                                    <div class="image-data">
+                                        <div class="bg-img">
                                         </div>
-                                        <div class="course-data">
-                                            <div class="course">
-                                                <h4 class="course-title b-2">Topics covered in this section are:</h4>
-                                                <ul class='course-detail px-3'>
-                                                    <li>Learn the concepts of Customer Care and Communication</li>
-                                                    <li>how to effectively Communicate</li>
-                                                </ul>
-                                                <div class="cta">
-                                                    <a target="_blank" href="">Register
-                                                        here &rarr;</a>
-                                                </div>
+                                        <div class="img-details">
+                                            <h4 class="b-2 img-title">10 - Pathway: Communication & Customer Care
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="course-data">
+                                        <div class="course">
+                                            <h4 class="course-title b-2">Topics covered in this section are:</h4>
+                                            <ul class='course-detail px-3'>
+                                                <li>Learn the concepts of Customer Care and Communication</li>
+                                                <li>how to effectively Communicate</li>
+                                            </ul>
+                                            <div class="cta">
+                                                <a target="_blank" href="">Register
+                                                    here &rarr;</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="section-content week11">
-                                    <div class="course-card my-1">
-                                        <div class="image-data">
-                                            <div class="bg-img">
-                                            </div>
-                                            <div class="img-details">
-                                                <h4 class="b-2 img-title">10 - Pathway: Fire , Electrical, Mechanical &
-                                                    Water Systems Response
-                                                </h4>
-                                            </div>
+                            </div>
+                            <div class="section-content week11">
+                                <div class="course-card my-1">
+                                    <div class="image-data">
+                                        <div class="bg-img">
                                         </div>
-                                        <div class="course-data">
-                                            <div class="course">
-                                                <h4 class="course-title b-2">Topics covered in this section are:</h4>
-                                                <ul class='course-detail px-3'>
-                                                    <li>Details to be updated soon! Please check again later</li>
-                                                </ul>
-                                                <div class="cta">
-                                                    <a target="_blank" href="">Register
-                                                        here &rarr;</a>
-                                                </div>
+                                        <div class="img-details">
+                                            <h4 class="b-2 img-title">10 - Pathway: Fire , Electrical, Mechanical &
+                                                Water Systems Response
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="course-data">
+                                        <div class="course">
+                                            <h4 class="course-title b-2">Topics covered in this section are:</h4>
+                                            <ul class='course-detail px-3'>
+                                                <li>Details to be updated soon! Please check again later</li>
+                                            </ul>
+                                            <div class="cta">
+                                                <a target="_blank" href="">Register
+                                                    here &rarr;</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1439,12 +1468,12 @@
                             </div>
                         </div>
                     </div>
-                    <div id="cf-intermediate" class="tabcontent">
-                        <h1>Inside IBX Critical Facilities Intermediate</h1>
-                    </div>
-                    <div id="cf-advanced" class="tabcontent">
-                        <h1>Inside IBX Critical Facilities Advanced</h1>
-                    </div>
+                </div>
+                <div id="cf-intermediate" class="tabcontent">
+                    <h1>Inside IBX Critical Facilities Intermediate</h1>
+                </div>
+                <div id="cf-advanced" class="tabcontent">
+                    <h1>Inside IBX Critical Facilities Advanced</h1>
                 </div>
             </div>
         </div>
@@ -1454,373 +1483,372 @@
         <h1 class="text-center lg py-2 b-4">IBX Logistics Specialists</h1>
         <div class="tab-container">
             <div class="tablinks-container">
-                <div class="tablinks-container">
-                    <button class="tablink xs b-2 beginner defaultOpen" data-target-container="ls-beginner">
-                        Logistics Specialists Beginner
-                    </button>
-                    <button class="tablink xs b-2 intermediate " data-target-container="ls-intermediate">
-                        Logistics Specialists Intermediate
-                    </button>
-                    <button class="tablink xs b-2 advanced" data-target-container="ls-advanced">
-                        Logistics Specialists Advanced
-                    </button>
-                    <div id="ls-beginner" class="tabcontent">
-                        <div class="progress-wrapper">
-                            <div class="progress-bar-container">
-                                <div id="line">
-                                    <div id="line-progress"></div>
-                                </div>
-                                <ul>
-                                    <li class="step step1 sm ls-beginner active current">
-                                        <div class="step-inner">
-                                            IBX Familiarization
-                                        </div>
-                                    </li>
-                                    <li class="step step2 sm ls-beginner">
-                                        <div class="step-inner">
-                                            GNSP
-                                        </div>
-                                    </li>
-                                    <li class="step step3 sm ls-beginner">
-                                        <div class="step-inner">
-                                            Equinix Products Fundamentals
-                                        </div>
-                                    </li>
-                                    <li class="step step4 sm ls-beginner">
-                                        <div class="step-inner">
-                                            Safety Fundamentals
-                                        </div>
-                                    </li>
-                                    <li class="step step5 sm ls-beginner">
-                                        <div class="step-inner">
-                                            IBX Security Fundamentals
-                                        </div>
-                                    </li>
-                                    <li class="step step6 sm ls-beginner">
-                                        <div class="step-inner">
-                                            Inbound & Outbound Shipment Fundamentals
-                                        </div>
-                                    </li>
-                                    <li class="step step7 sm ls-beginner">
-                                        <div class="step-inner">
-                                            Incident Management
-                                        </div>
-                                    </li>
-                                    <li class="step step8 sm ls-beginner">
-                                        <div class="step-inner">
-                                            IBX Application Systems (Jarvis, Airflow Management)
-                                        </div>
-                                    </li>
-                                    <li class="step step9 sm ls-beginner">
-                                        <div class="step-inner">
-                                            Customer Service & Care
-                                        </div>
-                                    </li>
-                                    <li class="step step10 sm ls-beginner">
-                                        <div class="step-inner">
-                                            Cross Connect Fundamentals
-                                        </div>
-                                    </li>
-                                </ul>
+                <button class="tablink xs b-2 beginner defaultOpen" data-target-container="ls-beginner">
+                    Logistics Specialists Beginner
+                </button>
+                <button class="tablink xs b-2 intermediate " data-target-container="ls-intermediate">
+                    Logistics Specialists Intermediate
+                </button>
+                <button class="tablink xs b-2 advanced" data-target-container="ls-advanced">
+                    Logistics Specialists Advanced
+                </button>
+
+                <div id="ls-beginner" class="tabcontent">
+                    <div class="progress-wrapper">
+                        <div class="progress-bar-container scroll-pane" id="scroll-pane">
+                            <div id="line">
+                                <div id="line-progress"></div>
                             </div>
-                            <div class="progress-content">
-                                <div class="section-content week1 active">
-                                    <div class="course-card">
-                                        <div class="image-data">
-                                            <div class="bg-img">
-                                            </div>
-                                            <div class="img-details">
-                                                <h4 class="b-2 img-title">1 - Pathway: IBX Familiarization
-                                                </h4>
-                                            </div>
+                            <ul>
+                                <li class="step step1 sm ls-beginner active current">
+                                    <div class="step-inner">
+                                        IBX Familiarization
+                                    </div>
+                                </li>
+                                <li class="step step2 sm ls-beginner">
+                                    <div class="step-inner">
+                                        GNSP
+                                    </div>
+                                </li>
+                                <li class="step step3 sm ls-beginner">
+                                    <div class="step-inner">
+                                        Equinix Products Fundamentals
+                                    </div>
+                                </li>
+                                <li class="step step4 sm ls-beginner">
+                                    <div class="step-inner">
+                                        Safety Fundamentals
+                                    </div>
+                                </li>
+                                <li class="step step5 sm ls-beginner">
+                                    <div class="step-inner">
+                                        IBX Security Fundamentals
+                                    </div>
+                                </li>
+                                <li class="step step6 sm ls-beginner">
+                                    <div class="step-inner">
+                                        Inbound & Outbound Shipment Fundamentals
+                                    </div>
+                                </li>
+                                <li class="step step7 sm ls-beginner">
+                                    <div class="step-inner">
+                                        Incident Management
+                                    </div>
+                                </li>
+                                <li class="step step8 sm ls-beginner">
+                                    <div class="step-inner">
+                                        IBX Application Systems (Jarvis, Airflow Management)
+                                    </div>
+                                </li>
+                                <li class="step step9 sm ls-beginner">
+                                    <div class="step-inner">
+                                        Customer Service & Care
+                                    </div>
+                                </li>
+                                <li class="step step10 sm ls-beginner">
+                                    <div class="step-inner">
+                                        Cross Connect Fundamentals
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="progress-content">
+                            <div class="section-content week1 active">
+                                <div class="course-card">
+                                    <div class="image-data">
+                                        <div class="bg-img">
                                         </div>
-                                        <div class="course-data">
-                                            <div class="course">
-                                                <h4 class="course-title b-3">Topics covered in this section are:
-                                                </h4>
-                                                <ul class='course-detail px-3'>
-                                                    <li>Learn infographic top 10 teams that interact w/IBX</li>
-                                                    <li>Campus/IBX orientation checklists</li>
-                                                    <li>Operations Knowledge Base (OKB) tour</li>
-                                                </ul>
-                                                <div class="cta">
-                                                    <a target="_blank" href="">Register
-                                                        here &rarr;</a>
-                                                </div>
+                                        <div class="img-details">
+                                            <h4 class="b-2 img-title">1 - Pathway: IBX Familiarization
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="course-data">
+                                        <div class="course">
+                                            <h4 class="course-title b-3">Topics covered in this section are:
+                                            </h4>
+                                            <ul class='course-detail px-3'>
+                                                <li>Learn infographic top 10 teams that interact w/IBX</li>
+                                                <li>Campus/IBX orientation checklists</li>
+                                                <li>Operations Knowledge Base (OKB) tour</li>
+                                            </ul>
+                                            <div class="cta">
+                                                <a target="_blank" href="">Register
+                                                    here &rarr;</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="section-content week2">
-                                    <div class="course-card">
-                                        <div class="image-data">
-                                            <div class="bg-img">
-                                            </div>
-                                            <div class="img-details">
-                                                <h4 class="b-2 img-title">2 - Pathway: Global Notification
-                                                    Subscription
-                                                    Portal (GNSP)
-                                                </h4>
-                                            </div>
+                            </div>
+                            <div class="section-content week2">
+                                <div class="course-card">
+                                    <div class="image-data">
+                                        <div class="bg-img">
                                         </div>
-                                        <div class="course-data">
-                                            <div class="course">
-                                                <h4 class="course-title b-3">Topics covered in this section are:
-                                                </h4>
-                                                <ul class='course-detail px-3'>
-                                                    <li>Familiarize with Global Notification Subscription Portal
-                                                        Basics-
-                                                        subscribing, unsubscribing, running and viewing subscription
-                                                        reports
-                                                    </li>
+                                        <div class="img-details">
+                                            <h4 class="b-2 img-title">2 - Pathway: Global Notification
+                                                Subscription
+                                                Portal (GNSP)
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="course-data">
+                                        <div class="course">
+                                            <h4 class="course-title b-3">Topics covered in this section are:
+                                            </h4>
+                                            <ul class='course-detail px-3'>
+                                                <li>Familiarize with Global Notification Subscription Portal
+                                                    Basics-
+                                                    subscribing, unsubscribing, running and viewing subscription
+                                                    reports
+                                                </li>
 
-                                                </ul>
-                                                <div class="cta">
-                                                    <a target="_blank" href="">Register
-                                                        here &rarr;</a>
-                                                </div>
+                                            </ul>
+                                            <div class="cta">
+                                                <a target="_blank" href="">Register
+                                                    here &rarr;</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="section-content week3">
-                                    <div class="course-card my-1">
-                                        <div class="image-data">
-                                            <div class="bg-img">
-                                            </div>
-                                            <div class="img-details">
-                                                <h4 class="b-2 img-title">3 - Pathway: Equinix Products Fundamentals
-                                                </h4>
-                                            </div>
+                            </div>
+                            <div class="section-content week3">
+                                <div class="course-card my-1">
+                                    <div class="image-data">
+                                        <div class="bg-img">
                                         </div>
-                                        <div class="course-data">
-                                            <div class="course">
-                                                <h4 class="course-title b-3">Topics covered in this section are:
-                                                </h4>
-                                                <ul class='course-detail px-3'>
-                                                    <li>Watch Colocation fundamentals</li>
-                                                    <li>tour the product portfolio Hub site</li>
-                                                    <li>Product & Services </li>
-                                                    <li>glossary & documentation </li>
+                                        <div class="img-details">
+                                            <h4 class="b-2 img-title">3 - Pathway: Equinix Products Fundamentals
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="course-data">
+                                        <div class="course">
+                                            <h4 class="course-title b-3">Topics covered in this section are:
+                                            </h4>
+                                            <ul class='course-detail px-3'>
+                                                <li>Watch Colocation fundamentals</li>
+                                                <li>tour the product portfolio Hub site</li>
+                                                <li>Product & Services </li>
+                                                <li>glossary & documentation </li>
 
-                                                </ul>
-                                                <div class="cta">
-                                                    <a target="_blank" href="">Register
-                                                        here &rarr;</a>
-                                                </div>
+                                            </ul>
+                                            <div class="cta">
+                                                <a target="_blank" href="">Register
+                                                    here &rarr;</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="section-content week4">
-                                    <div class="course-card my-1">
-                                        <div class="image-data">
-                                            <div class="bg-img">
-                                            </div>
-                                            <div class="img-details">
-                                                <h4 class="b-2 img-title">4 - Pathway: Safety Fundamentals
-                                                </h4>
-                                            </div>
+                            </div>
+                            <div class="section-content week4">
+                                <div class="course-card my-1">
+                                    <div class="image-data">
+                                        <div class="bg-img">
                                         </div>
-                                        <div class="course-data">
-                                            <div class="course">
-                                                <h4 class="course-title b-2">Topics covered in this section are:
-                                                </h4>
-                                                <ul class='course-detail px-3'>
-                                                    <li>Watch keeping safe Inside the Collocation- ladder safety
-                                                    </li>
-                                                    <li>hearing conservation</li>
-                                                    <li>fall prevention</li>
-                                                    <li>electrical</li>
-                                                    <li>Laser & back safety & injury prevention</li>
-                                                </ul>
-                                                <div class="cta">
-                                                    <a target="_blank" href="">Register
-                                                        here &rarr;</a>
-                                                </div>
+                                        <div class="img-details">
+                                            <h4 class="b-2 img-title">4 - Pathway: Safety Fundamentals
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="course-data">
+                                        <div class="course">
+                                            <h4 class="course-title b-2">Topics covered in this section are:
+                                            </h4>
+                                            <ul class='course-detail px-3'>
+                                                <li>Watch keeping safe Inside the Collocation- ladder safety
+                                                </li>
+                                                <li>hearing conservation</li>
+                                                <li>fall prevention</li>
+                                                <li>electrical</li>
+                                                <li>Laser & back safety & injury prevention</li>
+                                            </ul>
+                                            <div class="cta">
+                                                <a target="_blank" href="">Register
+                                                    here &rarr;</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="section-content week5">
-                                    <div class="course-card my-1">
-                                        <div class="image-data">
-                                            <div class="bg-img">
-                                            </div>
-                                            <div class="img-details">
-                                                <h4 class="b-2 img-title">5 - Pathway: IBX Security Fundamentals
-                                                </h4>
-                                            </div>
+                            </div>
+                            <div class="section-content week5">
+                                <div class="course-card my-1">
+                                    <div class="image-data">
+                                        <div class="bg-img">
                                         </div>
-                                        <div class="course-data">
-                                            <div class="course">
-                                                <h4 class="course-title b-2">Topics covered in this section are:
-                                                </h4>
-                                                <ul class='course-detail px-3'>
-                                                    <li>Get introduced to IBX safety& security</li>
-                                                    <li>IBX general policies</li>
-                                                    <li>Customer access policy</li>
-                                                    <li>Customer space restrictions policy</li>
-                                                    <li>General Data Protection Regulation (GDPR) and procedure</li>
-                                                    <li>Cage restrictions - standard and custom signage</li>
-                                                </ul>
-                                                <div class="cta">
-                                                    <a target="_blank" href="">Register
-                                                        here &rarr;</a>
-                                                </div>
+                                        <div class="img-details">
+                                            <h4 class="b-2 img-title">5 - Pathway: IBX Security Fundamentals
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="course-data">
+                                        <div class="course">
+                                            <h4 class="course-title b-2">Topics covered in this section are:
+                                            </h4>
+                                            <ul class='course-detail px-3'>
+                                                <li>Get introduced to IBX safety& security</li>
+                                                <li>IBX general policies</li>
+                                                <li>Customer access policy</li>
+                                                <li>Customer space restrictions policy</li>
+                                                <li>General Data Protection Regulation (GDPR) and procedure</li>
+                                                <li>Cage restrictions - standard and custom signage</li>
+                                            </ul>
+                                            <div class="cta">
+                                                <a target="_blank" href="">Register
+                                                    here &rarr;</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="section-content week6">
-                                    <div class="course-card my-1">
-                                        <div class="image-data">
-                                            <div class="bg-img">
-                                            </div>
-                                            <div class="img-details">
-                                                <h4 class="b-2 img-title">6- Pathway: Inbound & Outbound Shipment
-                                                    Fundamentals
-                                                </h4>
-                                            </div>
+                            </div>
+                            <div class="section-content week6">
+                                <div class="course-card my-1">
+                                    <div class="image-data">
+                                        <div class="bg-img">
                                         </div>
-                                        <div class="course-data">
-                                            <div class="course">
-                                                <h4 class="course-title b-2">Topics covered in this section are:
-                                                </h4>
-                                                <ul class='course-detail px-3'>
-                                                    <li>Learn to handle unannounced and rejected shipments</li>
-                                                    <li>receiving inbound shipment</li>
-                                                    <li>sending outbound shipment</li>
-                                                    <li>outbound shipment policy</li>
-                                                    <li>suspicious packages</li>
-                                                    <li>Spotlight IOS devise</li>
-                                                    <li>how to use the shipment Spotlight app - inbound shipment
-                                                    </li>
-                                                    <li>how to use the shipment Spotlight app - deliver to
-                                                        cage/customer
-                                                    </li>
-                                                    <li>how to use the shipment Spotlight app - outbound shipments
-                                                    </li>
-                                                </ul>
-                                                <div class="cta">
-                                                    <a target="_blank" href="">Register
-                                                        here &rarr;</a>
-                                                </div>
+                                        <div class="img-details">
+                                            <h4 class="b-2 img-title">6- Pathway: Inbound & Outbound Shipment
+                                                Fundamentals
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="course-data">
+                                        <div class="course">
+                                            <h4 class="course-title b-2">Topics covered in this section are:
+                                            </h4>
+                                            <ul class='course-detail px-3'>
+                                                <li>Learn to handle unannounced and rejected shipments</li>
+                                                <li>receiving inbound shipment</li>
+                                                <li>sending outbound shipment</li>
+                                                <li>outbound shipment policy</li>
+                                                <li>suspicious packages</li>
+                                                <li>Spotlight IOS devise</li>
+                                                <li>how to use the shipment Spotlight app - inbound shipment
+                                                </li>
+                                                <li>how to use the shipment Spotlight app - deliver to
+                                                    cage/customer
+                                                </li>
+                                                <li>how to use the shipment Spotlight app - outbound shipments
+                                                </li>
+                                            </ul>
+                                            <div class="cta">
+                                                <a target="_blank" href="">Register
+                                                    here &rarr;</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="section-content week7">
-                                    <div class="course-card my-1">
-                                        <div class="image-data">
-                                            <div class="bg-img">
-                                            </div>
-                                            <div class="img-details">
-                                                <h4 class="b-2 img-title">7 - Pathway: Incident Management
-                                                </h4>
-                                            </div>
+                            </div>
+                            <div class="section-content week7">
+                                <div class="course-card my-1">
+                                    <div class="image-data">
+                                        <div class="bg-img">
                                         </div>
-                                        <div class="course-data">
-                                            <div class="course">
-                                                <h4 class="course-title b-2">Topics covered in this section are:
-                                                </h4>
-                                                <ul class='course-detail px-3'>
-                                                    <li>Introduces to Global IBX Operations incident notification
-                                                        guidelines</li>
-                                                    <li>Jarvis incident management application modules for
-                                                        introduction
-                                                    </li>
-                                                    <li>report first alert</li>
-                                                    <li>update and resolve</li>
-                                                    <li>EOC job aids</li>
-                                                    <li>releases and policy training</li>
-                                                </ul>
-                                                <div class="cta">
-                                                    <a target="_blank" href="">Register
-                                                        here &rarr;</a>
-                                                </div>
+                                        <div class="img-details">
+                                            <h4 class="b-2 img-title">7 - Pathway: Incident Management
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="course-data">
+                                        <div class="course">
+                                            <h4 class="course-title b-2">Topics covered in this section are:
+                                            </h4>
+                                            <ul class='course-detail px-3'>
+                                                <li>Introduces to Global IBX Operations incident notification
+                                                    guidelines</li>
+                                                <li>Jarvis incident management application modules for
+                                                    introduction
+                                                </li>
+                                                <li>report first alert</li>
+                                                <li>update and resolve</li>
+                                                <li>EOC job aids</li>
+                                                <li>releases and policy training</li>
+                                            </ul>
+                                            <div class="cta">
+                                                <a target="_blank" href="">Register
+                                                    here &rarr;</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="section-content week8">
-                                    <div class="course-card my-1">
-                                        <div class="image-data">
-                                            <div class="bg-img">
-                                            </div>
-                                            <div class="img-details">
-                                                <h4 class="b-2 img-title">8 - Pathway: IBX Application Systems
-                                                    (Jarvis,
-                                                    Airflow Management)
-                                                </h4>
-                                            </div>
+                            </div>
+                            <div class="section-content week8">
+                                <div class="course-card my-1">
+                                    <div class="image-data">
+                                        <div class="bg-img">
                                         </div>
-                                        <div class="course-data">
-                                            <div class="course">
-                                                <h4 class="course-title b-2">Topics covered in this section are:
-                                                </h4>
-                                                <ul class='course-detail px-3'>
-                                                    <li>Familiarize with Jarvis dashboard</li>
-                                                    <li>DART mobile</li>
-                                                    <li>Intro to IBX airflow management</li>
-                                                    <li>airtight - application</li>
-                                                </ul>
-                                                <div class="cta">
-                                                    <a target="_blank" href="">Register
-                                                        here &rarr;</a>
-                                                </div>
+                                        <div class="img-details">
+                                            <h4 class="b-2 img-title">8 - Pathway: IBX Application Systems
+                                                (Jarvis,
+                                                Airflow Management)
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="course-data">
+                                        <div class="course">
+                                            <h4 class="course-title b-2">Topics covered in this section are:
+                                            </h4>
+                                            <ul class='course-detail px-3'>
+                                                <li>Familiarize with Jarvis dashboard</li>
+                                                <li>DART mobile</li>
+                                                <li>Intro to IBX airflow management</li>
+                                                <li>airtight - application</li>
+                                            </ul>
+                                            <div class="cta">
+                                                <a target="_blank" href="">Register
+                                                    here &rarr;</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="section-content week9">
-                                    <div class="course-card my-1">
-                                        <div class="image-data">
-                                            <div class="bg-img">
-                                            </div>
-                                            <div class="img-details">
-                                                <h4 class="b-2 img-title">9 - Pathway: Customer Service & Care
-                                                </h4>
-                                            </div>
+                            </div>
+                            <div class="section-content week9">
+                                <div class="course-card my-1">
+                                    <div class="image-data">
+                                        <div class="bg-img">
                                         </div>
-                                        <div class="course-data">
-                                            <div class="course">
-                                                <h4 class="course-title b-2">Topics covered in this section are:
-                                                </h4>
-                                                <ul class='course-detail px-3'>
-                                                    <li>concepts of Customer Care and Communication </li>
-                                                    <li>how to effectively Communicate</li>
-                                                </ul>
-                                                <div class="cta">
-                                                    <a target="_blank" href="">Register
-                                                        here &rarr;</a>
-                                                </div>
+                                        <div class="img-details">
+                                            <h4 class="b-2 img-title">9 - Pathway: Customer Service & Care
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="course-data">
+                                        <div class="course">
+                                            <h4 class="course-title b-2">Topics covered in this section are:
+                                            </h4>
+                                            <ul class='course-detail px-3'>
+                                                <li>concepts of Customer Care and Communication </li>
+                                                <li>how to effectively Communicate</li>
+                                            </ul>
+                                            <div class="cta">
+                                                <a target="_blank" href="">Register
+                                                    here &rarr;</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="section-content week10">
-                                    <div class="course-card my-1">
-                                        <div class="image-data">
-                                            <div class="bg-img">
-                                            </div>
-                                            <div class="img-details">
-                                                <h4 class="b-2 img-title">10 - Pathway: Topic TBD
-                                                </h4>
-                                            </div>
+                            </div>
+                            <div class="section-content week10">
+                                <div class="course-card my-1">
+                                    <div class="image-data">
+                                        <div class="bg-img">
                                         </div>
-                                        <div class="course-data">
-                                            <div class="course">
-                                                <h4 class="course-title b-2">Topics covered in this section are:
-                                                </h4>
-                                                <ul class='course-detail px-3'>
-                                                    <li>Details To Be Updated Soon! Please Check Again Later </li>
+                                        <div class="img-details">
+                                            <h4 class="b-2 img-title">10 - Pathway: Topic TBD
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="course-data">
+                                        <div class="course">
+                                            <h4 class="course-title b-2">Topics covered in this section are:
+                                            </h4>
+                                            <ul class='course-detail px-3'>
+                                                <li>Details To Be Updated Soon! Please Check Again Later </li>
 
-                                                </ul>
-                                                <div class="cta">
-                                                    <a target="_blank" href="">Register
-                                                        here &rarr;</a>
-                                                </div>
+                                            </ul>
+                                            <div class="cta">
+                                                <a target="_blank" href="">Register
+                                                    here &rarr;</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1828,14 +1856,15 @@
                             </div>
                         </div>
                     </div>
-                    <div id="co-intermediate" class="tabcontent">
-                        <h1>Inside Customer Operations Intermediate</h1>
-                    </div>
-                    <div id="co-advanced" class="tabcontent">
-                        <h1>Inside Customer Operations Advanced</h1>
-                    </div>
+                </div>
+                <div id="ls-intermediate" class="tabcontent">
+                    <h1>Inside Customer Operations Intermediate</h1>
+                </div>
+                <div id="ls-advanced" class="tabcontent">
+                    <h1>Inside Customer Operations Advanced</h1>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -1857,7 +1886,7 @@
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse quas molestiae eum repudiandae. Beatae
                     porro sequi impedit! Ipsam, facilis non.</p>
                 <div class="cta">
-                    <a class="modal">Go to Degreed Home &rarr;</a>
+                    <a>Go to Degreed Home &rarr;</a>
                 </div>
             </div>
             <div class="new-degreed-card degreed-assignments">
@@ -1870,7 +1899,7 @@
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse quas molestiae eum repudiandae. Beatae
                     porro sequi impedit! Ipsam, facilis non.</p>
                 <div class="cta">
-                    <a class="modal">View Your Assignments &rarr;</a>
+                    <a>View Your Assignments &rarr;</a>
                 </div>
             </div>
             <div class="new-degreed-card degreed-featured">
@@ -1883,7 +1912,7 @@
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse quas molestiae eum repudiandae. Beatae
                     porro sequi impedit! Ipsam, facilis non.</p>
                 <div class="cta">
-                    <a class="modal">Go to Degreed Home &rarr;</a>
+                    <a>Go to Degreed Home &rarr;</a>
                 </div>
             </div>
             <div class="new-degreed-card degreed-skills">
@@ -1896,7 +1925,7 @@
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse quas molestiae eum repudiandae. Beatae
                     porro sequi impedit! Ipsam, facilis non.</p>
                 <div class="cta">
-                    <a class="modal">View your skills &rarr;</a>
+                    <a>View your skills &rarr;</a>
                 </div>
             </div>
             <div class="new-degreed-card degreed-skills-coach">
@@ -1909,7 +1938,7 @@
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse quas molestiae eum repudiandae. Beatae
                     porro sequi impedit! Ipsam, facilis non.</p>
                 <div class="cta">
-                    <a class="modal">View Degreed Skills Coach &rarr;</a>
+                    <a>View Degreed Skills Coach &rarr;</a>
                 </div>
             </div>
         </div>
@@ -2250,14 +2279,6 @@
 
     <!-- My teams section -->
     <section class="about" id="about">
-        <!--         <div class='organization-banner lg text-center p-1 b-3'>
-            <h1 class="b-4">GCCX Organization</h1>
-            <div>
-                <a class="btn coverBtn" href="https://equinix.sumtotal.host/core/organization" target="_blank">View
-                    Chart</a>
-            </div>
-            </a>
-        </div> -->
         <div class="section-header text-center py-2 b-4">
             <h1 class="lg b-4">About Us : Global Operations Acedemy</h1>
             <h6 class="xs b-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae id cupiditate
@@ -2319,6 +2340,15 @@
 
             </div>
         </div>
+        <div class='organization-banner lg text-center my-1 p-1 b-3'>
+            <h1 class="b-4">Global OPS Organization</h1>
+            <div>
+                <a class="btn coverBtn" href="https://equinix.sumtotal.host/core/organization" target="_blank">View
+                    Chart</a>
+            </div>
+            </a>
+        </div>
+
 
         <div class="container">
             <div class="team-slider">

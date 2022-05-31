@@ -1355,21 +1355,7 @@
     -ms-overflow-style: scroll;
     scrollbar-width: none;
   }
-  #slideBack,
-  #slideForward {
-    height: 5rem;
-    cursor: pointer;
-  }
-  #slideBack {
-    position: absolute;
-    top: 1%;
-    left: 3%;
-  }
-  #slideForward {
-    position: absolute;
-    top: 1%;
-    right: 3%;
-  }
+
   .progress-bar-container ul {
     width: 100%;
     height: 190px;
@@ -1382,12 +1368,13 @@
     display: none;
   }
   .progress-bar-container ul li {
-    width: 170px;
+    width: 180px;
     padding: 0;
     display: grid;
     grid-template-rows: 0.25fr 1fr 0.25fr;
     justify-content: center;
     align-items: center;
+    gap: 5px;
   }
   .step-inner {
     font-size: 0.6rem;
@@ -1395,7 +1382,12 @@
     align-self: start;
   }
   .progress-bar-container li::before {
+    width: 40px;
+    height: 40px;
     justify-self: center;
+  }
+  .progress-bar-container li::after {
+    justify-self: end;
   }
 
   .progress-bar-container #line {
@@ -1419,13 +1411,70 @@
       #ed1c24 95%
     );
   }
+
+  /* Changing the view for trainings by roles */
+  #ibx-co .progress-bar-container,
+  #ibx-cf .progress-bar-container,
+  #ibx-ls .progress-bar-container {
+    justify-content: flex-start;
+    padding-top: 1rem;
+    background-color: #f0f0f0;
+  }
+  #ibx-co .progress-bar-container ul,
+  #ibx-cf .progress-bar-container ul,
+  #ibx-ls .progress-bar-container ul {
+    height: 6.85rem;
+    min-width: 100%;
+    width: auto;
+    overflow-x: auto;
+    flex: 0 0 auto;
+    justify-content: flex-start;
+    padding: 0.5rem;
+    display: inherit;
+  }
+
+  #ibx-co .progress-bar-container #line,
+  #ibx-ls .progress-bar-container #line {
+    top: 6.85rem;
+    left: 4.5rem;
+    width: 100%;
+    flex-grow: 1;
+  }
+  #ibx-cf .progress-bar-container #line {
+    top: 6.95rem;
+    left: 4rem;
+    right: 4rem;
+  }
+  #slideBack,
+  #slideForward {
+    height: 7.85rem;
+    cursor: pointer;
+    border: none;
+    background-color: #043776;
+    color: white;
+    padding: 0.5rem;
+  }
+  #slideBack:hover,
+  #slideForward:hover {
+    background-color: var(--equinix-red);
+  }
+  #slideBack {
+    position: absolute;
+    top: 0%;
+    left: 3%;
+  }
+  #slideForward {
+    position: absolute;
+    top: 0%;
+    right: 3%;
+  }
 }
 @media all and (min-width: 1600px) {
   .progress-bar-container ul {
     height: 195px;
   }
   .progress-bar-container #line {
-    top: 182px;
+    top: 180px;
   }
 }
 @media all and (min-width: 2020px) {
@@ -1483,19 +1532,6 @@
   }
 }
 
-/* @media all and (min-width: 3000px) {
-  .progress-content .section-content {
-    margin-top: 0;
-  }
-  .progress-bar-container li::after {
-    top: 115px;
-    left: 0px;
-  }
-  .progress-bar-container #line {
-    top: 121px;
-    left: 10%;
-  }
-} */
 /* Course Card Styles */
 .course-card {
   display: flex;
@@ -1697,7 +1733,6 @@
   height: max-content;
 }
 .about .container {
-  margin: 2rem auto;
   justify-content: center;
 }
 .aboutUs-content {
@@ -1799,10 +1834,47 @@
   grid-column-start: 3;
   margin-top: -4.5rem;
 }
+@media all and (max-width: 1200px) {
+  .aboutUs-content {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 0.1rem;
+  }
+  .img-block .color-block {
+    display: none;
+  }
+  .img-block:nth-child(n) {
+    display: block;
+    order: 1;
+    flex-grow: 5;
+    width: 33%;
+    justify-content: center;
+  }
+
+  .aboutUs-block {
+    flex-direction: row;
+  }
+  .aboutUs-block .block-desc {
+    background-color: #063755 !important;
+  }
+  .why,
+  .what,
+  .how {
+    margin: 0;
+    order: 2;
+  }
+}
+/* @media all and (max-width: 550px) {
+  .img-block:nth-child(n) {
+    display: block;
+    width: 100%;
+  }
+} */
 /* Contact Slider */
+
 .contact-card {
   width: 200px;
-  height: 250px;
+  min-height: 250px;
   box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.2);
   text-align: center;
   position: relative;
@@ -1814,10 +1886,7 @@
   transition: all 0.5s;
   margin: 1rem;
 }
-.slick-slide {
-  min-height: 21rem !important;
-  height: auto !important;
-}
+
 .banner-img {
   width: 130%;
   height: 150px;
@@ -1959,16 +2028,6 @@
   position: static;
   top: 0px;
   left: 0;
-}
-.organization-banner-bottom {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("https://equinix.sumtotal.host/Core/610.sumtfile");
-  background-attachment: fixed;
-  position: static;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 10vh;
 }
 
 /* Footer */
@@ -2261,7 +2320,9 @@ footer a {
 .new-degreed {
   display: flex;
   flex-direction: column;
-  background-color: var(--primary-blue);
+  background: url(./images/degreed-bg.png) no-repeat fixed;
+  background-size: cover;
+
   color: #f2f2f2;
   min-height: 95vh;
 }
@@ -2279,15 +2340,32 @@ footer a {
 .new-degreed-card {
   width: 100%;
   min-height: 8rem;
-  background-color: var(--light-gray);
+  background-color: #000c1e;
   box-shadow: 3px 3px 10px rgba(51, 51, 51, 0.3);
   transition: all 0.5s ease;
   display: flex;
   flex-direction: column;
   padding: 1rem;
+  position: relative;
 }
-
+.new-degreed-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 5px;
+  background-color: var(--equinix-red);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s;
+}
+.new-degreed-card:hover::before,
+.new-degreed-card:hover .cta a::before {
+  transform: scaleX(1);
+}
 .new-degreed-card:hover {
+  background-color: #003870;
   transform: scale3d(1.03, 1.03, 1.03);
 }
 
@@ -2302,12 +2380,10 @@ footer a {
 }
 
 .new-degreed-card .headline {
-  color: black;
   padding: 0 1.25rem;
 }
 
 .new-degreed-card p {
-  color: black;
   font-size: 0.6rem;
   padding: 0 1.25rem;
 }
@@ -2321,14 +2397,15 @@ footer a {
 }
 
 .new-degreed-card .cta a {
-  color: black;
-  color: var(--equinix-red);
   font-size: 0.6rem;
   text-transform: capitalize;
+  color: var(--equinix-red);
 }
-
+.new-degreed-card:hover .cta > a {
+  color: #f2f2f2;
+}
 .degreed-home .icon {
-  background: url(./images/home-icon-black.svg) no-repeat;
+  background: url(./images/home-icon-white.svg) no-repeat;
   background-size: contain;
 }
 
@@ -2338,7 +2415,7 @@ footer a {
 }
 
 .degreed-assignments .icon {
-  background: url(./images/assignments-black.svg) no-repeat;
+  background: url(./images/assignments-white.svg) no-repeat;
   background-size: contain;
 }
 
@@ -2348,7 +2425,7 @@ footer a {
 }
 
 .degreed-featured .icon {
-  background: url(./images/featured-black.svg) no-repeat;
+  background: url(./images/featured-white.svg) no-repeat;
   background-size: contain;
 }
 
@@ -2358,7 +2435,7 @@ footer a {
 }
 
 .degreed-skills .icon {
-  background: url(./images/skills-black.svg) no-repeat;
+  background: url(./images/skills-white.svg) no-repeat;
   background-size: contain;
 }
 
@@ -2368,7 +2445,7 @@ footer a {
 }
 
 .degreed-skills-coach .icon {
-  background: url(./images/coach-black.svg) no-repeat;
+  background: url(./images/coach-white.svg) no-repeat;
   background-size: contain;
 }
 
@@ -2378,8 +2455,8 @@ footer a {
 }
 /* Counter upper */
 .counters {
-  background: #041b39;
-  color: #fff;
+  background: #000c1e;
+  color: #f2f2f2;
   padding: 40px 20px;
   /*   border-top: 3px rgb(220, 225, 230) solid; */
 }

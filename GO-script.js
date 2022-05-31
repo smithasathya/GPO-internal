@@ -376,8 +376,6 @@ const styleActiveTabLink = (activeLink, tablinks) => {
   for (i = 0; i < tabcontent.length; i++) {
     tabcontent[i].style.display = "none";
   }
-  const targetTabContent = activeLink.getAttribute("data-target-container");
-  document.querySelector(`#${targetTabContent}`).style.display = "block";
 };
 
 function openPage(pageName, targetDiv) {
@@ -489,7 +487,7 @@ window.addEventListener("touchmove", () => {
 });
 
 function elementInViewport(el) {
-  var top = el.offsetTop + 300;
+  var top = el.offsetTop;
   var left = el.offsetLeft;
   var width = el.offsetWidth;
   var height = el.offsetHeight;
@@ -849,7 +847,6 @@ const paintBigScreen = (tablnks) => {
 /* Slide pane for the course steps */
 /* Script for a smooth sliding slider-Different from the autotimed slider with smooth slides*/
 var slideForward = document.querySelectorAll(".slideForward");
-console.log(slideForward);
 slideForward.forEach((hit) => {
   hit.onclick = function () {
     var containers = document.querySelectorAll(".scroll-pane");
@@ -901,15 +898,13 @@ modalBtns.forEach((btn) => {
   btn.onclick = () => {
     modal.style.display = "block";
   };
-
-  //close modal when clicked anywhere outside hte modal
-  window.onclick = (event) => {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  };
-
   closeBtn.onclick = () => {
     modal.style.display = "none";
+  };
+  //close modal when clicked anywhere outside hte modal
+  window.onclick = function (event) {
+    if (event.target.classList.contains("modal")) {
+      event.target.style.display = "none";
+    }
   };
 });
