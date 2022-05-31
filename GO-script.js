@@ -36,7 +36,6 @@ window.onscroll = function (ev) {
 /* Active Links when the screen scrolls to that section*/
 // Get all sections that have an ID defined
 const sections = document.querySelectorAll("section:not(.hidden-section)[id]");
-
 function navHighlighter() {
   // Get current scroll position
   let scrollY = window.pageYOffset;
@@ -44,11 +43,12 @@ function navHighlighter() {
   sections.forEach((current) => {
     const sectionHeight = current.offsetHeight;
     const sectionTop = current.offsetTop - 200;
-    sectionId = current.getAttribute("id");
+    const sectionId = current.getAttribute("id");
     /*
     - If our current scroll position enters the space where current section on screen is, add .active class to corresponding navigation link, else remove it
     - To know which link needs an active class, we use sectionId variable we are getting while looping through sections as an selector
     */
+
     if (sectionId) {
       if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
         document
@@ -64,7 +64,7 @@ function navHighlighter() {
   /* Last Section */
   if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
     document
-      .querySelector(".nav-item a[href*=team]")
+      .querySelector(".nav-item a[href*=about]")
       .classList.remove("active");
     document
       .querySelector(".nav-item a[href*=contact]")
@@ -338,6 +338,7 @@ $(document).ready(function () {
 //styleActive link function and display resective tab content
 var activeSection;
 const styleActiveTabLink = (activeLink, tablinks) => {
+  console.log(tablinks, activeLink);
   //default style
   // Remove styles of all tablinks/buttons
   for (i = 0; i < tablinks.length; i++) {
@@ -376,6 +377,9 @@ const styleActiveTabLink = (activeLink, tablinks) => {
   for (i = 0; i < tabcontent.length; i++) {
     tabcontent[i].style.display = "none";
   }
+  const targetTab = activeLink.getAttribute("data-target-container");
+  console.log(targetTab);
+  document.getElementById(targetTab).style.display = "block";
 };
 
 function openPage(pageName, targetDiv) {

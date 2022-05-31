@@ -1338,6 +1338,12 @@
   transition: border-color 0.2s ease;
   transition-delay: 0.5s;
 }
+@media all and (max-width: 1199px) {
+  #slideBack,
+  #slideForward {
+    display: none;
+  }
+}
 @media all and (min-width: 1200px) {
   .progress-wrapper {
     flex-direction: column;
@@ -1871,10 +1877,9 @@
   }
 } */
 /* Contact Slider */
-
 .contact-card {
   width: 200px;
-  min-height: 250px;
+  height: 250px;
   box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.2);
   text-align: center;
   position: relative;
@@ -1886,7 +1891,10 @@
   transition: all 0.5s;
   margin: 1rem;
 }
-
+.slick-slide {
+  min-height: 23rem !important;
+  height: auto !important;
+}
 .banner-img {
   width: 130%;
   height: 150px;
